@@ -1,0 +1,119 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .hardware-video-container {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      height: 664rem;
+      position: relative;
+      border-radius: 16rem;
+
+      .hardware-video-item {
+        flex: 0 0 250rem;
+        position: relative;
+        transition: flex 0.3s ease, height 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 84rem;
+          height: 84rem;
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .hardware-video-item.hardware-active {
+        flex: 1;
+        z-index: 1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hardware-video-container {
+        flex-direction: column;
+        border-radius: 8rem;
+        height: auto;
+
+        .hardware-video-item {
+          height: 72rem;
+          flex: none;
+
+          img {
+            width: 40rem;
+            height: 40rem;
+          }
+
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .hardware-video-item.hardware-active {
+          height: 164rem;
+        }
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="hardware-video-container">
+    <div class="hardware-video-item hardware-active" onclick="hardwareToggleVideo(this)">
+      <video src="https://www.eipeks.com/wp-content/uploads/2024/09/drone-video-01.mp4"></video>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/drone_72.webp" onclick="hardwarePlayVideo(this)">
+    </div>
+    <div class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <video src="https://www.eipeks.com/wp-content/uploads/2024/09/drone-video-02.mp4"></video>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/drone_72.webp" onclick="hardwarePlayVideo(this)">
+    </div>
+    <div class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <video src="https://www.eipeks.com/wp-content/uploads/2024/09/drone-video-03.mp4"></video>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/drone_72.webp" onclick="hardwarePlayVideo(this)">
+    </div>
+    <div class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <video src="https://www.eipeks.com/wp-content/uploads/2024/09/drone-video-04.mp4"></video>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/drone_72.webp" onclick="hardwarePlayVideo(this)">
+    </div>
+  </div>
+
+  <script>
+    function hardwareToggleVideo(element) {
+      const hardwareActiveItem = document.querySelector('.hardware-video-item.hardware-active');
+      if (hardwareActiveItem !== element) {
+        hardwareActiveItem.classList.remove('hardware-active');
+        element.classList.add('hardware-active');
+      }
+    }
+
+    function hardwarePlayVideo(button) {
+      const hardwareVideo = button.previousElementSibling;
+      if (hardwareVideo.paused) {
+        hardwareVideo.play();
+        button.style.display = 'none';
+      } else {
+        hardwareVideo.pause();
+        button.style.display = 'flex';
+      }
+    }
+  </script>
+</body>

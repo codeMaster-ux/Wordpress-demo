@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .toy_reviews_carousel {
+      text-align: center;
+      margin: 0 auto;
+      overflow: hidden;
+      font-family: "Outfit", sans-serif;
+      width: 908rem;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 414rem;
+      justify-content: center;
+
+      img {
+        position: absolute;
+        width: 56rem;
+        height: 56rem;
+        top: 71rem;
+      }
+
+      >:nth-child(1) {
+        left: 0;
+      }
+
+      >:nth-child(3) {
+        right: 0;
+      }
+
+      .toy_reviews_carousel_container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .toy_reviews_carousel_container {
+        display: flex;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        width: 712rem;
+
+        .toy_reviews_carousel_item {
+          width: 348rem;
+          height: 212rem;
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          box-sizing: border-box;
+          padding: 18rem 20rem 0 20rem;
+          margin-right: 20rem;
+          font-size: 14rem;
+          line-height: 22rem;
+          border-radius: 10rem;
+          background: #fff;
+          text-align: left;
+          color: #333;
+          background-color: #FAFAFA;
+        }
+      }
+
+      .reviews_carousel_dots {
+        margin-top: 26rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+
+        .reviews_dot {
+          height: 6rem;
+          width: 6rem;
+          margin: 0 3rem;
+          background-color: #D9D9D9;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease, transform 0.6s ease;
+        }
+
+        .reviews_dot.reviews_active {
+          background-color: #333;
+          transform: scale(1.5);
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .toy_reviews_carousel {
+        width: 100%;
+        position: relative;
+        height: 539rem;
+
+        img {
+          top: auto;
+        }
+
+        >:nth-child(1) {
+          left: 0;
+          top: 28rem;
+        }
+
+        >:nth-child(3) {
+          right: 0;
+          bottom: 28rem;
+        }
+
+        .toy_reviews_carousel_container {
+          width: 100%;
+          display: block;
+          padding: 0 20rem;
+          z-index: 1;
+
+          .toy_reviews_carousel_item {
+            margin-right: 0;
+            width: 100%;
+            height: 140rem;
+            padding: 14rem 12rem 0 12rem;
+            font-size: 12rem;
+            font-weight: 300;
+            line-height: 14rem;
+            border-radius: 4rem;
+            margin-bottom: 8rem;
+          }
+
+          >:last-child {
+            height: 124rem;
+            margin-bottom: 0;
+          }
+        }
+
+        .reviews_carousel_dots {
+          display: none;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="toy_reviews_carousel">
+    <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_mark_left.webp">
+    <div class="toy_reviews_carousel_container" id="reviewsCarousel">
+      <div class="toy_reviews_carousel_item">"We have very high standards for sourcing agent. EIPEKS not only helped us
+        restructure our supplier network but also significantly reduced costs through centralized purchasing and bulk
+        negotiations. Especially, their implementation of a procurement management system has greatly improved our
+        procurement efficiency." </div>
+      <div class="toy_reviews_carousel_item">"It was a pleasure working with my agent, Lucy. She provided excellent
+        support throughout the entire process, patiently answering all my questions and making everything very simple. I
+        received outstanding service during the entire product procurement process. Many thanks to Lucy and EIPEKS!"
+      </div>
+      <div class="toy_reviews_carousel_item">"I highly recommend EIPEKS; their professional team helped us find multiple
+        high-quality raw material suppliers, greatly enhancing our product quality and effectively reducing costs. Their
+        service is professional, attentive, and they are a reliable partner for us."
+      </div>
+    </div>
+    <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_mark_right.webp">
+    <div class="reviews_carousel_dots">
+      <span class="reviews_dot reviews_active"></span>
+      <span class="reviews_dot"></span>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toyCarousel = document.querySelector('.toy_reviews_carousel_container');
+      const toyDots = document.querySelectorAll('.reviews_dot');
+      let toyCurrentIndex = 0;
+      const toyTotalItems = document.querySelectorAll('.toy_reviews_carousel_item').length;
+
+      function toyUpdateDots() {
+        toyDots.forEach(dot => dot.classList.remove('reviews_active'));
+        toyDots[toyCurrentIndex].classList.add('reviews_active');
+      }
+
+      function toyScrollToIndex(index) {
+        toyCurrentIndex = index;
+        toyCarousel.scrollTo({
+          left: toyCarousel.scrollWidth / toyTotalItems * toyCurrentIndex,
+          behavior: 'smooth'
+        });
+        toyUpdateDots();
+      }
+
+      toyDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => toyScrollToIndex(index));
+      });
+
+      toyCarousel.addEventListener('scroll', () => {
+        const index = Math.round(toyCarousel.scrollLeft / (toyCarousel.scrollWidth / toyTotalItems));
+        if (index !== toyCurrentIndex) {
+          toyCurrentIndex = index;
+          toyUpdateDots();
+        }
+      });
+
+      const isTouchDevice = 'ontouchstart' in document.documentElement;
+
+      if (!isTouchDevice) {
+        let toyIsDown = false;
+        let toyStartX;
+        let toyScrollLeft;
+
+        toyCarousel.addEventListener('mousedown', (e) => {
+          toyIsDown = true;
+          toyStartX = e.pageX - toyCarousel.offsetLeft;
+          toyScrollLeft = toyCarousel.scrollLeft;
+          toyCarousel.classList.add('active');
+        });
+
+        toyCarousel.addEventListener('mouseleave', () => {
+          toyIsDown = false;
+          toyCarousel.classList.remove('active');
+        });
+
+        toyCarousel.addEventListener('mouseup', () => {
+          toyIsDown = false;
+          toyCarousel.classList.remove('active');
+        });
+
+        toyCarousel.addEventListener('mousemove', (e) => {
+          if (!toyIsDown) return;
+          e.preventDefault();
+          const x = e.pageX - toyCarousel.offsetLeft;
+          const walk = (x - toyStartX); // 调整此值以更改滚动速度
+          toyCarousel.scrollLeft = toyScrollLeft - walk;
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

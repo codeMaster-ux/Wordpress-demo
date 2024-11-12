@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Example</title>
+  <link rel="stylesheet" href="common.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <!-- 引入 Vue 和 Vue-tel-input 的 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <style>
+    .pcb_manufacturing {
+      width: 960rem;
+      margin: 0 auto;
+      font-family: "Helvetica", sans-serif;
+
+      h1 {
+        font-size: 36rem;
+        font-weight: 700;
+        color: #162c5b;
+        line-height: 42rem;
+      }
+
+      .manufacturing {
+        margin-top: 28rem;
+        width: 960rem;
+        font-family: "Helvetica", sans-serif;
+        background: #ffffff;
+        border-radius: 8rem;
+        box-shadow: 0 16rem 44rem 0 rgba(0, 0, 0, 0.06);
+
+        .first_card {
+          width: 100%;
+          padding: 36rem 40rem 78rem 40rem;
+        }
+
+        .second_card {
+          width: 100%;
+          padding: 40rem 40rem 55rem 40rem;
+        }
+      }
+
+      .m_hidden {
+        display: block;
+      }
+
+      .m_visible {
+        display: none;
+      }
+
+      .el-form {
+        h2 {
+          font-size: 20rem;
+          font-weight: 700;
+          color: #162c5b;
+          line-height: 23rem;
+          margin-bottom: 28rem;
+        }
+
+        .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+          position: absolute !important;
+          right: -7rem !important;
+          margin: 0 !important;
+        }
+
+        .el-form-item {
+          margin: 0 0 28rem 0;
+          width: 100%;
+
+          .el-form-item__content {
+            line-height: normal;
+          }
+
+          .el-radio-button__inner {
+            width: 100%;
+            border-radius: 4rem;
+            border: 1px solid #EEF1F7;
+          }
+
+          .el-radio__inner {
+            border-color: #2770F1;
+          }
+
+          .el-radio__input.is-checked .el-radio__inner {
+            background-color: #2770F1;
+          }
+
+          .el-radio-group {
+            display: flex;
+            gap: 12rem;
+
+            .el-radio-button__inner {
+              height: 52rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0;
+            }
+
+            .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+              background-color: #2770F1;
+              border-color: #2770F1;
+            }
+
+            label {
+              width: 100%;
+
+              span {
+                font-size: 16rem;
+                font-weight: 500;
+                color: #576788;
+
+                line-height: 19rem;
+              }
+            }
+
+            label.is-active {
+              span {
+                color: #fff;
+              }
+            }
+          }
+
+          input,
+          select {
+            width: 100%;
+            height: 52rem;
+            background: #FAFAFA;
+            border: 1px solid #EEF1F7;
+            font-size: 16rem;
+            font-weight: 500;
+            color: #162C5B !important;
+            line-height: 19rem;
+            border-radius: 4rem;
+          }
+
+          .el-select {
+            width: 100%;
+          }
+
+          input::-webkit-input-placeholder,
+          textarea::-webkit-input-placeholder {
+            color: #BBC4D6 !important;
+          }
+
+          .el-form-item__label {
+            font-size: 14rem;
+            font-weight: 500;
+            line-height: 16rem;
+            padding: 0 0 8rem 0;
+            color: #576788;
+            position: relative !important;
+          }
+
+        }
+
+        .lines_one {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+          }
+        }
+
+        .lines_three {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+
+            >div {
+              height: 52rem;
+              background: #fafafa;
+              border: 1px solid #eef1f7;
+              border-radius: 4rem;
+              padding-left: 16rem;
+              display: flex;
+              align-items: center;
+
+              .el-radio__inner {
+                height: 16rem;
+                width: 16rem;
+              }
+
+              .el-radio__label {
+                font-size: 16rem;
+                font-weight: 500;
+                color: #576788;
+                line-height: 19rem;
+              }
+
+              .el-radio.is-checked {
+                .el-radio__label {
+                  color: #162C5B;
+                }
+              }
+            }
+          }
+        }
+
+        .customization_h2 {
+          margin-top: 28rem;
+        }
+
+        .lines_four {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+
+
+          }
+
+          .board_cl {
+            display: flex;
+            align-items: center;
+
+            span {
+              font-size: 16rem;
+              font-weight: 500;
+              color: #576788;
+              line-height: 19rem;
+            }
+
+            span:nth-child(2) {
+              margin: 0 16rem;
+
+            }
+
+            span:nth-child(4) {
+              margin-left: 6rem;
+            }
+          }
+        }
+
+        .lines_five {
+          display: flex;
+          gap: 56rem;
+
+          >div {
+            width: 100%;
+            display: flex;
+            gap: 12rem;
+          }
+
+          .el-form-item {
+            width: 100%;
+
+            .el-select {
+              width: 100%;
+            }
+          }
+
+        }
+
+        .lines_six {
+          gap: 56rem;
+          display: flex;
+
+          .el-form-item {
+            width: 100%;
+
+            .el-select {
+              width: 100%;
+            }
+          }
+        }
+
+        .lines_seven {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+
+          }
+        }
+
+        .lines_eight {
+          display: flex;
+          gap: 56rem;
+
+          .fct_cl {
+            width: 100%;
+            display: flex;
+            gap: 12rem;
+          }
+
+          .el-form-item {
+            width: 100%;
+
+
+
+            .el-input-number {
+              line-height: normal !important;
+
+              span:nth-child(1) {
+                border-radius: 4rem 0 0 4rem;
+              }
+
+              span:nth-child(2) {
+                border-radius: 0 4rem 4rem 0;
+              }
+
+              span {
+                width: 88rem;
+                line-height: 50rem;
+                background: #fff;
+              }
+            }
+
+            .el-input-number.numer_add_cl {
+              span {
+                width: 52rem;
+              }
+            }
+          }
+        }
+
+        .line_nine {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+          }
+        }
+
+        .lines_ten {
+          display: flex;
+          gap: 56rem;
+
+          .el-form-item {
+            width: 100%;
+
+            .upload-box {
+              width: 100%;
+              height: 52rem;
+              display: flex;
+              align-items: center;
+              background: #fafafa;
+              border: 1px solid #eef1f7;
+              border-radius: 4rem;
+              padding: 0 16rem;
+              gap: 8rem;
+
+              span {
+                font-size: 14rem;
+                font-weight: 500;
+                color: #7c8fb3;
+                line-height: 16rem;
+              }
+
+              img {
+                width: 28rem;
+              }
+            }
+          }
+
+        }
+
+        .lines_eleven {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 64rem;
+          gap: 24rem;
+
+          .el-button {
+            width: 400rem;
+            height: 64rem;
+            background: #162c5b;
+            border-radius: 8rem;
+            margin: 0 auto;
+            border: none;
+            font-size: 16rem;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 19rem;
+            z-index: 11;
+            margin-bottom: -41rem;
+          }
+
+          .el-button:hover {
+            background: #2770F1;
+          }
+
+          .pcb_shadow_cl {
+            width: 365rem;
+            height: 21rem;
+            background: rgba(22, 44, 91, 0.60);
+            border-radius: 8rem;
+            filter: blur(10rem);
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 500;
+            color: #7c8fb3;
+            line-height: 14rem;
+            width: 727rem;
+            text-align: center;
+          }
+        }
+
+        .information_five {
+          display: flex;
+          align-items: center;
+          margin-top: 40rem;
+          gap: 24rem;
+          justify-content: center;
+
+          >div:nth-child(1) {
+            width: 64rem;
+            height: 64rem;
+            background: #ffffff;
+            border: 1px solid #eef1f7;
+            border-radius: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            img {
+              width: 20rem;
+            }
+          }
+
+          >div:nth-child(2) {
+            position: relative;
+          }
+
+          .el-button {
+            width: 400rem;
+            height: 64rem;
+            background: #162c5b;
+            border-radius: 8rem;
+            margin: 0 auto;
+            border: none;
+            font-size: 16rem;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 19rem;
+            padding: 0;
+            position: relative;
+            z-index: 1 !important;
+          }
+
+          .el-button:hover {
+            background: #2770F1;
+          }
+
+          .pcb_shadow_cl {
+            width: 365rem;
+            height: 21rem;
+            background: rgba(22, 44, 91, 0.60);
+            border-radius: 8rem;
+            filter: blur(10rem);
+            position: absolute;
+            bottom: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 500;
+            color: #7c8fb3;
+            line-height: 14rem;
+            width: 727rem;
+            text-align: center;
+          }
+        }
+
+
+        textarea {
+          width: 100%;
+          background: #FAFAFA;
+          border: 1px solid #EEF1F7;
+          font-size: 16rem;
+          font-weight: 500;
+          color: #162C5B !important;
+          line-height: 19rem;
+          height: 132rem;
+        }
+
+        textarea::-webkit-input-placeholder {
+          color: #BBC4D6 !important;
+        }
+
+        .information_one {
+          display: flex;
+          gap: 56rem;
+        }
+
+        .information_two {
+          display: flex;
+          gap: 56rem;
+
+          .iti {
+            width: 100%;
+
+            .iti__flag-container {
+              background: #fff !important;
+            }
+
+            .iti__selected-flag {
+              padding: 0 6rem 0 8rem;
+            }
+
+            .iti__flag {
+              width: 20rem;
+
+              .iti__us {
+                height: 11rem;
+              }
+            }
+
+            .iti__country-name {
+              margin-right: 6rem !important;
+              font-size: 14rem !important;
+              line-height: 16rem !important;
+              font-weight: 500 !important;
+              color: #545966 !important;
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .pcb_manufacturing {
+        width: 100%;
+        margin: 0 auto;
+
+        .manufacturing {
+          width: 100%;
+          font-family: "Helvetica", sans-serif;
+          background: #ffffff;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 0;
+          margin-top: 0rem;
+
+          .first_card {
+            width: 100%;
+            padding: 24rem 16rem 31rem 16rem;
+          }
+
+          .second_card {
+            width: 100%;
+            padding: 24rem 16rem 28rem 16rem;
+          }
+        }
+
+        h1 {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          padding-left: 16rem;
+        }
+
+        h1 {
+          position: relative;
+          display: inline-block;
+        }
+
+        h1::after {
+          content: "";
+          display: block;
+          width: 40rem;
+          height: 2rem;
+          background-color: #0E6AED;
+          position: absolute;
+          bottom: -5rem;
+          left: 16rem;
+        }
+
+
+        .m_hidden {
+          display: none !important;
+        }
+
+        .m_visible {
+          display: block;
+        }
+
+
+        .el-form {
+          h2 {
+            font-size: 16rem;
+            font-weight: 700;
+            line-height: 19rem;
+            margin-bottom: 12rem;
+          }
+
+          .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+            right: -6rem !important;
+          }
+
+          .el-form-item {
+            margin: 0 0 16rem 0;
+
+            .el-form-item__content {
+              line-height: 36rem;
+            }
+
+            .el-radio-group {
+              display: flex;
+              gap: 12rem;
+
+              .el-radio-button__inner {
+                height: 36rem;
+                padding: 0;
+              }
+
+              .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+                background-color: #2770F1;
+                border-color: #2770F1;
+              }
+
+              label {
+                width: 100%;
+
+                span {
+                  font-size: 14rem;
+                  font-weight: 500;
+                  color: #576788;
+                  line-height: 16rem;
+                }
+              }
+
+              label.is-active {
+                span {
+                  color: #fff;
+                }
+              }
+            }
+
+            input,
+            select {
+              width: 100%;
+              height: 36rem;
+              font-size: 14rem;
+              color: #162C5B !important;
+              line-height: 16rem;
+            }
+
+            input,
+            textarea,
+            ::-webkit-input-placeholder {
+              color: #567788;
+            }
+
+            .el-form-item__label {
+              font-size: 12rem;
+              line-height: 14rem;
+              padding: 0 0 4rem 0;
+            }
+          }
+
+          .lines_one {
+            display: flex;
+            gap: 12rem;
+
+            .el-form-item {
+              width: 100%;
+            }
+          }
+
+          .lines_three {
+            display: flex;
+            gap: 13rem;
+
+            .el-form-item {
+              width: 100%;
+
+              >div {
+                height: 36rem;
+                padding-left: 12rem;
+
+                .el-radio__inner {
+                  height: 16rem;
+                  width: 16rem;
+                }
+
+                .el-radio__label {
+                  font-size: 14rem;
+                  line-height: 16rem;
+                }
+              }
+            }
+          }
+
+          .customization_h2 {
+            margin-top: 28rem;
+          }
+
+          .lines_four {
+            display: flex;
+            gap: 12rem;
+            flex-direction: column;
+
+            .el-form-item {
+              width: 100%;
+
+
+            }
+
+            .board_cl {
+              display: flex;
+              align-items: center;
+
+              span {
+                font-size: 16rem;
+                font-weight: 500;
+                color: #576788;
+                line-height: 19rem;
+              }
+
+              span:nth-child(2) {
+                margin: 0 16rem;
+
+              }
+
+              span:nth-child(4) {
+                margin-left: 6rem;
+              }
+            }
+          }
+
+          .lines_five {
+            display: flex;
+            gap: 12rem;
+
+            >div {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 0;
+            }
+
+            .el-form-item {
+              width: 100%;
+
+              .el-select {
+                width: 100%;
+              }
+            }
+          }
+
+          .lines_six {
+            gap: 12rem;
+            display: flex;
+
+            .el-form-item {
+              width: 100%;
+
+              .el-select {
+                width: 100%;
+              }
+            }
+          }
+
+          .lines_seven {
+            display: flex;
+            gap: 0;
+            flex-direction: column;
+
+            .el-form-item {
+              width: 100%;
+
+            }
+          }
+
+          .lines_eight {
+            display: flex;
+            gap: 56rem;
+
+            .el-form-item {
+              width: 100%;
+
+              .el-input-number {
+                line-height: normal !important;
+
+                span:nth-child(1) {
+                  border-radius: 4rem 0 0 4rem;
+                }
+
+                span:nth-child(2) {
+                  border-radius: 0 4rem 4rem 0;
+                }
+
+                span {
+                  width: 56rem;
+                  line-height: 34rem;
+                  background: #fff;
+                }
+              }
+
+              .el-input-number.numer_add_cl {
+                span {
+                  width: 36rem;
+                }
+              }
+            }
+          }
+
+          .line_nine {
+            display: flex;
+            gap: 12rem;
+
+            .el-form-item {
+              width: 100%;
+            }
+          }
+
+          .lines_ten {
+            display: flex;
+            gap: 12rem;
+
+            .el-form-item {
+              width: 100%;
+
+              .upload-box {
+                width: 100%;
+                height: 36rem;
+                padding: 0 12rem;
+
+                img {
+                  width: 24rem;
+                }
+              }
+            }
+
+          }
+
+          .lines_eleven {
+            margin-top: 8rem;
+            gap: 0;
+
+            .el-button {
+              height: 44rem;
+              width: 200rem;
+              margin-bottom: 0;
+            }
+
+            .pcb_shadow_cl {
+              width: calc(200rem - 22rem);
+              height: 18rem;
+              background: rgba(22, 44, 91, 0.60);
+              border-radius: 8rem;
+              filter: blur(10rem);
+              margin-top: -12rem;
+            }
+
+            p {
+              font-size: 11rem;
+              line-height: 13rem;
+              width: 100%;
+              margin-top: 6rem;
+            }
+          }
+
+
+
+          textarea {
+            font-size: 14rem;
+            font-weight: 500;
+            color: #162C5B !important;
+            line-height: 16rem;
+            height: 96rem;
+          }
+
+          .information_one {
+            flex-direction: column;
+            gap: 0;
+          }
+
+          .information_two {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            .iti {
+              width: 100%;
+
+              .iti__selected-flag {
+                padding: 0 6rem 0 8rem;
+              }
+
+              .iti__flag {
+                width: 20rem;
+
+                .iti__us {
+                  height: 11rem;
+                }
+              }
+
+              .iti__country-name {
+                margin-right: 6rem !important;
+                font-size: 14rem !important;
+                line-height: 16rem !important;
+                font-weight: 500 !important;
+                color: #545966 !important;
+              }
+            }
+          }
+
+          .information_five {
+            margin-top: 20rem;
+            gap: 12rem;
+
+            >div:nth-child(1) {
+              width: 44rem;
+              height: 44rem;
+              border-radius: 4rem;
+            }
+
+            .el-button {
+              width: 200rem;
+              height: 44rem;
+              border-radius: 4rem;
+              font-size: 14rem;
+              line-height: 16rem;
+            }
+
+            .pcb_shadow_cl {
+              width: 181rem;
+              height: 21rem;
+              background: rgba(22, 44, 91, 0.50);
+              bottom: -4rem;
+            }
+          }
+
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 这里将是 Vue 作用的地方 -->
+  <div id="app" class="pcb_manufacturing">
+    <h1>{{activeIndex === 0 ? 'PCB Manufacturing' : 'Information'}}</h1>
+    <div class="manufacturing">
+      <div class="first_card" v-show="activeIndex === 0">
+        <el-form label-suffix=":" ref="pcbForm" status-icon label-position="top" :model="form">
+          <h2>Basic Information</h2>
+          <div class="lines_one">
+            <el-form-item label="PCB Name / Part Nr." prop="pcb_name" :rules="[
+            { required: true, message: 'This field is required.', trigger: 'change' },
+          ]">
+              <el-input placeholder="Please enter" v-model="form.pcb_name"></el-input>
+            </el-form-item>
+            <el-form-item class="m_hidden" :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`"
+              prop="quantity" :rules="[
+            { required: true, message: 'This field is required.', trigger: 'change' },
+          ]">
+              <el-input v-model="form.quantity" placeholder="Please enter"></el-input>
+            </el-form-item>
+          </div>
+          <div class="lines_one">
+            <el-form-item class="m_visible" :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`"
+              prop="quantity" :rules="[
+            { required: true, message: 'This field is required.', trigger: 'change' },
+          ]">
+              <el-input v-model="form.quantity"></el-input>
+            </el-form-item>
+            <el-form-item label="Delivery Term" prop="delivery_term" :rules="[
+            { required: true, message: 'Please select', trigger: 'change' },
+          ]">
+              <el-select :popper-append-to-body="false" style="width: 100%;" v-model="form.delivery_term">
+                <el-option label="1 Working Day" value="1 Working Day"></el-option>
+                <el-option label="2 Working Days" value="2 Working Days"></el-option>
+                <el-option label="3 Working Days" value="3 Working Days"></el-option>
+                <el-option label="4 Working Days" value="4 Working Days"></el-option>
+                <el-option label="5 Working Days" value="5 Working Days"></el-option>
+                <el-option label="7 Working Days" value="7 Working Days"></el-option>
+                <el-option label="2 Weeks" value="2 Weeks"></el-option>
+                <el-option label="3 Weeks" value="3 Weeks"></el-option>
+                <el-option label="4 Weeks" value="4 Weeks"></el-option>
+                <el-option label="5 Weeks" value="5 Weeks"></el-option>
+              </el-select>
+            </el-form-item>
+            <div style="width: 100%;" class="m_hidden"></div>
+          </div>
+          <div class="lines_three">
+            <el-form-item label="ITAR">
+              <div>
+                <el-radio v-model="form.ITAR" label="是">Yes</el-radio>
+                <el-radio v-model="form.ITAR" label="否">No</el-radio>
+              </div>
+            </el-form-item>
+            <el-form-item label="First Article">
+              <div>
+                <el-radio v-model="form.first_article" label="是">Yes</el-radio>
+                <el-radio v-model="form.first_article" label="否">No</el-radio>
+              </div>
+            </el-form-item>
+            <el-form-item class="m_hidden" label="Test Coupons">
+              <div>
+                <el-radio v-model="form.test_coupons" label="是">Yes</el-radio>
+                <el-radio v-model="form.test_coupons" label="否">No</el-radio>
+              </div>
+            </el-form-item>
+          </div>
+          <div class="m_visible">
+            <div class="lines_three ">
+              <el-form-item label="Test Coupons">
+                <div>
+                  <el-radio v-model="form.test_coupons" label="是">Yes</el-radio>
+                  <el-radio v-model="form.test_coupons" label="否">No</el-radio>
+                </div>
+              </el-form-item>
+              <div style="width: 100%;"></div>
+            </div>
+          </div>
+          <h2 class="customization_h2">Customization Parameters</h2>
+          <div class="lines_four">
+            <el-form-item label="Dispatch Unit">
+              <el-radio-group v-model="form.dispatch_unit">
+                <el-radio-button label="Single Board"></el-radio-button>
+                <el-radio-button label="Panel"></el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            <el-form-item prop="form.dimension_width"
+              :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Dimension`">
+              <div class="board_cl">
+                <el-input v-model="form.dimension_width"></el-input><span>X</span>
+                <el-input v-model="form.dimension_height"></el-input><span>Inch</span>
+              </div>
+            </el-form-item>
+          </div>
+          <div class="lines_four" v-if="form.dispatch_unit === 'Panel'">
+            <el-form-item label="PCBs/panel" prop="pcbs_panel">
+              <el-input v-model="form.pcbs_panel"></el-input>
+            </el-form-item>
+            <el-form-item label="Different designs/Panel" props="different_designs_panel">
+              <el-input v-model="form.different_designs_panel"></el-input>
+            </el-form-item>
+          </div>
+          <div class="lines_five">
+            <div>
+              <el-form-item label="Material">
+                <el-select :popper-append-to-body='false' v-model="form.material">
+                  <el-option label="FR4" value="FR4"></el-option>
+                  <el-option label="FR4 Black" value="FR4 Black"></el-option>
+                  <el-option label="RF" value="RF"></el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+            <div v-show="form.dispatch_unit !== 'Panel' || isMobile">
+              <el-form-item label="Board Layers">
+                <el-select :popper-append-to-body="false" v-model="form.board_layers">
+                  <el-option label="1 Layer" value="1 Layer"></el-option>
+                  <el-option label="2 Layer" value="2 Layer"></el-option>
+                  <el-option label="4 Layer" value="4 Layer"></el-option>
+                  <el-option label="6 Layer" value="6 Layer"></el-option>
+                  <el-option label="8 Layer" value="8 Layer"></el-option>
+                  <el-option label="10 Layer" value="10 Layer"></el-option>
+                  <el-option label="12 Layer" value="12 Layer"></el-option>
+                  <el-option label="14 Layer" value="14 Layer"></el-option>
+                  <el-option label="16 Layer" value="16 Layer"></el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+            <div class="m_hidden">
+              <el-form-item class="m_hidden" label="Board Thickness">
+                <el-select :popper-append-to-body="false" v-model="form.board_thickness">
+                  <el-option label="0.02″/0.5 mm" value="0.02″/0.5 mm"></el-option>
+                  <el-option label="0.025″/0.6 mm" value="0.025″/0.6 mm"></el-option>
+                  <el-option label="0.03″/0.8 mm" value="0.03″/0.8 mm"></el-option>
+                  <el-option label="0.04″/1.0 mm" value="0.04″/1.0 mm"></el-option>
+                  <el-option label="0.047″/1.2 mm" value="0.047″/1.2 mm"></el-option>
+                  <el-option label="0.062″/1.6 mm" value="0.062″/1.6 mm"></el-option>
+                  <el-option label="0.078″/2.0 mm" value="0.078″/2.0 mm"></el-option>
+                  <el-option label="0.094″/2.4 mm" value="0.094″/2.4 mm"></el-option>
+                  <el-option label="0.125″/3.2 mm" value="0.125″/3.2 mm"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item v-show="form.dispatch_unit === 'Panel'" label="Board Layers">
+                <el-select :popper-append-to-body="false" v-model="form.board_layers">
+                  <el-option label="1 Layer" value="1 Layer"></el-option>
+                  <el-option label="2 Layer" value="2 Layer"></el-option>
+                  <el-option label="4 Layer" value="4 Layer"></el-option>
+                  <el-option label="6 Layer" value="6 Layer"></el-option>
+                  <el-option label="8 Layer" value="8 Layer"></el-option>
+                  <el-option label="10 Layer" value="10 Layer"></el-option>
+                  <el-option label="12 Layer" value="12 Layer"></el-option>
+                  <el-option label="14 Layer" value="14 Layer"></el-option>
+                  <el-option label="16 Layer" value="16 Layer"></el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+          </div>
+          <div class="m_visible">
+            <div class="lines_five">
+              <el-form-item label="Board Thickness">
+                <el-select :popper-append-to-body="false" v-model="form.board_thickness">
+                  <el-option label="0.02″/0.5 mm" value="0.02″/0.5 mm"></el-option>
+                  <el-option label="0.025″/0.6 mm" value="0.025″/0.6 mm"></el-option>
+                  <el-option label="0.03″/0.8 mm" value="0.03″/0.8 mm"></el-option>
+                  <el-option label="0.04″/1.0 mm" value="0.04″/1.0 mm"></el-option>
+                  <el-option label="0.047″/1.2 mm" value="0.047″/1.2 mm"></el-option>
+                  <el-option label="0.062″/1.6 mm" value="0.062″/1.6 mm"></el-option>
+                  <el-option label="0.078″/2.0 mm" value="0.078″/2.0 mm"></el-option>
+                  <el-option label="0.094″/2.4 mm" value="0.094″/2.4 mm"></el-option>
+                  <el-option label="0.125″/3.2 mm" value="0.125″/3.2 mm"></el-option>
+                </el-select>
+              </el-form-item>
+              <el-form-item label="Surface Finish">
+                <el-select :popper-append-to-body='false' v-model="form.surface_finish">
+                  <el-option label="ENIG" value="ENIG"></el-option>
+                  <el-option label="Hal (Sn-Pb)" value="Hal (Sn-Pb)"></el-option>
+                  <el-option label="Lead Free HAL" value="Lead Free HAL"></el-option>
+                  <el-option label="Immersion Tin" value="Immersion Tin"></el-option>
+                  <el-option label="ENEPIG" value="ENEPIG"></el-option>
+                  <el-option label="Immersion Silver" value="Immersion Silver"></el-option>
+                  <el-option label="Any Lead Free" value="Any Lead Free"></el-option>
+                  <el-option label="Soft Gold (Grade A)" value="Soft Gold (Grade A)"></el-option>
+                </el-select>
+              </el-form-item>
+            </div>
+          </div>
+          <div class="lines_six">
+            <el-form-item class="m_hidden" label="Surface Finish">
+              <el-select :popper-append-to-body='false' v-model="form.surface_finish">
+                <el-option label="ENIG" value="ENIG"></el-option>
+                <el-option label="Hal (Sn-Pb)" value="Hal (Sn-Pb)"></el-option>
+                <el-option label="Lead Free HAL" value="Lead Free HAL"></el-option>
+                <el-option label="Immersion Tin" value="Immersion Tin"></el-option>
+                <el-option label="ENEPIG" value="ENEPIG"></el-option>
+                <el-option label="Immersion Silver" value="Immersion Silver"></el-option>
+                <el-option label="Any Lead Free" value="Any Lead Free"></el-option>
+                <el-option label="Soft Gold (Grade A)" value="Soft Gold (Grade A)"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="Material TG">
+              <el-radio-group v-model="form.material_tg">
+                <el-radio-button label="Middle TG (150)"></el-radio-button>
+                <el-radio-button label="High TG (>=170)"></el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+          </div>
+          <div class="lines_seven">
+            <el-form-item label="Finish Cu Thickness">
+              <el-radio-group v-model="form.finish_cu_thickness">
+                <el-radio-button label="35(M)/1oz"></el-radio-button>
+                <el-radio-button label="60(M)/2oz"></el-radio-button>
+                <el-radio-button label="90(M)/3oz"></el-radio-button>
+                <el-radio-group>
+            </el-form-item>
+            <el-form-item label="Inner Cu Thickness">
+              <el-input v-model="form.inner_cu_thickness"></el-input>
+            </el-form-item>
+          </div>
+          <div class="lines_eight">
+            <div class="fct_cl">
+              <el-form-item label="Hard Gold Tab">
+                <div class="fct_cl">
+                  <el-input-number :class="form.hard_gold_tab > 0 ? 'numer_add_cl' : ''" style="width: 100%;"
+                    v-model="form.hard_gold_tab"></el-input-number>
+                </div>
+              </el-form-item>
+              <el-form-item v-show="form.hard_gold_tab > 0" label="Au Thickness">
+                <div class="fct_cl">
+                  <el-select :popper-append-to-body="false" v-model="form.au_thickness">
+                    <el-option label="1 - 10" value="1 - 10"></el-option>
+                    <el-option label="11 - 20" value="11 - 20"></el-option>
+                    <el-option label="21 - 30" value="21 - 30"></el-option>
+                    <el-option label="31 - 40" value="31 - 40"></el-option>
+                    <el-option label="41 - 50" value="41 - 50"></el-option>
+                    <el-option label="51 - 60" value="51 - 60"></el-option>
+                  </el-select>
+                </div>
+              </el-form-item>
+            </div>
+            <el-form-item class="m_hidden" label="Solder Mask Top">
+              <el-select :popper-append-to-body="false" v-model="form.solder_mask_top">
+                <el-option label="Green" value="Green"></el-option>
+                <el-option label="Blue" value="Blue"></el-option>
+                <el-option label="White" value="White"></el-option>
+                <el-option label="Red" value="Red"></el-option>
+                <el-option label="Clear" value="Clear"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+                <el-option label="No Solder Mask" value="No Solder Mask"></el-option>
+              </el-select>
+            </el-form-item>
+          </div>
+          <div class="line_nine">
+            <el-form-item label="Legend Top">
+              <el-select :popper-append-to-body="false" v-model="form.legend_top">
+                <el-option label="White" value="White"></el-option>
+                <el-option label="No Legend" value="No Legend"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item class="m_visible" label="Solder Mask Top">
+              <el-select :popper-append-to-body='false' v-model="form.solder_mask_top">
+                <el-option label="Green" value="Green"></el-option>
+                <el-option label="Blue" value="Blue"></el-option>
+                <el-option label="White" value="White"></el-option>
+                <el-option label="Red" value="Red"></el-option>
+                <el-option label="Clear" value="Clear"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+                <el-option label="No Solder Mask" value="No Solder Mask"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item class="m_hidden" label="Solder Mask Bottom">
+              <el-select :popper-append-to-body="false" v-model="form.solder_mask_bottom">
+                <el-option label="Green" value="Green"></el-option>
+                <el-option label="Blue" value="Blue"></el-option>
+                <el-option label="White" value="White"></el-option>
+                <el-option label="Red" value="Red"></el-option>
+                <el-option label="Clear" value="Clear"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+                <el-option label="No Solder Mask" value="No Solder Mask"></el-option>
+              </el-select>
+            </el-form-item>
+          </div>
+          <div class="lines_ten">
+            <el-form-item class="m_visible" label="Solder Mask Bottom">
+              <el-select :popper-append-to-body="false" v-model="form.solder_mask_bottom">
+                <el-option label="Green" value="Green"></el-option>
+                <el-option label="Blue" value="Blue"></el-option>
+                <el-option label="White" value="White"></el-option>
+                <el-option label="Red" value="Red"></el-option>
+                <el-option label="Clear" value="Clear"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+                <el-option label="No Solder Mask" value="No Solder Mask"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="Legend Bottom">
+              <el-select :popper-append-to-body="false" v-model="form.legend_bottom">
+                <el-option label="White" value="White"></el-option>
+                <el-option label="No Legend" value="No Legend"></el-option>
+                <el-option label="Black" value="Black"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item class="m_hidden" label="Upload Gerber Files">
+              <div class="upload-box" @click="$refs.fileInput.click()">
+                <img v-if="!form.gerber_file_url" src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_36.png">
+                <img v-else src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_63.png" alt="">
+                <span :style="{ color: form.gerber_file_url ? '#162C5B' : 'none'}">
+                  {{ form.gerber_file_url || 'Select File' }}</span>
+              </div>
+              <input style="display: none;" id="attachment" type="file" ref="fileInput" @change="handleFileChange" />
+            </el-form-item>
+          </div>
+          <div class="lines_ten">
+            <el-form-item class="m_visible" label="Upload Gerber Files">
+              <div class="upload-box" @click="$refs.mFileInput.click()">
+                <img v-if="!form.gerber_file_url" src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_36.png">
+                <img v-else src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_63.png" alt="">
+                <span :style="{ color: form.gerber_file_url ? '#162C5B' : 'none'}">
+                  {{ form.gerber_file_url || 'Select File' }}</span>
+              </div>
+              <input style="display: none;" id="mAttachment" type="file" ref="mFileInput" @change="handleFileChange" />
+            </el-form-item>
+          </div>
+          <div class="lines_eleven">
+            <el-button type="primary" @click="nextPage">{{isMobile ? 'Next' : 'Go To Next Page'}}</el-button>
+            <div class="pcb_shadow_cl"></div>
+            <p>Note: Our start dates are scheduled on weekdays. All services have a 10:00 am daily order deadline. All
+              the
+              orders placed post that deadline, will start on the next available working day, irrespective of which
+              day of
+              the
+              week that may be.</p>
+          </div>
+        </el-form>
+      </div>
+      <div class="second_card" v-show="activeIndex === 1"><el-form ref="pcbInfoForm" status-icon label-position="top"
+          :model="form">
+          <div class="information_one">
+            <el-form-item label="Name:" prop="name">
+              <el-input v-model="form.name" placeholder="First &last name"></el-input>
+            </el-form-item>
+            <el-form-item label="Email:" prop="email" :rules="[
+            { required: true, message: 'Please enter your email address', trigger: 'blur' },
+            { type: 'email', message: 'Please enter the correct email address', trigger: ['blur', 'change'] }
+          ]">
+              <el-input v-model="form.email" placeholder="Email address"></el-input>
+            </el-form-item>
+          </div>
+          <div class="information_two">
+            <el-form-item label="Phone: ">
+              <input style="width: 100%;" name="phone" ref="phoneInput" id="pcb-phone" type="tel">
+            </el-form-item>
+            <el-form-item label="Company:" prop="company">
+              <el-input v-model="form.company" placeholder="Your company name"></el-input>
+            </el-form-item>
+          </div>
+          <div class="information_three">
+            <el-form-item label="Application Area:" prop="application">
+              <el-input type="textarea" placeholder="Application Description" v-model="form.application">
+              </el-input>
+            </el-form-item>
+          </div>
+          <div class="information_four">
+            <el-form-item label="Message:" prop="message">
+              <el-input type="textarea" placeholder="Your message" v-model="form.message" />
+            </el-form-item>
+          </div>
+          <div class="information_five">
+            <div @click="handlePreviosPage">
+              <img src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_80.png">
+            </div>
+            <div>
+              <el-button type="primary" @click="submitForm">Submit</el-button>
+              <div class="pcb_shadow_cl"></div>
+            </div>
+          </div>
+        </el-form></div>
+    </div>
+  </div>
+  <!-- 自定义 Vue 实例 -->
+  <script>
+    // 创建 Vue 实例
+    new Vue({
+      el: '#app',  // Vue 作用的 HTML 元素
+      data() {
+        return {
+          activeIndex: 0,
+          iti: null,
+          form: {
+            name: null,
+            email: null,
+            phone: null,
+            company: null,
+            application: null,
+            message: null,
+            "hard_gold_tab": 0,
+            'au_thickness': '1 - 10',
+            "pcb_name": null,
+            "quantity": null,
+            "delivery_term": "2 Working Days",
+            "ITAR": "否",
+            "first_article": "否",
+            "test_coupons": "否",
+            "dimension": "100",
+            dimension_width: 0,
+            dimension_height: 0,
+            pcbs_panel: null,
+            different_designs_panel: null,
+            "dispatch_unit": "Single Board",
+            "material": "FR4",
+            "board_layers": "2 Layer",
+            "board_thickness": "0.062″/1.6 mm",
+            "surface_finish": "Soft Gold (Grade A)",
+            "material_tg": "Middle TG (150)",
+            "finish_cu_thickness": "35(M)/1oz",
+            "inner_cu_thickness": "0",
+            "solder_mask_top": "Green",
+            "legend_top": "White",
+            "solder_mask_bottom": "Green",
+            "legend_bottom": "White",
+            "gerber_file_url": ""
+          }
+        };
+      },
+      computed: {
+        isMobile() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+      },
+      mounted() {
+        this.initIntlTelInput();
+      },
+      created() {
+        // 从 sessionStorage 中获取数据
+        const formData = JSON.parse(sessionStorage.getItem('pcbFormData') || '{}');
+        let file = null
+        if (formData.source_gerber_file_url) {
+          // 将 Base64 数据转换为 Blob 对象
+          const byteString = atob(formData.source_gerber_file_url.split(',')[1]); // 去掉前面的 "data:image/webp;base64,"
+          const mimeType = formData.source_gerber_file_url.split(',')[0].split(':')[1].split(';')[0];
+          // 创建 Uint8Array 并填充二进制数据
+          const arrayBuffer = new Uint8Array(byteString.length);
+          for (let i = 0; i < byteString.length; i++) {
+            arrayBuffer[i] = byteString.charCodeAt(i);
+          }
+          // 创建 Blob 对象
+          const blob = new Blob([arrayBuffer], { type: mimeType });
+
+          // 将 Blob 转换为 File 对象
+          file = new File([blob], 'source_gerber_file_url.webp', { type: mimeType });
+        }
+        this.form = { ...this.form, ...formData, source_gerber_file_url: file }
+        console.log(this.form)
+      },
+      methods: {
+        // 返回上一页
+        handlePreviosPage() {
+          this.scrollToTop()
+          this.activeIndex = 0
+        },
+        // 回到顶部
+        scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        },
+        // 初始化国家选择
+        initIntlTelInput() {
+          this.iti = intlTelInput(this.$refs.phoneInput, {
+            initialCountry: "us",
+            nationalMode: false,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+          });
+          // 设置默认号码
+          this.iti.setNumber("+1");
+        },
+        // 当文件选择发生变化时的回调
+        handleFileChange(event) {
+          const file = event.target.files[0];  // 获取用户选择的文件
+          if (file) {
+            this.form.source_gerber_file_url = null
+            this.form.gerber_file_url = file.name;  // 更新gerber_file_name用于显示文件名
+          }
+        },
+        // 下一步
+        nextPage() {
+          this.$refs.pcbForm.validate((valid) => {
+            if (valid) {
+              this.scrollToTop()
+              this.activeIndex = 1
+            } else {
+              return false;
+            }
+          });
+        },
+        // 提交表单
+        submitForm() {
+          const form = this.form || {}
+          this.$refs.pcbInfoForm.validate((valid) => {
+            if (valid) {
+              const formDatas = new FormData();
+              // 将form对象中的数据手动添加到formDatas中
+              Object.keys(this.form).forEach(key => {
+                formDatas.append(key, this.form[key]);
+              });
+              if (this.$refs.phoneInput.value) {
+                formDatas.append('phone', this.$refs.phoneInput.value);
+              }
+              if (form.source_gerber_file_url) {
+                formDatas.append('gerber_file_url', form.source_gerber_file_url);
+              } else {
+                formDatas.append('gerber_file_url', this.isMobile ? document.getElementById('mAttachment').files[0] : document.getElementById('attachment').files[0]);
+              }
+              formDatas.append('action', 'handle_pcb_form'); // 添加action参数
+              fetch('/wp-admin/admin-ajax.php', {
+                method: 'POST',
+                body: formDatas
+              }).then(response => response.json())
+                .then(data => {
+                  if (data.success) {
+                    window.location.href = 'https://www.eipeks.com/thank-you/';
+                  } else {
+                    alert('Form submission failed.');
+                  }
+                }).catch(error => {
+                  console.error('Error:', error);
+                });
+            } else {
+              return false;
+            }
+          });
+        }
+      },
+      beforeDestroy() {
+        // 在组件销毁前移除实例
+        if (this.iti) {
+          this.iti.destroy();
+        }
+      },
+    });
+  </script>
+</body>
+
+</html>

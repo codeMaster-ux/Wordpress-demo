@@ -1,0 +1,468 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .new-mobile-nav {
+      position: relative;
+      background-color: #FFFFFF !important;
+      color: #fff;
+      font-family: "Helvetica", sans-serif;
+      min-height: 56rem;
+      z-index: 99999;
+
+      .new-mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56rem;
+        padding: 0 16rem;
+        border-bottom: 1px solid #DDE4F3;
+
+        img {
+          width: auto;
+          height: 36rem;
+          width: 72rem;
+          object-fit: cover;
+        }
+
+        .new-nav-toggle {
+          background: none;
+          border: none;
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          cursor: pointer;
+          color: #162C5B;
+          padding: 0;
+
+          img {
+            width: 32rem;
+            height: 32rem;
+          }
+
+          #header_close_icon {
+            display: none;
+            height: 25rem;
+            width: 25rem;
+          }
+        }
+
+      }
+
+      #one-menu-ul {
+        display: none;
+        flex-direction: column;
+        background-color: #FAFDFF;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: max-height 0.3s ease-in-out;
+        overflow: auto;
+        max-height: 0;
+        padding: 0;
+        padding: 16rem 16rem 20rem 16rem;
+        border-bottom: 1px solid #DCE1E8;
+        z-index: 9999;
+
+        li:not(:last-child) {
+
+          .one_menu,
+          .only_one_menu {
+            margin-bottom: 4rem;
+            border-bottom: 0.5px solid #F1F2F4;
+          }
+        }
+
+        li {
+          .only_one_menu {
+            cursor: pointer;
+            height: 40rem;
+
+            a {
+              text-decoration: none;
+              color: #000;
+              display: block;
+              font-size: 16rem;
+              font-weight: 500;
+              line-height: 40rem;
+            }
+
+            a.new-active {
+              color: #0E6AED;
+              font-weight: bold;
+            }
+          }
+
+          .one_menu {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            height: 40rem;
+            justify-content: space-between;
+            padding-right: 20rem;
+
+            .header_new_arrow {
+              transform: transform 0.3s ease;
+              width: 30rem;
+              height: 30rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 10rem;
+                height: 10rem;
+                object-fit: cover;
+              }
+            }
+
+            .header_new_arrow.new_down {
+              transform: rotate(0deg);
+            }
+
+            .header_new_arrow.new_up {
+              transform: rotate(180deg);
+            }
+
+            a {
+              text-decoration: none;
+              color: #000;
+              display: block;
+              font-size: 16rem;
+              font-weight: 500;
+              line-height: 19rem;
+            }
+
+            a.new-active {
+              color: #0E6AED;
+              font-weight: bold;
+            }
+          }
+
+          .one_menu.new-active {
+            a {
+              color: #0E6AED;
+              font-weight: 700;
+            }
+          }
+
+          .two-menu-ul {
+            display: none;
+            flex-direction: column;
+            overflow: auto;
+            transition: max-height 0.3s ease-in-out;
+            padding: 0;
+            max-height: 440rem;
+
+
+            >a {
+              font-size: 14rem;
+              font-weight: 500rem;
+              line-height: 40rem;
+              text-decoration: none;
+              color: #162C5B;
+            }
+
+            li {
+              display: flex;
+              padding-left: 8rem;
+              border-bottom: 1px solid transparent;
+            }
+
+            li.new_active {
+              border-bottom: 1px solid #0E6AED;
+            }
+
+            .two_nav_without_clicks {
+              font-size: 14rem;
+              font-weight: 500rem;
+              line-height: 40rem;
+              text-decoration: none;
+              color: #162C5B;
+              background: #F2F4F9;
+            }
+
+            .two_nav_without_clicks.new_active {
+              border: none;
+            }
+
+            .three_menu-ul {
+              transition: max-height 0.3s ease-in-out;
+              padding: 0;
+
+              a {
+                font-size: 12rem;
+                font-weight: 500rem;
+                line-height: 14rem;
+                text-decoration: none;
+                color: #576788;
+              }
+
+              li {
+                height: 36rem;
+                display: flex;
+                align-items: center;
+                margin-left: 20rem;
+                padding-left: 0;
+                border-bottom: 1px solid transparent;
+              }
+
+              li:active {
+                border-bottom: 1px solid #0E6AED;
+              }
+            }
+          }
+
+        }
+      }
+
+      #one-menu-ul.new-active {
+        display: flex;
+        max-height: calc(84.3vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="new-mobile-nav">
+    <div class="new-mobile-nav-header">
+      <a href="https://www.eipeks.com/"><img
+          src="https://www.eipeks.com/wp-content/uploads/2024/08/Eipeks.logo_.webp"></a>
+      <button id="new-navToggle" class="new-nav-toggle">
+        <img id="mobile_menu_fold_icon"
+          src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_menu_fold_icon.png">
+        <img id="header_close_icon" src="https://www.eipeks.com/wp-content/uploads/2024/08/header_close_icon.webp">
+      </button>
+    </div>
+    <ul id="one-menu-ul">
+      <li>
+        <div class="one_menu">
+          <a>Services</a>
+          <div class="header_new_arrow new_down"><img
+              src="https://www.eipeks.com/wp-content/uploads/2024/08/new-mobile-down-icon-1.png"></div>
+        </div>
+        <ul class="two-menu-ul">
+          <a href="https://www.eipeks.com/product-design/">
+            <li>Product Design </li>
+          </a>
+          <a href="https://www.eipeks.com/product-design/industrial-design/">
+            <li>Industrial Design</li>
+          </a>
+          <a href="https://www.eipeks.com/product-design/mechanical-design/">
+            <li>Mechanical Design</li>
+          </a>
+          <a href="https://www.eipeks.com/product-design/software-product-development/">
+            <li>Software Product
+              Development</li>
+          </a>
+          <a href="https://www.eipeks.com/prototyping/3d-printing-service/">
+            <li>3D Printing Service</li>
+          </a>
+          <a href="https://www.eipeks.com/manufacturing/">
+            <li>Manufacturing</li>
+          </a>
+          <a href="https://www.eipeks.com/sourcing-agent/">
+            <li>Sourcing Agent</li>
+          </a>
+          <a href="https://www.eipeks.com/prototyping/">
+            <li>Prototyping
+            </li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <div class="one_menu">
+          <a>Portfolio</a>
+          <div class="header_new_arrow new_down"><img
+              src="https://www.eipeks.com/wp-content/uploads/2024/08/new-mobile-down-icon-1.png"></div>
+        </div>
+        <ul class="two-menu-ul">
+          <li class="two_nav_without_clicks">Industry</li>
+          <ul class="three_menu-ul">
+            <a href="https://www.eipeks.com/industries/sports-fitness/">
+              <li>Sport Fitness</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/household-products/">
+              <li>Household Products</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/pet-products/">
+              <li>Pet Products</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/toys/">
+              <li>Toys</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/industrial-products/">
+              <li>Industrial Products</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/packaging/">
+              <li>Packaging</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/cutting-edge-products/">
+              <li>Cutting Edge Products</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/beauty-products/">
+              <li>Beauty Products
+              </li>
+            </a>
+            <a href="https://www.eipeks.com/industries/electronic-products/">
+              <li>Electronic Products</li>
+            </a>
+            <a href="https://www.eipeks.com/industries/clothing-accessory/">
+              <li>Clothing & Accessory</li>
+            </a>
+            <a style="color: #0E6AED;" href="https://www.eipeks.com/industries/">
+              <li>See All</li>
+            </a>
+          </ul>
+          <a href="https://www.eipeks.com/technologies/">
+            <li>Technology</li>
+          </a>
+          <a href="https://www.eipeks.com/successful-cases/">
+            <li>Case</li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <div class="one_menu">
+          <a>Support</a>
+          <div class="header_new_arrow new_down"><img
+              src="https://www.eipeks.com/wp-content/uploads/2024/08/new-mobile-down-icon-1.png"></div>
+        </div>
+        <ul class="two-menu-ul">
+          <a href="https://www.eipeks.com/market-research/">
+            <li>Market Survey</li>
+          </a>
+          <a href="https://www.eipeks.com/project-quality-control/">
+            <li>Project Quality Control</li>
+          </a>
+          <a href="https://www.eipeks.com/marketing-preparation/">
+            <li>Marketing Preparation</li>
+          </a>
+          <a href="https://www.eipeks.com/logistics-delivery/">
+            <li>Logistics
+            </li>
+          </a>
+          <a href="https://www.eipeks.com/regulatory-compliance/">
+            <li>Regulatory Compliance</li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <div class="one_menu">
+          <a>Resources</a>
+          <div class="header_new_arrow new_down"><img
+              src="https://www.eipeks.com/wp-content/uploads/2024/08/new-mobile-down-icon-1.png"></div>
+        </div>
+        <ul class="two-menu-ul">
+          <a href="https://www.eipeks.com/blog/">
+            <li>Blog</li>
+          </a>
+          <a href="https://www.eipeks.com/news/">
+            <li>News</li>
+          </a>
+          <a href="https://www.eipeks.com/nda/">
+            <li>NDA</li>
+          </a>
+          <li class="two_nav_without_clicks">Customer</li>
+          <ul class="three_menu-ul">
+            <a href="https://www.eipeks.com/customer/e-commerce-brand/">
+              <li>E-Commerce Brand</li>
+            </a>
+            <a href="https://www.eipeks.com/offline-independent-brand/">
+              <li>Offline Independent Brand</li>
+            </a>
+            <a href="https://www.eipeks.com/emerging-brand/">
+              <li>Emerging Brand</li>
+            </a>
+          </ul>
+        </ul>
+      </li>
+      <li>
+        <div class="one_menu">
+          <a>About Us</a>
+          <a href="https://www.eipeks.com/about-us/" class="header_new_arrow new_down"></a>
+        </div>
+      </li>
+      <li>
+        <div class="one_menu">
+          <a>Contact Us</a>
+          <a href="https://www.eipeks.com/contact-us/" class="header_new_arrow new_down"></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('new-navToggle');
+      const oneMenuUl = document.getElementById('one-menu-ul');
+      const mobileMenuFoldIcon = document.getElementById('mobile_menu_fold_icon')
+      const headerCloseIcon = document.getElementById('header_close_icon')
+
+
+      const oneMenu = document.querySelectorAll('.one_menu');
+      const twoMenuUl = document.querySelectorAll('.two-menu-ul li');
+
+      const headerNewArrow = document.querySelectorAll('.header_new_arrow')
+
+
+      navToggle.addEventListener('click', function () {
+        if (mobileMenuFoldIcon.style.display === 'none') {
+          mobileMenuFoldIcon.style.display = 'block';
+          headerCloseIcon.style.display = 'none';
+        } else {
+          mobileMenuFoldIcon.style.display = 'none';
+          headerCloseIcon.style.display = 'block';
+        }
+        oneMenuUl.classList.toggle('new-active');
+      });
+
+      headerNewArrow.forEach(arrow => {
+        arrow.addEventListener('click', function (event) {
+          event.stopPropagation();
+          oneMenu.forEach(btn => {
+            const btnArrow = btn.querySelector('.header_new_arrow')
+            if (btnArrow !== this) {
+              btn.classList.remove('new-active')
+              if (btn.nextElementSibling) {
+                btn.nextElementSibling.style.display = 'none'
+              }
+              btnArrow.classList.remove('new_up')
+              btnArrow.classList.add('new_down')
+            }
+          })
+
+
+          const dropdownContent = this.parentElement.nextElementSibling;
+          const dropdownBtn = this.parentElement;
+          if (dropdownContent && dropdownContent.style) {
+            if (dropdownContent.style.display === 'block') {
+              dropdownContent.style.display = 'none';
+              this.classList.remove('new_up');
+              this.classList.add('new_down');
+              dropdownBtn.classList.remove('new-active');
+            } else {
+              dropdownContent.style.display = 'block';
+              this.classList.remove('new_down');
+              this.classList.add('new_up');
+            }
+          }
+          dropdownBtn.classList.add('new-active');
+
+        })
+      })
+
+      twoMenuUl.forEach(link => {
+        link.addEventListener('click', function () {
+          // Reset all links
+          twoMenuUl.forEach(lnk => lnk.classList.remove('new_active'));
+          this.classList.add('new_active');
+        })
+      })
+    });
+  </script>
+
+</body>

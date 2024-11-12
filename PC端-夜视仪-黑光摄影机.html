@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .products-camera-container {
+      display: flex;
+      width: 100%;
+      height: 940rem;
+      font-family: "Lato", sans-serif;
+      background: #E9ECF0;
+
+      .camera-right-section {
+        width: 1000rem;
+        position: relative;
+
+        #camera-image {
+          width: 1000rem;
+          height: 940rem;
+          object-fit: cover;
+        }
+
+        #camera-text {
+          width: 440rem;
+          min-height: 260rem;
+          background: rgba(229, 95, 6, 0.36);
+          font-size: 18rem;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 24rem;
+          padding: 20rem 22rem;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          left: 8rem;
+          bottom: 120rem;
+        }
+      }
+
+      .camera-left-section {
+        width: 920rem;
+        padding: 180rem 39rem 0 240rem;
+
+        .products-camera-button-list {
+          display: flex;
+          padding-left: 28rem;
+          margin-top: 78rem;
+
+          a {
+            button {
+              font-size: 14rem;
+              font-weight: 400;
+              line-height: 16rem;
+              width: 193rem;
+              height: 48rem;
+              cursor: pointer;
+            }
+
+            &:nth-child(1) {
+              button {
+                color: #ffffff;
+                background: #363d4e;
+                border: #363d4e;
+              }
+            }
+
+            &:nth-child(2) {
+              button {
+                background: #fafafa00;
+                border: 1rem solid #1a58f7;
+                color: #1A58F7;
+                margin-left: 28rem;
+
+              }
+            }
+          }
+        }
+
+        h2,
+        p {
+          margin-left: 28rem;
+        }
+
+        h2 {
+          font-size: 28rem;
+          font-weight: 900;
+          color: #111111;
+          line-height: 32rem;
+        }
+
+        p {
+          margin: 16rem 0 70rem 28rem;
+          font-size: 18rem;
+          font-weight: 400;
+          color: #333333;
+          line-height: 21rem;
+        }
+
+        #camera-list {
+          list-style: none;
+          padding: 0;
+          display: inline-flex;
+          flex-direction: column;
+
+          li {
+            margin-bottom: 16rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 16rem;
+            display: inline-block;
+            line-height: 32rem;
+
+            .camera-arrow {
+              margin-right: 10rem;
+              color: transparent;
+            }
+
+          }
+        }
+
+        #camera-list li.camera-active,
+        #camera-list li:hover {
+          color: #FF6600;
+
+          .camera-arrow {
+            color: #FF6600;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="products-camera-container">
+    <div class="camera-left-section">
+      <h2>Black Light Camera</h2>
+      <p>The Black Light Camera is designed for all-weather surveillance, especially at night and in low-light
+        environments. It uses advanced AI-ISP (Artificial Intelligence Image Signal Processor) technology to
+        automatically switch working modes during the day and night to ensure the best image quality and energy
+        efficiency.</p>
+      <ul id="camera-list">
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/camera_images_01.webp"
+          data-text="Traditional ISP technology: During the daytime, conventional image signal processing techniques are employed to ensure image quality while maintaining power consumption equivalent to traditional AOV (visual analytics and optimization) devices."
+          class="camera-active">
+          <span class="camera-arrow">▶</span> Day Mode
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/camera_images_01.webp"
+          data-text="(1) AI-ISP technology: At night, AI-ISP technology is utilized to slightly increase power consumption while reducing the energy consumption associated with constant illumination from fill lights.(2)Full-color night vision: It uses AI technology to filter out invalid data and achieve full-color images, thereby improving object recognition.(3)Energy-saving effect: It can significantly shorten the time needed for infrared lamps and save a lot of power consumption.">
+          <span class="camera-arrow">▶</span> Night Mode
+        </li>
+      </ul>
+      <div class="products-camera-button-list">
+        <a href="#my-darkness-start-form"><button>Direct purchase</button></a>
+        <a href="#my-darkness-start-form"><button> Development services</button></a>
+      </div>
+    </div>
+
+    <div class="camera-right-section">
+      <img id="camera-image" src="">
+      <div id="camera-text"></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productList = document.getElementById('camera-list');
+      const productImage = document.getElementById('camera-image');
+      const productText = document.getElementById('camera-text');
+
+      function updateContent(item) {
+        const imageSrc = item.getAttribute('data-image');
+        const textContent = item.getAttribute('data-text');
+
+        productImage.src = imageSrc;
+        productText.textContent = textContent;
+
+        const activeItem = productList.querySelector('.camera-active');
+        if (activeItem) {
+          activeItem.classList.remove('camera-active');
+        }
+        item.classList.add('camera-active');
+      }
+
+      productList.addEventListener('mouseover', function (e) {
+        if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
+          const item = e.target.tagName === 'LI' ? e.target : e.target.parentElement;
+          updateContent(item);
+        }
+      });
+
+      // Initialize the first item as active
+      const firstItem = productList.querySelector('li');
+      if (firstItem) {
+        updateContent(firstItem);
+      }
+    });
+  </script>
+</body>
+
+</html>

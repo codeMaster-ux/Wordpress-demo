@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .mobile_digital_slider_container {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      background: #FAFAFA;
+      font-family: "Lato", sans-serif;
+      padding-left: 16rem;
+
+      .mobile_digital_slider {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #0252A6 #FAFAFA;
+        padding-bottom: 12rem;
+
+        img {
+          width: 284rem;
+          height: 284rem;
+          object-fit: cover;
+          background: #fff
+        }
+
+        img:not(:last-child) {
+          margin-right: 10px;
+          /* 根据需要调整 margin-right 的值 */
+        }
+
+      }
+
+
+      .mobile_digital_text {
+        margin-top: 10rem;
+        padding-right: 16rem;
+        height: 138rem;
+
+        h2 {
+          font-size: 14rem;
+          font-weight: 600;
+          line-height: 16rem;
+        }
+
+        p {
+          font-size: 12rem;
+          font-weight: 400;
+          line-height: 16rem;
+          margin-top: 8rem;
+        }
+      }
+
+      .mobile_digital_slide_number {
+        margin-top: 4rem;
+        font-size: 12rem;
+        line-height: 14rem;
+        color: #555;
+        text-align: right;
+        padding-right: 16rem;
+        color: #999999;
+
+        span {
+          color: #000;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mobile_digital_slider_container">
+    <div class="mobile_digital_slider" id="mobile_digital_slider">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_01.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_03.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_04.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_02.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_05.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_09.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_07.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_08.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile_super_digital_06.webp" />
+      <!-- Repeat this block for each additional image -->
+    </div>
+    <div class="mobile_digital_slide_number" id="mobile_digital_slide_number"><span>1</span>/9</div>
+    <div class="mobile_digital_text" id="mobile_digital_text">
+      <h2>OWL-201 Super Digital Head-Mounted Night Vision Device</h2>
+      <p>
+        The OWL-201 features a high-performance 1-inch target solid-state low-light device of the second generation. It
+        offers high sensitivity, reliability, and versatility for day and night use, making it ideal for security
+        monitoring, night observation, and special operations, providing excellent visual enhancement.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    const slides = [
+      {
+        title: "OWL-201 Super Digital Head-Mounted Night Vision Device",
+        description:
+          "The OWL-201 features a high-performance 1-inch target solid-state low-light device of the second generation. It offers high sensitivity, reliability, and versatility for day and night use, making it ideal for security monitoring, night observation, and special operations, providing excellent visual enhancement.",
+      },
+      {
+        title: "OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles",
+        description:
+          "The OWL-208 integrates digital low-light and infrared observation, target positioning functions. It offers high sensitivity, digital fusion processing, day and night use, low latency, and the capability to fuse low-light and infrared images, suitable for night image capturing.",
+      },
+      {
+        title: "OWL-M108 Super Digital Low-Light Night Vision Scope",
+        description:
+          "The OWL-M108 is a high-performance digital low-light night vision scope with high sensitivity, reliability, and day-night use. Compatible with various mainstream gun mounts, it offers recording and digital image storage capabilities, ideal for night combat and observation missions.",
+      },
+      {
+        title: "OWL-M118 Super Digital Low-Light Night Vision Scope",
+        description:
+          "The OWL-M118 is a high-performance digital low-light night vision scope featuring day-night use and resistance to bright light. It fits various mainstream gun mounts and can expand digital image storage, ideal for night combat and precise shooting tasks.",
+      },
+      {
+        title: "OWL-M208 Super Digital Low-Light Night Vision Scope",
+        description:
+          "The OWL-M208 utilizes a high-performance 1-inch target solid-state low-light device of the second generation. It offers high sensitivity, reliability, and day-night versatility, suitable for night observation and precise shooting with various mainstream gun types.",
+      },
+      {
+        title: "OWL-M218 Super Digital Low-Light Night Vision Scope",
+        description:
+          "The OWL-M218 uses a high-performance 1-inch target solid-state low-light device of the second generation. It features high sensitivity, reliability, and day-night versatility, compatible with various mainstream gun mounts and expandable digital image storage, perfect for night combat and precise shooting tasks.",
+      },
+      {
+        title: "OWL-RH108 Super Digital Fusion Infrared Night Vision Thermal Imager",
+        description:
+          "The OWL-RH108 integrates low-light and infrared observation for superior sensitivity, reliability, and day-night versatility. Ideal for security monitoring, military reconnaissance, and night operations, offering efficient observation and positioning capabilities.",
+      },
+      {
+        title: "OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager",
+        description:
+          "The OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning functions. With high sensitivity, reliability, and day-night use, it’s perfect for security monitoring, military reconnaissance, and night operations, offering precise observation, ranging, and positioning.",
+      },
+      {
+        title: " OWL-RH218 Super Digital Vehicle-Mounted Fusion Infrared Night Vision Thermal",
+        description:
+          "The OWL-RH218 is a multifunctional driving assistance device integrating low-light and infrared observation, wide-field image stitching, large-screen display, and control functions. It features high sensitivity, reliability, and day-night versatility, making it particularly suitable for vehicle safety monitoring and navigation in nighttime driving conditions.",
+      },
+    ];
+
+    document.getElementById("mobile_digital_slider").addEventListener("scroll", () => {
+      const slider = document.getElementById("mobile_digital_slider");
+      const slideWidth = document.querySelector(".mobile_digital_slider img").clientWidth;
+      const newSlide = Math.round(slider.scrollLeft / slideWidth);
+      if (newSlide !== currentSlide) {
+        currentSlide = newSlide;
+        document.getElementById(
+          "mobile_digital_text"
+        ).innerHTML = `<h2>${slides[currentSlide].title}</h2><p>${slides[currentSlide].description}</p>`;
+        document.getElementById("mobile_digital_slide_number").innerHTML = '<span>' + `${currentSlide + 1}` + '</span>' + `/${slides.length}`;
+      }
+    });
+  </script>
+</body>
+
+</html>

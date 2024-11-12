@@ -1,0 +1,724 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .dnvd-slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: "Helvetica", sans-serif;
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16rem;
+        margin-top: 48rem;
+
+        .dnvd_line {
+          border-bottom: 1px solid #E7E7E7;
+          height: 1px;
+          width: 1250rem;
+        }
+
+        #tlnvdSliderCounter {
+          font-size: 14rem;
+          font-weight: 400;
+          text-align: left;
+          color: #999;
+          line-height: 23rem;
+
+          span {
+            font-size: 18rem;
+            color: #333;
+          }
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+          width: 40rem;
+          height: 40rem;
+          cursor: pointer;
+          background-size: cover;
+        }
+
+        #tlnvdPrevBtn {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_32.png');
+        }
+
+        #tlnvdPrevBtn:disabled {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_34.png');
+        }
+
+        #tlnvNextBtn {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_31-1.png');
+        }
+
+        #tlnvNextBtn:disabled {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_33.png');
+        }
+
+        .slide-counter {
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 14rem;
+
+        }
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 200%;
+
+        .slider-item {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 24rem;
+
+          >div {
+            display: flex;
+            gap: 24rem;
+
+
+            .item {
+              width: 100%;
+              background: #f4f6f8;
+              display: flex;
+              cursor: pointer;
+
+              h3 {
+                font-size: 24rem;
+                color: #162C5B;
+                font-weight: 400;
+                line-height: 28rem;
+              }
+
+              p {
+                font-size: 14rem;
+                line-height: 23rem;
+                color: #7C8FB3;
+              }
+
+              >div {
+                >div {
+                  display: flex;
+                  flex-direction: column-reverse;
+
+                  .btn button {
+                    width: 172rem;
+                    height: 44rem;
+                    border-radius: 40rem;
+                    font-size: 14rem;
+                    font-weight: 400;
+                    line-height: 16rem;
+                    cursor: pointer;
+                    transform: all 0.3s ease;
+                  }
+
+                  .left button {
+                    color: #0E6AED;
+                    border: none;
+                    background: #E9EEF7;
+                  }
+
+                  .right button {
+                    color: #7C8FB3;
+                    border: 1px solid #C4CDDD;
+                    background: transparent;
+                  }
+                }
+              }
+            }
+
+            .item:hover {
+
+              .left button {
+                background: #FFFFFF;
+              }
+
+              .right button {
+                border: 1px solid #C4CDDD;
+                color: #7C8FB3;
+              }
+
+              .right:hover button {
+                background-color: #FF823A;
+                color: white;
+                border: none;
+              }
+
+              .right:hover~.left button {
+                border: 1px solid #D0D7E3;
+                background: transparent;
+                color: #7C8FB3;
+              }
+            }
+
+            .owl-201-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_06.webp');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: right;
+              height: 496rem;
+
+              >div {
+                width: 448rem;
+                padding: 56rem 0 0 64rem;
+
+                p {
+                  margin: 16rem 0 60rem 0;
+                }
+
+                >div {
+                  flex-direction: row-reverse;
+                  justify-content: flex-end;
+                  gap: 12rem;
+                }
+              }
+
+
+            }
+
+            .owl-201-cl:hover {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_74.webp');
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+
+              h3,
+              p {
+                color: #fff;
+              }
+
+              .left button {
+                background: #FFFFFF;
+              }
+
+              .right button {
+                border: 1px solid #fff;
+                color: #fff;
+              }
+
+              .right:hover~.left button {
+                border: 1px solid #fff;
+                background: transparent;
+                color: #fff;
+              }
+            }
+
+            .owl-208-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_09.webp');
+              background-repeat: no-repeat;
+              background-size: 518rem auto;
+              background-position: right bottom;
+              height: 496rem;
+              min-width: 802rem;
+              width: 802rem;
+
+              >div {
+                width: 470rem;
+                padding: 56rem 0 0 56rem;
+
+                p {
+                  margin: 16rem 0 60rem 0;
+                }
+
+                >div {
+                  display: flex;
+                  gap: 16rem;
+
+                  button {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            .owl-m108-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_10.webp');
+              background-repeat: no-repeat;
+              background-size: 478rem auto;
+              background-position: right bottom;
+              width: 100%;
+              height: 496rem;
+
+              >div {
+                width: 418rem;
+                padding: 36rem 0 0 56rem;
+
+                p {
+                  margin: 15rem 0 48rem 0;
+                }
+
+                >div {
+                  gap: 16rem;
+
+                  button {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            .owl-m118-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_11.webp');
+              background-repeat: no-repeat;
+              background-size: 478rem auto;
+              background-position: right bottom;
+              width: 100%;
+              height: 496rem;
+
+              >div {
+                width: 500rem;
+                padding: 36rem 0 0 56rem;
+
+                p {
+                  margin: 15rem 0 48rem 0;
+                }
+
+                >div {
+                  display: flex;
+                  gap: 16rem;
+
+                  button {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+
+            .owl-m208-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_12.webp');
+              background-repeat: no-repeat;
+              background-size: 478rem auto;
+              background-position: right bottom;
+              width: 100%;
+              height: 496rem;
+
+              >div {
+                width: 500rem;
+                padding: 36rem 0 0 56rem;
+
+                p {
+                  margin: 15rem 0 48rem 0;
+                }
+
+                >div {
+                  display: flex;
+                  gap: 16rem;
+
+                  button {
+                    margin: 0 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .slider-items {
+          width: 100%;
+          display: flex;
+          gap: 24rem;
+
+          >div:nth-child(2) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            >div:nth-child(2) {
+              width: 100%;
+              height: 496rem;
+              display: flex;
+              gap: 24rem;
+            }
+          }
+
+          >div {
+            display: flex;
+            gap: 24rem;
+
+            .item {
+              width: 100%;
+              background: #f4f6f8;
+              cursor: pointer;
+              align-items: flex-start;
+
+              >div {
+                display: flex;
+                flex-direction: column-reverse;
+
+                .btn {
+                  display: inline-block;
+                }
+
+                .btn button {
+                  width: 172rem;
+                  height: 44rem;
+                  border-radius: 40rem;
+                  font-size: 14rem;
+                  font-weight: 400;
+                  line-height: 16rem;
+                  cursor: pointer;
+                  transform: all 0.3s ease;
+                }
+
+                .left button {
+                  color: #0E6AED;
+                  border: none;
+                  background: #E9EEF7;
+                }
+
+                .right button {
+                  color: #7C8FB3;
+                  border: 1px solid #C4CDDD;
+                  background: transparent;
+                }
+              }
+
+              h3 {
+                font-size: 24rem;
+                color: #162C5B;
+                font-weight: 400;
+                line-height: 28rem;
+              }
+
+              p {
+                font-size: 14rem;
+                line-height: 23rem;
+                color: #7C8FB3;
+              }
+            }
+
+            .item:hover {
+
+              .left button {
+                background: #FFFFFF;
+              }
+
+              .right button {
+                border: 1px solid #C4CDDD;
+                color: #7C8FB3;
+              }
+
+              .right:hover button {
+                background-color: #FF823A;
+                color: white;
+                border: none;
+              }
+
+              .right:hover~.left button {
+                border: 1px solid #D0D7E3;
+                background: transparent;
+                color: #7C8FB3;
+              }
+            }
+
+            .owl-m218-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_78.webp');
+              background-repeat: no-repeat;
+              background-size: 624rem auto;
+              background-position: bottom;
+              width: 624rem;
+              min-width: 624rem;
+              padding: 139rem 142rem 0 64rem;
+
+              display: flex;
+              flex-direction: column;
+
+              p {
+                margin: 16rem 0 60rem 0;
+              }
+
+              div {
+                display: flex;
+                gap: 16rem;
+
+                button {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            .owl-rh108-cl {
+              height: 496rem;
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_35.webp');
+              background-repeat: no-repeat;
+              background-size: 682rem auto;
+              background-position: right;
+              padding: 109rem 0 0 100rem;
+              display: flex;
+              flex-direction: column;
+
+              h3 {
+                width: 428rem;
+              }
+
+              p {
+                margin: 16rem 0 60rem 0;
+                width: 418rem;
+              }
+
+              >div {
+                display: flex;
+                gap: 16rem;
+                flex-direction: row-reverse;
+
+                button {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            .owl-rh208-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_36.webp');
+              background-repeat: no-repeat;
+              background-size: 430rem auto;
+              background-position: right bottom;
+              padding: 51rem 0 0 56rem;
+              display: flex;
+              height: 496rem;
+              flex-direction: column;
+
+              h3 {
+                width: 428rem;
+              }
+
+              p {
+                margin: 16rem 0 60rem 0;
+                width: 418rem;
+              }
+
+              >div {
+                display: flex;
+                gap: 16rem;
+
+                button {
+                  margin: 0 !important;
+                }
+              }
+            }
+
+            .owl-rh218-cl {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_37.webp');
+              background-repeat: no-repeat;
+              background-size: 430rem auto;
+              background-position: right bottom;
+              padding: 51rem 0 0 56rem;
+              display: flex;
+              height: 496rem;
+              flex-direction: column;
+
+              h3 {
+                width: 520rem;
+              }
+
+              p {
+                margin: 16rem 0 60rem 0;
+                width: 418rem;
+              }
+
+              >div {
+                display: flex;
+                gap: 16rem;
+
+                button {
+                  margin: 0 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dnvd-slider-container">
+    <div class="slider" id="tlnvdSlider">
+      <div class="slider-item">
+        <div>
+          <div class="item owl-201-cl">
+            <div>
+              <h3>OWL-201 Super Digital Head-Mounted Night Vision Device</h3>
+              <p>The OWL-201 features a high-performance 1-inch target solid-state low-light device of the second
+                generation. It offers high sensitivity, reliability, and versatility for day and night use, making it
+                ideal for security monitoring, night observation, and special operations, providing excellent visual
+                enhancement.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="item owl-208-cl">
+            <div>
+              <h3>OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles</h3>
+              <p>The OWL-208 integrates digital low-light and infrared observation, target positioning functions. It
+                offers high sensitivity, digital fusion processing, day and night use, low latency, and the capability
+                to fuse low-light and infrared images, suitable for night image capturing.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="item owl-m108-cl">
+            <div>
+              <h3>OWL-M108 Super Digital Low-Light Night Vision Scope</h3>
+              <p>The OWL-M108 is a high-performance digital low-light night vision scope with high sensitivity,
+                reliability, and day-night use. Compatible with various mainstream gun mounts, it offers recording and
+                digital image storage capabilities, ideal for night combat and observation missions.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="item owl-m118-cl">
+            <div>
+              <h3>OWL-M118 Super Digital Low-Light Night Vision Scope</h3>
+              <p>The OWL-M118 is a high-performance digital low-light night vision scope featuring day-night use and
+                resistance to bright light. It fits various mainstream gun mounts and can expand digital image storage,
+                ideal for night combat and precise shooting tasks.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="item owl-m208-cl">
+            <div>
+              <h3>OWL-M208 Super Digital Low-Light Night Vision Scope</h3>
+              <p>The OWL-RH108 integrates low-light and infrared observation for superior sensitivity, reliability, and
+                day-night versatility. Ideal for security monitoring, military reconnaissance, and night operations,
+                offering efficient observation and positioning capabilities.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-items">
+        <div style="min-width: 624rem;width: 624rem;">
+          <div class="item owl-m218-cl">
+            <h3>OWL-M218 Super Digital Low-Light Night Vision Scope</h3>
+            <p>The OWL-M218 uses a high-performance 1-inch target solid-state low-light device of the second generation.
+              It features high sensitivity, reliability, and day-night versatility, compatible with various mainstream
+              gun mounts and expandable digital image storage, perfect for night combat and precise shooting tasks..</p>
+            <div>
+              <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                  purchase</button></a>
+              <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                  services</button></a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="item owl-rh108-cl">
+            <h3>OWL-RH108 Super Digital Fusion Infrared Night Vision Thermal Imager</h3>
+            <p>The OWL-RH108 integrates low-light and infrared observation for superior sensitivity, reliability, and
+              day-night versatility. Ideal for security monitoring, military reconnaissance, and night operations,
+              offering efficient observation and positioning capabilities.</p>
+            <div>
+              <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                  purchase</button></a>
+              <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                  services</button></a>
+            </div>
+          </div>
+          <div>
+            <div class="item owl-rh208-cl">
+              <h3>OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager</h3>
+              <p>TThe OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning
+                functions. With high sensitivity, reliability, and day-night use, it’s perfect for security
+                monitoring, military reconnaissance, and night operations, offering precise observation, ranging, and
+                positioning.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+            <div class="item owl-rh218-cl">
+              <h3>OWL-RH218 Super Digital Vehicle-Mounted Fusion Infrared Night Vision Thermal Imager</h3>
+              <p>The OWL-RH218 is a multifunctional driving assistance device integrating low-light and infrared
+                observation, wide-field image stitching, large-screen display, and control functions. It features high
+                sensitivity, reliability, and day-night versatility, making it particularly suitable for vehicle
+                safety monitoring and navigation in nighttime driving conditions.</p>
+              <div>
+                <a class="btn right" href="https://www.eipeks.com/contact-us/"><button>Direct
+                    purchase</button></a>
+                <a class="btn left" href="https://www.eipeks.com/contact-us/"><button>Development
+                    services</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <div>
+        <button id="tlnvdPrevBtn" onclick="dnvdMoveSlide(-1)" disabled></button>
+        <button id="tlnvNextBtn" onclick="dnvdMoveSlide(1)"></button>
+      </div>
+      <div class="dnvd_line"></div>
+      <div id="tlnvdSliderCounter"><span>1</span> / 4</div>
+    </div>
+  </div>
+
+  <script>
+    let tlnvdCurrentIndex = 0;
+    const tlnvdTotalItems = 2;
+
+    function dnvdUpdateButtons() {
+      document.getElementById('tlnvdPrevBtn').disabled = tlnvdCurrentIndex === 0;
+      document.getElementById('tlnvNextBtn').disabled = tlnvdCurrentIndex === tlnvdTotalItems - 1;
+    }
+
+    function dnvdUpdateCounter() {
+      document.getElementById('tlnvdSliderCounter').innerHTML = `<span>${tlnvdCurrentIndex + 1}</span> / ${tlnvdTotalItems}`;
+    }
+
+    function dnvdMoveSlide(direction) {
+      tlnvdCurrentIndex += direction;
+
+      if (tlnvdCurrentIndex < 0) {
+        tlnvdCurrentIndex = 0;
+      } else if (tlnvdCurrentIndex >= tlnvdTotalItems) {
+        tlnvdCurrentIndex = tlnvdTotalItems - 1;
+      }
+
+      const offset = -tlnvdCurrentIndex * 100 / tlnvdTotalItems;
+      document.getElementById('tlnvdSlider').style.transform = `translateX(${offset}%)`;
+
+      dnvdUpdateButtons();
+      dnvdUpdateCounter();
+    }
+
+    dnvdUpdateButtons();
+    dnvdUpdateCounter();
+
+  </script>
+
+</body>

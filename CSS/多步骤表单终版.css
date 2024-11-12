@@ -1,0 +1,1099 @@
+#multiStepFormContact {
+  font-family: "Helvetica", sans-serif;
+  background: #f9f9f9;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 0;
+
+  .msf-step {
+    display: none;
+    width: 824rem;
+    margin: 0 auto;
+    .error {
+      font-size: 11rem;
+      font-weight: 500;
+      color: #af2c2c;
+      line-height: 13rem;
+      margin-top: 8rem;
+      display: block;
+    }
+    input[type="radio"] {
+      width: 30rem;
+      height: 30rem;
+    }
+
+    /* 隐藏默认的选择箭头 */
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url("https://www.eipeks.com/wp-content/uploads/2024/09/msf-icon.png")
+        no-repeat right center;
+      background-size: 50rem;
+      padding-right: 30rem;
+      position: relative;
+    }
+
+    .msf-custom-select {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    .msf-custom-select::after {
+      content: "";
+      background: url("https://www.eipeks.com/wp-content/uploads/2024/09/msf-icon.png")
+        no-repeat;
+      background-size: 50rem;
+      position: absolute;
+      right: 6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50rem;
+      height: 50rem;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+
+    .msf-custom-select.open::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    h2,
+    input,
+    p,
+    select,
+    textarea,
+    ::-webkit-input-placeholder {
+      color: #162c5b;
+    }
+
+    h2 {
+      width: 500rem;
+      font-size: 36rem;
+      font-weight: 700;
+      line-height: 40rem;
+      text-align: center;
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    .msf-item-main {
+      width: 100%;
+
+      input,
+      select,
+      textarea {
+        border: none;
+        background: #ffffff;
+        border-radius: 8rem;
+        box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+      }
+
+      label {
+        font-size: 18rem;
+        line-height: 21rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 12rem;
+        padding-left: 8rem;
+        color: #576788;
+
+        span {
+          color: #ff0101;
+        }
+      }
+    }
+
+    .step-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 8rem;
+      position: absolute;
+      bottom: 157rem;
+      width: 100%;
+      left: 0;
+      div {
+        width: 48rem;
+        height: 48rem;
+        background: #f9f9f9;
+        border: 1px solid rgba(187, 196, 214, 0.5);
+        border-radius: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+          width: 18rem;
+          height: 18rem;
+        }
+      }
+
+      button {
+        cursor: pointer;
+        width: 172rem;
+        height: 48rem;
+        background: #0e6aed;
+        border-radius: 8px;
+        border: none;
+        color: #fff;
+        font-size: 16rem;
+        line-height: 19rem;
+      }
+    }
+  }
+
+  .msf-step.msf-active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .msf-step-00 {
+    width: 634rem;
+    padding: 182rem 0 0 0;
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+
+      > div {
+        input {
+          width: 100%;
+          padding-left: 24rem;
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          height: 72rem;
+        }
+
+        select {
+          height: 72rem;
+        }
+
+        &:nth-child(1) {
+          div {
+            display: flex;
+            gap: 34rem;
+          }
+        }
+
+        .iti {
+          width: 100%;
+        }
+
+        #msf-phone {
+          padding-left: 80rem;
+        }
+      }
+    }
+  }
+
+  .msf-step-01 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+
+      select {
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        height: 72rem;
+      }
+
+      .input-bg-cl {
+        width: 100%;
+        height: 72rem;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+        display: flex;
+        align-items: center;
+        padding: 0 6rem 0 24rem;
+        gap: 16rem !important;
+
+        .other-input-cl {
+          width: 684rem;
+          height: 56rem;
+          background: #fafafa;
+          border-radius: 8rem;
+          font-size: 13rem !important;
+          font-weight: 400;
+          line-height: 15rem;
+          padding: 5rem 16rem;
+          box-shadow: none;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #bbc4d6;
+        }
+
+        .other-input-cl {
+          display: none;
+        }
+
+        .other-input-cl.other-active {
+          display: inline-block;
+        }
+
+        input {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          padding-left: 24rem;
+          box-shadow: none;
+        }
+
+        label {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          color: #162c5b;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: 11rem;
+      font-weight: 500;
+      color: #7c8fb3;
+      line-height: 16rem;
+      text-align: center;
+      width: 743rem;
+      margin-top: 196rem;
+    }
+  }
+
+  .msf-step-02 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+
+      .msf-item-line {
+        display: flex;
+        width: 100%;
+        gap: 36rem;
+
+        > div {
+          width: 100%;
+        }
+      }
+
+      select,
+      input {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .msf-step-03 {
+    width: 960rem;
+    padding: 129rem 0 0 0;
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+
+      .msf-item-line {
+        display: flex;
+        width: 100%;
+        gap: 36rem;
+
+        > div {
+          width: 100%;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding: 24rem;
+        height: 207rem;
+      }
+
+      select,
+      input {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .msf-step-04 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+
+      select {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 100%;
+      }
+
+      .input-bg-cl {
+        width: 100%;
+        height: 72rem;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+        display: flex;
+        align-items: center;
+        padding: 0 6rem 0 24rem;
+        gap: 16rem !important;
+
+        .other-input-step-04-cl {
+          width: 684rem;
+          height: 56rem;
+          background: #fafafa;
+          border-radius: 8rem;
+          font-size: 13rem !important;
+          font-weight: 400;
+          line-height: 15rem;
+          padding: 5rem 16rem;
+          box-shadow: none;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #bbc4d6;
+        }
+
+        .other-input-step-04-cl {
+          display: none;
+        }
+
+        .other-input-step-04-cl.other-active {
+          display: inline-block;
+        }
+
+        input {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          padding-left: 24rem;
+          box-shadow: none;
+        }
+
+        label {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          color: #162c5b;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .msf-step-05 {
+    width: 960rem;
+    padding: 129rem 0 0 0;
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 8rem 0;
+    }
+
+    p {
+      font-size: 16rem;
+      font-weight: 4700;
+      text-align: center;
+      color: #162c5b;
+      line-height: 19rem;
+      margin-bottom: 34rem;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+      .msf-custom-select {
+        width: 460rem;
+      }
+      .msf-phase-btn-list {
+        display: flex;
+        gap: 16rem;
+
+        > div {
+          height: 48rem;
+          padding: 0 20rem 0 16rem;
+          background: #f9f9f9;
+          border: 1px solid #ecedf0;
+          border-radius: 40px;
+          display: flex;
+          align-items: center;
+          gap: 8rem;
+          cursor: pointer;
+
+          img {
+            width: 20rem;
+            height: 20rem;
+          }
+
+          span {
+            font-size: 16rem;
+            font-weight: 500;
+            color: #0e6aed;
+            line-height: 19rem;
+          }
+        }
+
+        > div:hover {
+          background: rgba(14, 106, 237, 0.04);
+          border: 1px solid rgba(14, 106, 237, 0.04);
+        }
+      }
+      .cancel-icon {
+        width: 20rem;
+        height: 20rem;
+        background: url("https://www.eipeks.com/wp-content/uploads/2024/09/drone_75.png")
+          no-repeat center center;
+        background-size: contain;
+        cursor: pointer;
+      }
+      .msf-item-list,
+      .msf-selected-list {
+        display: flex;
+        gap: 16rem;
+        flex-wrap: wrap;
+        .selected-item {
+          height: 48rem;
+          border-radius: 40rem;
+          font-size: 16rem;
+          font-weight: 500;
+          color: #0e6aed;
+          line-height: 19rem;
+          padding: 0 16rem 0 20rem;
+          display: flex;
+          align-items: center;
+          gap: 8rem;
+          background: rgba(14, 106, 237, 0.04);
+          border: 1rem solid #0e6aed;
+          cursor: pointer;
+          img {
+            width: 20rem;
+            height: 20rem;
+          }
+        }
+        .item {
+          height: 48rem;
+          border-radius: 40rem;
+          font-size: 16rem;
+          font-weight: 500;
+          color: #0e6aed;
+          line-height: 19rem;
+          padding: 0 20rem 0 16rem;
+          display: flex;
+          align-items: center;
+          gap: 8rem;
+          background: #f9f9f9;
+          border: 1rem solid #ecedf0;
+          cursor: pointer;
+          img {
+            width: 20rem;
+            height: 20rem;
+          }
+        }
+        .disabled-item {
+          background: #f9f9f9;
+          border: 1px solid #ecedf0;
+          color: #bbc4d6;
+        }
+        .item:hover {
+          background: rgba(14, 106, 237, 0.04);
+        }
+      }
+      select {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 460rem;
+      }
+
+      .input-bg-cl {
+        width: 100%;
+        height: 72rem;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+        display: flex;
+        align-items: center;
+        padding: 0 6rem 0 24rem;
+        gap: 16rem !important;
+
+        .other-input-step-05-cl {
+          width: 684rem;
+          height: 56rem;
+          background: #fafafa;
+          border-radius: 8rem;
+          font-size: 13rem !important;
+          font-weight: 400;
+          line-height: 15rem;
+          padding: 5rem 16rem;
+          box-shadow: none;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #bbc4d6;
+        }
+
+        .other-input-step-05-cl {
+          display: none;
+        }
+
+        .other-input-step-05-cl.other-active {
+          display: inline-block;
+        }
+
+        input {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          padding-left: 24rem;
+          box-shadow: none;
+        }
+
+        label {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          color: #162c5b;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .msf-step-06 {
+    width: 606rem;
+    padding: 129rem 0 0 0;
+
+    h2 {
+      width: 100%;
+    }
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      gap: 36rem;
+      width: 100%;
+      padding: 0 21rem;
+
+      select {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 460rem;
+      }
+
+      > div {
+        width: 100%;
+        height: 72rem;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+        display: flex;
+        align-items: center;
+        padding: 0 6rem 0 24rem;
+        gap: 16rem !important;
+
+        input {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          padding-left: 24rem;
+          box-shadow: none;
+        }
+
+        label {
+          font-size: 20rem;
+          font-weight: 700;
+          line-height: 23rem;
+          color: #162c5b;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: 14rem;
+      font-weight: 500;
+      color: #7c8fb3;
+      line-height: 16rem;
+      margin-top: 279rem;
+      text-align: center;
+    }
+  }
+
+  .msf-step-07 {
+    width: 896rem;
+    padding: 129rem 0 0 0;
+
+    h2 {
+      width: 535rem;
+    }
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 8rem 0;
+    }
+
+    p {
+      font-size: 16rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 19rem;
+      margin-bottom: 34rem;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+      padding: 0 21rem;
+
+      .msf-item-line {
+        display: flex;
+        gap: 24rem;
+        .input-bg-cl {
+          width: 100%;
+          height: 72rem;
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+          display: flex;
+          align-items: center;
+          padding: 0 6rem 0 24rem;
+          gap: 16rem !important;
+
+          .other-input-step-05-cl {
+            width: 684rem;
+            height: 56rem;
+            background: #fafafa;
+            border-radius: 8rem;
+            font-size: 13rem !important;
+            font-weight: 400;
+            line-height: 15rem;
+            padding: 5rem 16rem;
+            box-shadow: none;
+          }
+
+          ::-webkit-input-placeholder {
+            color: #bbc4d6;
+          }
+
+          .other-input-step-05-cl {
+            display: none;
+          }
+
+          .other-input-step-05-cl.other-active {
+            display: inline-block;
+          }
+
+          input {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            box-shadow: none;
+          }
+
+          label {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            color: #162c5b;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        > div {
+          width: 100%;
+          height: 72rem;
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+          display: flex;
+          align-items: center;
+          padding: 0 6rem 0 24rem;
+
+          input {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            box-shadow: none;
+          }
+
+          label {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            color: #162c5b;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .msf-step-08 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    h2 {
+      width: 535rem;
+    }
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+      padding: 0 21rem;
+
+      select {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+      }
+
+      .msf-item-line {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+          width: 100%;
+          height: 72rem;
+          display: flex;
+          align-items: center;
+          gap: 24rem;
+
+          > div {
+            width: 219rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+            padding: 0 6rem 0 24rem;
+            height: 72rem;
+            display: flex;
+            align-items: center;
+            gap: 16rem;
+
+            input {
+              font-size: 20rem;
+              font-weight: 700;
+              line-height: 23rem;
+              padding-left: 24rem;
+              box-shadow: none;
+            }
+
+            label {
+              font-size: 20rem;
+              font-weight: 700;
+              line-height: 23rem;
+              color: #162c5b;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .msf-step-09 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    h2 {
+      width: 512rem;
+    }
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+
+      select {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+      }
+
+      .msf-item-line {
+        display: flex;
+        width: 100%;
+        gap: 24rem;
+        .input-bg-cl {
+          width: 100%;
+          height: 72rem;
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+          display: flex;
+          align-items: center;
+          padding: 0 6rem 0 24rem;
+          gap: 16rem !important;
+
+          .other-input-step-09-cl {
+            width: 684rem;
+            height: 56rem;
+            background: #fafafa;
+            border-radius: 8rem;
+            font-size: 13rem !important;
+            font-weight: 400;
+            line-height: 15rem;
+            padding: 5rem 16rem;
+            box-shadow: none;
+          }
+
+          ::-webkit-input-placeholder {
+            color: #bbc4d6;
+          }
+
+          .other-input-step-09-cl {
+            display: none;
+          }
+
+          .other-input-step-09-cl.other-active {
+            display: inline-block;
+          }
+
+          input {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            box-shadow: none;
+          }
+
+          label {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            color: #162c5b;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        > div:nth-child(1) {
+          width: 100%;
+          background: #ffffff;
+          border-radius: 8rem;
+          box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+          height: 72rem;
+          display: flex;
+          align-items: center;
+          gap: 16rem;
+          padding-left: 24rem;
+
+          input {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            box-shadow: none;
+          }
+
+          label {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            color: #162c5b;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        .msf-please-specify {
+          width: 200rem;
+          min-width: 200rem;
+          box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+          height: 72rem;
+          background: #ffffff;
+          display: flex;
+          justify-content: center;
+          border-radius: 8rem;
+          input {
+            width: 120rem;
+            font-size: 16rem;
+            font-weight: 500;
+            color: #bbc4d6;
+            line-height: 19rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            height: 72rem;
+            box-shadow: none;
+          }
+          ::-webkit-input-placeholder {
+            color: #ff6600;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .msf-step-10 {
+    width: 824rem;
+    padding: 129rem 0 0 0;
+
+    h2 {
+      width: 512rem;
+    }
+
+    > span {
+      font-size: 16rem;
+      font-weight: 500rem;
+      line-height: 19rem;
+      text-align: center;
+      color: #0e6aed;
+      margin: 20rem 0 64rem 0;
+    }
+
+    .msf-item-main {
+      display: flex;
+      flex-direction: column;
+      gap: 36rem;
+      width: 100%;
+
+      input {
+        height: 72rem;
+        font-size: 20rem;
+        font-weight: 700;
+        line-height: 23rem;
+        padding-left: 24rem;
+        width: 100%;
+      }
+    }
+  }
+}

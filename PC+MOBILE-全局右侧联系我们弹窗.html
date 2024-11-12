@@ -1,0 +1,70 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .contact_mail_container {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      height: 48rem;
+      width: 48rem;
+      background: #01458C;
+      border-radius: 4rem 0 0 4rem;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: width 0.5s ease, opacity 0.5s ease;
+      z-index: 88;
+
+      img {
+        width: 24rem;
+        height: 24rem;
+        transition: margin-left 0.5s ease;
+        margin-left: 12rem;
+      }
+
+      span {
+        margin: 0 2rem 0 6rem;
+        color: #fff;
+        font-family: "Helvetica", sans-serif;
+        font-size: 14rem;
+        font-weight: 500;
+        line-height: 12rem;
+        transition: opacity 0.5s ease, margin-left 0.5s ease;
+        opacity: 0;
+      }
+    }
+
+    .contact_mail_container:hover {
+      width: 105rem;
+      cursor: pointer;
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+
+      .contact_mail_container span {
+        transition: none;
+      }
+
+      .contact_mail_container:hover {
+        width: 48rem;
+
+        span {
+          opacity: 0;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://www.eipeks.com/contact-us/">
+    <div class="contact_mail_container">
+      <img src="https://lontenoe.com/wp-content/uploads/2024/07/mail.png" alt="mail" />
+      <span>Contact</span>
+    </div>
+  </a>
+</body>

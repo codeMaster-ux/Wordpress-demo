@@ -1,0 +1,325 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .m_ehbs_container {
+      width: 100%;
+      font-family: "Helvetica", sans-serif;
+
+      input,
+      select {
+        border: 1px solid #EEF1F7 !important;
+      }
+
+      .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+        background-color: #0E6AED;
+        border-color: #0E6AED;
+        -webkit-box-shadow: -1px 0 0 0 #0E6AED;
+        box-shadow: -1px 0 0 0 #0E6AED;
+      }
+
+      form {
+        display: flex;
+        gap: 8rem;
+        flex-direction: column;
+
+        select,
+        input {
+          height: 36rem;
+          font-size: 14rem;
+          font-weight: 500;
+          line-height: 20rem;
+          border-radius: 4rem;
+          color: #162C5B;
+        }
+
+        >:nth-child(1) {
+          padding: 12rem 16rem 23rem 16rem;
+          box-shadow: 0 4rem 16rem 0 rgba(0, 42, 102, 0.06);
+          border-radius: 8rem;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 12rem;
+          font-weight: 700;
+          font-size: 14rem;
+          color: #162C5B;
+          line-height: 16rem;
+        }
+
+        .upload-section {
+          text-align: center;
+          border-radius: 4rem;
+          cursor: pointer;
+          color: #888;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 44rem;
+          box-shadow: 0 4rem 16rem 0 rgba(0, 42, 102, 0.06);
+
+          label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11rem;
+            margin-bottom: 0;
+            font-size: 13rem;
+            font-weight: 500;
+            line-height: 20rem;
+            color: #576788;
+          }
+
+          img {
+            width: 17rem;
+          }
+        }
+
+        .form-section {
+          display: flex;
+          flex-direction: column;
+
+          >div {
+            display: flex;
+            gap: 8rem;
+
+            .el-radio-group {
+              display: flex;
+
+              label {
+                margin-bottom: 0;
+              }
+            }
+
+            input {
+              width: 84rem;
+            }
+          }
+
+          select,
+          input {
+            padding: 10rem;
+            width: 100%;
+            border-radius: 5rem;
+            border: 1px solid #ccc;
+          }
+        }
+
+        .form-Dimensions {
+          display: flex;
+          flex-direction: column;
+          margin: 20rem 0;
+
+          >div {
+            display: flex;
+            align-items: end;
+
+            span {
+              font-size: 14rem;
+              font-weight: 500;
+              color: #7c8fb3;
+              line-height: 16rem;
+            }
+
+            .el-input {
+              width: 98rem;
+            }
+
+            input {
+              width: 98rem !important;
+              padding: 0;
+              text-align: center;
+            }
+
+            >span:nth-child(4) {
+              margin-left: 8rem;
+              font-size: 16rem;
+              line-height: 19rem;
+            }
+          }
+
+        }
+
+        .form-quantity {
+
+          input {
+            width: 98rem;
+            /* padding: 0 !important; */
+          }
+
+          >div {
+            display: flex;
+            justify-content: space-between;
+
+            button {
+              width: 136rem;
+              height: 36rem;
+              background-color: #0e6aed;
+              color: white;
+              text-align: center;
+              font-size: 14rem;
+              font-weight: 500;
+              border: none;
+              border-radius: 4rem;
+              cursor: pointer;
+            }
+          }
+        }
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mApp" class="m_ehbs_container">
+    <form @submit.prevent="submitForms" enctype="multipart/form-data">
+      <div>
+        <div class="form-section">
+          <label for="layers">Layers</label>
+          <div>
+            <el-radio-group @change="form.layers2 = null" v-model="form.layers1" size="medium">
+              <el-radio-button label="1"></el-radio-button>
+              <el-radio-button label="2"></el-radio-button>
+              <el-radio-button label="4"></el-radio-button>
+              <el-radio-button label="6"></el-radio-button>
+            </el-radio-group>
+            <el-select v-model="form.layers2" @change="form.layers1 = null" placeholder="more">
+              <el-option v-for="item in layersOptions" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+        </div>
+        <div class="form-Dimensions">
+          <label for="dimension_width">Dimensions</label>
+          <div>
+            <el-input v-model="form.dimension_width" /></el-input>
+            <span style="line-height: 36rem;margin: 0 8rem;">*</span>
+            <el-input v-model="form.dimension_height" /></el-input>
+            <span>inch</span>
+          </div>
+        </div>
+        <div class="form-quantity">
+          <label for="quantity">Quantity</label>
+          <div>
+            <el-select v-model="form.quantity" placeholder="请选择">
+              <el-option v-for="item in quantityOptions" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
+            <button type="submit">Instant Quote</button>
+          </div>
+        </div>
+      </div>
+      <div class="upload-section" @click="triggerFileUpload">
+        <label for="gerber-upload">
+          <input type="file" id="gerberUploads" ref="gerberUpload" @change="handleFileUpload" style="display: none" />
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/pcb_62.png" alt="">
+          <span>{{ form.gerber_file_url || 'Add gerber file' }}</span>
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    new Vue({
+      el: "#mApp",
+      data() {
+        return {
+          layersOptions: [
+            { label: "8", value: '8' },
+            { label: "10", value: '10' },
+            { label: "12", value: '12' },
+            { label: "14", value: '14' },
+            { label: "16", value: '16' },
+            { label: "18", value: '18' },
+          ],
+          quantityOptions: [
+            { label: "5", value: 5 },
+            { label: "10", value: 10 },
+            { label: "15", value: 15 },
+            { label: "20", value: 20 },
+            { label: "25", value: 25 },
+            { label: "30", value: 30 },
+            { label: "50", value: 50 },
+            { label: "75", value: 75 },
+            { label: "100", value: 100 },
+            { label: "500", value: 500 },
+            { label: "1000", value: 1000 },
+            { label: "2000", value: 2000 },
+          ],
+          form: {
+            layers1: null,
+            layers2: null,
+            board_layers: null,
+            dimension_width: null,
+            dimension_height: null,
+            quantity: null,
+            gerber_file_url: null,
+            source_gerber_file_url: null
+          },
+        };
+      },
+      created() {
+        // 从 sessionStorage 中获取数据
+        const formData = JSON.parse(sessionStorage.getItem('pcbFormData') || '{}');
+        console.log(formData)
+        let file = null
+        if (formData.source_gerber_file_url) {
+          // 将 Base64 数据转换为 Blob 对象
+          const byteString = atob(formData.source_gerber_file_url.split(',')[1]); // 去掉前面的 "data:image/webp;base64,"
+          const mimeType = formData.source_gerber_file_url.split(',')[0].split(':')[1].split(';')[0];
+          // 创建 Uint8Array 并填充二进制数据
+          const arrayBuffer = new Uint8Array(byteString.length);
+          for (let i = 0; i < byteString.length; i++) {
+            arrayBuffer[i] = byteString.charCodeAt(i);
+          }
+          // 创建 Blob 对象
+          const blob = new Blob([arrayBuffer], { type: mimeType });
+
+          // 将 Blob 转换为 File 对象
+          file = new File([blob], 'source_gerber_file_url.webp', { type: mimeType });
+        }
+        this.form = { ...this.form, ...formData, source_gerber_file_url: file }
+      },
+      methods: {
+        // 触发文件上传
+        triggerFileUpload() {
+          this.$refs.gerberUpload.click();
+        },
+        // 监听文件上传
+        handleFileUpload(event) {
+          const file = event.target.files[0];  // 获取用户选择的文件
+          if (file) {
+            this.form.gerber_file_url = file.name;  // 更新gerber_file_name用于显示文件名
+            this.form.fileSize = file.size;
+          }
+        },
+        submitForms() {
+          const form = this.form;
+          if (form.layers1 || form.layers2) {
+            this.form.board_layers = (form.layers1 || form.layers2) + ' Layer';
+          }
+          const file = document.getElementById('gerberUploads').files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+              this.form.source_gerber_file_url = reader.result; // Base64 string
+              sessionStorage.setItem('pcbFormData', JSON.stringify(this.form));
+            };
+            reader.readAsDataURL(file); // Convert file to Base64 string
+          } else {
+            sessionStorage.setItem('pcbFormData', JSON.stringify(this.form));
+          }
+          window.location.href = "https://www.eipeks.com/pcb-development/pcb-manufacturing/";
+        },
+      },
+    });
+  </script>
+</body>

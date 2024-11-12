@@ -1,0 +1,285 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @media only screen and (min-width: 768px) {
+      .home_services_container {
+        width: 1400rem;
+        font-family: "Helvetica", sans-serif;
+        display: flex;
+        justify-content: space-between;
+
+        .pc-show-item {
+          display: block;
+        }
+
+        .mobile-show-item {
+          display: none;
+        }
+
+        .item {
+          width: 451rem;
+
+          &:not(:last-child) {
+            cursor: pointer;
+          }
+
+          .top_cl {
+            height: 300rem;
+            width: 100%;
+            padding: 40rem 40rem 0 40rem;
+            background: #F9F9FB;
+            border-radius: 8rem;
+
+            div {
+              &:nth-child(1) {
+                width: 72rem;
+                height: 72rem;
+                background: #ffffff;
+                border-radius: 8rem;
+                box-shadow: 0px 8rem 8rem 0px rgba(0, 0, 0, 0.02);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                  width: 40rem;
+                  height: 40rem;
+                }
+              }
+            }
+          }
+
+
+          .learn_more_hidden {
+            width: 100%;
+            height: 60rem;
+            background: #162C5B;
+            padding: 0 19rem;
+            display: none;
+            border-radius: 0 0 8rem 8rem;
+            align-items: center;
+
+            span {
+              font-size: 12rem;
+              font-weight: 500;
+              color: #ffffff;
+              line-height: 14rem;
+            }
+
+          }
+
+          .learn_more {
+            width: 100%;
+            height: 60rem;
+            align-items: center;
+            justify-content: space-between;
+            background: #162C5B;
+            padding: 0 40rem;
+            display: none;
+            border-radius: 0 0 8rem 8rem;
+            text-decoration: none;
+
+            span {
+              font-size: 14rem;
+              font-weight: 500;
+              color: #ffffff;
+              line-height: 16rem;
+              text-decoration: none;
+
+            }
+
+            img {
+              width: 16rem;
+              height: 16rem;
+            }
+          }
+
+          h3 {
+            font-size: 28rem;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 33px;
+            color: #162c5b;
+            margin: 32rem 0 9rem 0;
+          }
+
+          p {
+            font-size: 16rem;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 24rem;
+            color: #576788;
+
+          }
+        }
+
+        .item:hover {
+          background-color: #0E6AED;
+          border-radius: 8rem;
+
+          .top_cl {
+            background-color: #0E6AED;
+          }
+
+          h3,
+          p {
+            color: #fff;
+          }
+
+          .learn_more,
+          .learn_more_hidden {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .home_services_container {
+        width: 100%;
+
+        .pc-show-item {
+          display: none;
+        }
+
+        .mobile-show-item {
+          display: block;
+          text-decoration: none;
+        }
+
+        .item {
+          width: 100%;
+          border-radius: 4rem;
+          margin-bottom: 8rem;
+
+          .top_cl {
+            width: 100%;
+            padding: 8rem 10rem 14rem 8rem;
+            background: #F9F9FB;
+            display: flex;
+            border-radius: 4rem;
+
+            div {
+              &:nth-child(1) {
+                width: 48rem;
+                height: 48rem;
+                background: #ffffff;
+                border-radius: 8rem;
+                box-shadow: 0px 8rem 8rem 0px rgba(0, 0, 0, 0.02);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 12rem;
+                min-width: 48rem;
+
+                img {
+                  width: 28rem;
+                  height: 28rem;
+                }
+              }
+
+            }
+
+            h3 {
+              font-size: 16rem;
+              line-height: 19rem;
+              font-weight: 500;
+              color: #162C5B;
+            }
+
+            p {
+              font-size: 13rem;
+              font-weight: 500;
+              line-height: 15rem;
+              color: #576788;
+              margin-top: 8rem;
+            }
+          }
+
+          .learn_more,
+          .learn_more_hidden {
+            display: none;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="home_services_container">
+    <div class="item pc-show-item">
+      <div class="top_cl">
+        <div><img src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_services_icon03.png" alt="">
+        </div>
+        <div>
+          <h3>Our Team</h3>
+          <p>We have a team of over <span style="color: #FF6600;">50</span> design engineers and more than <span
+              style="color: #FF6600;">200</span>
+            production members, with an annual order
+            volume exceeding <span style="color: #FF6600;">$30</span> million.</p>
+        </div>
+      </div>
+      <a href="https://www.eipeks.com/about-us/" class="learn_more">
+        <span>Learn more</span> <img
+          src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_service_right_icon.png" alt="">
+      </a>
+    </div>
+    <div class="item pc-show-item">
+      <div class="top_cl">
+        <div><img src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_services_icon01.png" alt="">
+        </div>
+        <div>
+          <h3>Our Goal</h3>
+          <p>EIPKES was formerly a large manufacturer of consumer products. We design for manufacturing and help our
+            customers produce best-selling products</p>
+        </div>
+      </div>
+      <a href="https://www.eipeks.com/about-us/" class="learn_more">
+        <span>Learn more</span> <img
+          src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_service_right_icon.png" alt="">
+      </a>
+    </div>
+    <a href="https://www.eipeks.com/about-us/" class="item mobile-show-item">
+      <div class="top_cl">
+        <div><img src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_services_icon03.png" alt="">
+        </div>
+        <div>
+          <h3>Our Team</h3>
+          <p>We have a team of over <span style="color: #FF6600;">50</span> design engineers and more than <span
+              style="color: #FF6600;">200</span>
+            production members, with an annual order
+            volume exceeding <span style="color: #FF6600;">$30</span> million.</p>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.eipeks.com/about-us/" class="item mobile-show-item">
+      <div class="top_cl">
+        <div><img src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_services_icon01.png" alt="">
+        </div>
+        <div>
+          <h3>Our Goal</h3>
+          <p>EIPKES was formerly a large manufacturer of consumer products. We design for manufacturing and help our
+            customers produce best-selling products</p>
+        </div>
+      </div>
+    </a>
+    <div class="item " id="item-three">
+      <div class="top_cl">
+        <div><img src="https://www.eipeks.com/wp-content/uploads/2024/08/home_by_services_icon02.png" alt="">
+        </div>
+        <div>
+          <h3>What We Give Back</h3>
+          <p>In order to reach a long-term cooperation, we show our sincerity by refunding all the design and
+            development
+            costs based on the customer’s order.</p>
+        </div>
+      </div>
+      <div class="learn_more_hidden">
+        <span>Due to the advantages of integrated research and development and production, we will gradually refund all
+          product research and design fees according to the order proportion.</span>
+      </div>
+    </div>
+  </div>
+</body>

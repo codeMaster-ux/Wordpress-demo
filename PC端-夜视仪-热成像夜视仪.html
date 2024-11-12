@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/common.css">
+  <style>
+    .products-thermal-container {
+      display: flex;
+      width: 100%;
+      height: 940rem;
+      font-family: "Lato", sans-serif;
+      background: #E9ECF0;
+
+      .thermal-right-section {
+        width: 1000rem;
+        position: relative;
+
+        #thermal-image {
+          width: 1000rem;
+          height: 940rem;
+          object-fit: cover;
+        }
+
+        #thermal-text {
+          width: 440rem;
+          height: 260rem;
+          background: rgba(229, 95, 6, 0.36);
+          font-size: 18rem;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 24rem;
+          padding: 0 22rem;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          left: 8rem;
+          bottom: 120rem;
+        }
+      }
+
+      .thermal-left-section {
+        width: 920rem;
+        padding: 180rem 0 0 240rem;
+
+        .products-thermal-button-list {
+          display: flex;
+          padding-left: 28rem;
+          margin-top: 78rem;
+
+          a {
+            button {
+              font-size: 14rem;
+              font-weight: 400;
+              line-height: 16rem;
+              width: 193rem;
+              height: 48rem;
+              cursor: pointer;
+            }
+
+            &:nth-child(1) {
+              button {
+                color: #ffffff;
+                background: #363d4e;
+                border: #363d4e;
+              }
+            }
+
+            &:nth-child(2) {
+              button {
+                background: #fafafa00;
+                border: 1rem solid #1a58f7;
+                color: #1A58F7;
+                margin-left: 28rem;
+
+              }
+            }
+          }
+        }
+
+        h2,
+        p {
+          margin-left: 28rem;
+        }
+
+        h2 {
+          font-size: 28rem;
+          font-weight: 900;
+          color: #111111;
+          line-height: 32rem;
+        }
+
+        p {
+          margin: 16rem 0 70rem 28rem;
+          font-size: 18rem;
+          font-weight: 400;
+          color: #333333;
+          line-height: 21rem;
+        }
+
+        #thermal-list {
+          list-style: none;
+          padding: 0;
+          display: inline-flex;
+          flex-direction: column;
+
+          li {
+            margin-bottom: 16rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 16rem;
+            display: inline-block;
+            line-height: 32rem;
+
+            .thermal-arrow {
+              margin-right: 10rem;
+              color: transparent;
+            }
+          }
+        }
+
+        #thermal-list li.thermal-active,
+        #thermal-list li:hover {
+          color: #FF6600;
+
+          .thermal-arrow {
+            color: #FF6600;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="products-thermal-container">
+    <div class="thermal-left-section">
+      <h2>Thermal Imaging Night Vision Device</h2>
+      <p>It can capture clear images without a light source, which is suitable for harsh environments.</p>
+      <ul id="thermal-list">
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-02.webp"
+          data-text="The Reach-3 boasts powerful monitoring and surveillance capabilities. It is equipped with an uncooled thermal imager and a visible light HD camera, which can provide stable, clear thermal imaging even in extreme weather and dark environments. It is suitable for LAN installation or analog security camera video networks."
+          class="thermal-active">
+          <span class="thermal-arrow">▶</span> Thermal Imaging Network Camera
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-03.webp"
+          data-text="ErlangSight is a multifunctional monocular thermal imager for head-mounted or handheld use. It offers high-resolution thermal image options (640x480 or 384x288), excellent thermal sensitivity (NETD<40mk @f1.0), and supports adaptive wide dynamic image processing and PIP (Picture-in-Picture) functions, which is perfect for real-time observation and monitoring in various environments.">
+          <span class="thermal-arrow">▶</span> Thermal Imaging Tactical Vision
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-04.webp"
+          data-text="The DriCam series is designed to enhance driver vision in total darkness, fog, rain, snow, and headlight glare conditions. It provides clear, real-time thermal images with optional 640x480 and 384x288 resolutions, IP67 sealing, and analog video output that is compatible with vehicle displays.">
+          <span class="thermal-arrow">▶</span> Vehicle-Mounted Thermal Imager
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-06.webp"
+          data-text="The SmartCor series features advanced WDR wide dynamic image processing technology and multiple scene modes to meet various application needs. It uses leading shutterless technology to ensure continuous, uninterrupted, real-time infrared imaging, making it suitable for infrared-integrated devices such as drones, handheld thermal imagers, and surveillance systems.">
+          <span class="thermal-arrow">▶</span> Infrared Thermal Imaging Module (Shutterless)
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-01.webp"
+          data-text="The SmartCor-S640 is a thermal imaging module with high sensitivity, continuous digital zoom and WDR image processing functions, which can provide high-quality thermal image video. It utilizes shutter imaging technology to ensure excellent real-time video performance, making it suitable for thermal applications and integration scenarios such as drones, handheld thermal imagers, thermal night vision systems, driver vision enhancement, and security surveillance.">
+          <span class="thermal-arrow">▶</span> Infrared Thermal Imaging Module (With Shutter)
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/thermal-imaging-05.webp"
+          data-text="The IPC expansion board is designed to integrate directly into the thermal IP network, providing IP network services, ONVIF communication, analog, and H.264 video output, widely used in thermal security monitoring systems and UAVs.">
+          <span class="thermal-arrow">▶</span> Expansion Board
+        </li>
+        <!-- Add more list items as needed -->
+      </ul>
+      <div class="products-thermal-button-list">
+        <a href="#my-darkness-start-form"><button>Direct purchase</button></a>
+        <a href="#my-darkness-start-form"><button> Development services</button></a>
+      </div>
+    </div>
+
+    <div class="thermal-right-section">
+      <img id="thermal-image" src="">
+      <div id="thermal-text"></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productList = document.getElementById('thermal-list');
+      const productImage = document.getElementById('thermal-image');
+      const productText = document.getElementById('thermal-text');
+
+      function updateContent(item) {
+        const imageSrc = item.getAttribute('data-image');
+        const textContent = item.getAttribute('data-text');
+
+        productImage.src = imageSrc;
+        productText.textContent = textContent;
+
+        const activeItem = productList.querySelector('.thermal-active');
+        if (activeItem) {
+          activeItem.classList.remove('thermal-active');
+        }
+        item.classList.add('thermal-active');
+      }
+
+      productList.addEventListener('mouseover', function (e) {
+        if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
+          const item = e.target.tagName === 'LI' ? e.target : e.target.parentElement;
+          updateContent(item);
+        }
+      });
+
+      // Initialize the first item as active
+      const firstItem = productList.querySelector('li');
+      if (firstItem) {
+        updateContent(firstItem);
+      }
+    });
+  </script>
+</body>
+
+</html>

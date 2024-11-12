@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动态选择框</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background-color: #fff;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .item-list,
+    .selected-list {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .item,
+    .selected-item {
+      padding: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .item:hover {
+      background-color: #e0e0e0;
+    }
+
+    .item img {
+      margin-right: 10px;
+    }
+
+    .selected-item {
+      background-color: #d0ffd0;
+      border: 1px solid #a0d0a0;
+    }
+
+    .selected-item:hover {
+      background-color: #b0f0b0;
+    }
+
+    .selected-item::before {
+      content: '✔️ ';
+      margin-right: 10px;
+    }
+
+    .disabled-item {
+      background-color: #e0e0e0;
+      color: #888;
+      cursor: not-allowed;
+    }
+
+    .cancel-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: url('https://www.eipeks.com/wp-content/uploads/2024/09/drone_75.png') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    .selected-item {
+      padding-right: 40px;
+      /* To accommodate cancel icon */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="selected-list" class="selected-list"></div>
+  <label for="category-select">选择类别:</label>
+  <select id="category-select">
+    <option value="fruits">水果</option>
+    <option value="vegetables">蔬菜</option>
+    <option value="dairy">乳制品</option>
+  </select>
+
+  <div id="item-list" class="item-list"></div>
+
+
+  <script>
+    const data = {
+      fruits: ['苹果', '香蕉', '橙子', '葡萄'],
+      vegetables: ['胡萝卜', '西兰花', '菠菜', '土豆'],
+      dairy: ['牛奶', '奶酪', '酸奶', '黄油']
+    };
+
+    const categorySelect = document.getElementById('category-select');
+    const itemList = document.getElementById('item-list');
+    const selectedList = document.getElementById('selected-list');
+
+    let selectedItems = new Set();
+
+    function updateItemList(category) {
+      itemList.innerHTML = '';
+      if (category && data[category]) {
+        data[category].forEach(item => {
+          const div = document.createElement('div');
+          div.textContent = item;
+          div.className = selectedItems.has(item) ? 'item disabled-item' : 'item';
+          div.addEventListener('click', () => {
+            if (!selectedItems.has(item)) {
+              addItem(item);
+            }
+          });
+
+          // Add image before item text
+          const img = document.createElement('img');
+          img.src = 'https://www.eipeks.com/wp-content/uploads/2024/09/drone_74.png';
+          div.prepend(img);
+
+          itemList.appendChild(div);
+        });
+      }
+    }
+
+    function addItem(item) {
+      if (selectedItems.has(item)) {
+        return;
+      }
+
+      selectedItems.add(item);
+      const div = document.createElement('div');
+      div.textContent = item;
+      div.className = 'selected-item';
+      const cancelIcon = document.createElement('span');
+      cancelIcon.className = 'cancel-icon';
+      cancelIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        removeItem(item);
+      });
+      div.appendChild(cancelIcon);
+      selectedList.appendChild(div);
+
+      updateItemList(categorySelect.value); // Update item list to disable selected items
+    }
+
+    function removeItem(item) {
+      selectedItems.delete(item);
+      const items = Array.from(selectedList.children);
+      items.forEach(child => {
+        if (child.textContent.includes(item)) {
+          selectedList.removeChild(child);
+        }
+      });
+
+      updateItemList(categorySelect.value); // Update item list to re-enable removed items
+    }
+
+    categorySelect.addEventListener('change', (event) => {
+      const category = event.target.value;
+      updateItemList(category);
+    });
+
+    // Set default category to "fruits" and update item list
+    window.onload = () => {
+      // categorySelect.value = 'fruits';
+      updateItemList('fruits');
+    };
+  </script>
+</body>
+
+</html>

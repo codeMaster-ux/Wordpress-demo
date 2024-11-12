@@ -1,0 +1,273 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+</head>
+<style>
+  .drone-payload-container {
+    width: 100%;
+    margin: auto;
+    font-family: "helvetica", sans-serif;
+    width: 1400rem;
+
+    .drone-payload-content-container {
+      position: relative;
+      width: 100%;
+      height: 700rem;
+      margin-bottom: 32rem;
+      overflow: hidden;
+      border-radius: 16rem;
+    }
+
+    .drone-payload-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      div {
+        height: 60rem;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.32);
+        backdrop-filter: blur(4rem);
+        font-size: 20rem;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 60rem;
+        padding-left: 28rem;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .drone-payload-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16rem;
+    }
+
+    .drone-payload-content.payload-active {
+      display: block;
+    }
+
+    .drone-payload-button-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .drone-payload-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 24rem;
+
+      button {
+        background: #333333;
+        font-size: 16rem;
+        font-weight: 500;
+        color: #333333;
+        line-height: 19rem;
+        margin-right: 24rem;
+      }
+    }
+
+    .drone-payload-buttons::-webkit-scrollbar {
+      display: none;
+    }
+
+    .drone-payload-button-container button {
+      border: none;
+      padding: 20rem 24rem;
+      border-radius: 48rem;
+      cursor: pointer;
+      background-color: #FAFAFA;
+      white-space: nowrap;
+      color: #333;
+      position: relative;
+    }
+
+    .drone-payload-button-container button.payload-btn-active {
+      background-color: #171A1B;
+      color: #fff;
+    }
+
+    .drone-payload-button-container button.payload-btn-active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 24rem;
+      background: rgba(23, 26, 27, 0.60);
+      border-radius: 48rem;
+      filter: blur(12rem);
+      z-index: -1;
+    }
+
+    .payload-nav-icon-container {
+      width: 100rem;
+      height: 60rem;
+      background: #ffffff;
+      min-width: 100rem;
+      display: flex;
+      gap: 8rem;
+      align-items: center;
+      justify-content: end;
+
+      div {
+        border: none;
+        cursor: pointer;
+        font-size: 13rem !important;
+        z-index: 10;
+        color: #333;
+        padding: 0;
+        min-width: 36rem !important;
+        height: 36rem !important;
+        border-radius: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafafa;
+      }
+
+      >div.payload-disabled {
+        fill: #999;
+        cursor: not-allowed;
+        background-color: #fff;
+      }
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="drone-payload-container">
+    <div class="drone-payload-content-container">
+      <div class="drone-payload-content payload-active" id="content1" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_18-scaled.webp') no-repeat center
+          ;background-size: cover">
+        <div>It provides critical infrared data by capturing temperature changes of objects.</div>
+      </div>
+      <div class="drone-payload-content" id="content2" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_53.webp') no-repeat center
+          ;background-size: cover">
+        <div>It collects various spectral data, which is widely used in agricultural monitoring and environmental
+          assessment.</div>
+      </div>
+      <div class="drone-payload-content" id="content3" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_50.webp') no-repeat center
+          ;background-size: cover">
+        <div>LIDAR achieves high-precision terrain mapping and obstacle detection through laser scanning technology.
+        </div>
+      </div>
+      <div class="drone-payload-content" id="content4" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_46.webp') no-repeat center
+          ;background-size: cover">
+        <div>It is used for distance measurement and obstacle identification.</div>
+      </div>
+      <div class="drone-payload-content" id="content5" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_51.webp') no-repeat center
+          ;background-size: cover">
+        <div>It offers long-range detection capabilities, supporting all-weather precision distance and speed
+          measurement.</div>
+      </div>
+      <div class="drone-payload-content" id="content6" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_47.webp') no-repeat center
+          ;background-size: cover">
+        <div>It supports long-distance control and data transmission, ensuring real-time communication between the drone
+          and the ground control station.</div>
+      </div>
+      <div class="drone-payload-content" id="content7" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_52.webp') no-repeat center
+          ;background-size: cover">
+        <div>It provides real-time HD image and video transmission, supporting instant video streaming from the drone to
+          the ground control station.</div>
+      </div>
+      <div class="drone-payload-content" id="content8" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/drone_48.webp') no-repeat center
+          ;background-size: cover">
+        <div>It integrates efficient spraying devices for precise application of chemicals or liquid spraying.</div>
+      </div>
+    </div>
+
+    <div class="drone-payload-button-container" id="drone-payload-button-container">
+      <div class="drone-payload-buttons" id="payloadButtonScroll">
+        <button class="payload-btn-active" onclick="payloadShowContent('content1',this)">Thermal Imaging Camera</button>
+        <button onclick="payloadShowContent('content2',this)">Multispectral Sensor</button>
+        <button onclick="payloadShowContent('content3',this)">LIDAR (Light Detection and Ranging)</button>
+        <button onclick="payloadShowContent('content4',this)">Ultrasonic Sensor</button>
+        <button onclick="payloadShowContent('content5',this)">Radar Sensor</button>
+        <button onclick="payloadShowContent('content6',this)">Radio Communication Equipment</button>
+        <button onclick="payloadShowContent('content7',this)">Video Transmission System</button>
+        <button onclick="payloadShowContent('content8',this)">Spraying System</button>
+      </div>
+      <div class="payload-nav-icon-container">
+        <div onclick="payloadScrollButtonsLeft()" id="payloadLeftNav"><svg t="1725523317236" class="icon"
+            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1432" width="12" height="12">
+            <path d="M825.99 968.7V53.89L188.63 508.87z" p-id="1433"></path>
+          </svg></div>
+        <div onclick="payloadScrollButtonsRight()" id="payloadRightNav"><svg t="1725523126220" class="icon"
+            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9139" width="12" height="12">
+            <path d="M188.63 968.7V53.89l637.36 454.98z" p-id="9140"></path>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const payloadbButtonContainer = document.getElementById('payloadButtonScroll');
+    function payloadShowContent(contentId, element) {
+      if (element.getBoundingClientRect().left < payloadbButtonContainer.getBoundingClientRect().left) {
+        const scrollAmount = payloadbButtonContainer.scrollLeft - (payloadbButtonContainer.getBoundingClientRect().left - element.getBoundingClientRect().left);
+        payloadbButtonContainer.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'  // 添加丝滑滚动效果
+        });
+      }
+      if (element.getBoundingClientRect().right > payloadbButtonContainer.getBoundingClientRect().right) {
+        const scrollAmounts = payloadbButtonContainer.scrollLeft - (payloadbButtonContainer.getBoundingClientRect().right - element.getBoundingClientRect().right - 20);
+        payloadbButtonContainer.scrollTo({
+          left: scrollAmounts,
+          behavior: 'smooth'  // 添加丝滑滚动效果
+        });
+      }
+      // Hide all contents
+      document.querySelectorAll('.drone-payload-content').forEach(content => content.classList.remove('payload-active'));
+      // Show the selected content
+      document.getElementById(contentId).classList.add('payload-active');
+      // Update button states
+      document.querySelectorAll('.drone-payload-button-container button').forEach(button => button.classList.remove('payload-btn-active'));
+      event.target.classList.add('payload-btn-active');
+    }
+
+    function payloadScrollButtonsLeft() {
+      payloadbButtonContainer.scrollTo({
+        left: 0,
+        behavior: 'smooth'  // 添加丝滑滚动效果
+      });
+    }
+
+    function payloadScrollButtonsRight() {
+      payloadbButtonContainer.scrollTo({
+        left: 2000,
+        behavior: 'smooth'  // 添加丝滑滚动效果
+      });
+    }
+
+    function payloadUpdateNavButtons() {
+
+    }
+    // 监听 scroll 事件
+    payloadbButtonContainer.addEventListener('scroll', function () {
+      if (payloadbButtonContainer.scrollLeft === 0) {
+        document.getElementById('payloadLeftNav').classList.add('payload-disabled');
+      } else { document.getElementById('payloadLeftNav').classList.remove('payload-disabled'); }
+      if (Math.round(payloadbButtonContainer.scrollLeft) === (Math.round(payloadbButtonContainer.scrollWidth - payloadbButtonContainer.clientWidth))) {
+        document.getElementById('payloadRightNav').classList.add('payload-disabled');
+      } else { document.getElementById('payloadRightNav').classList.remove('payload-disabled'); }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('payloadLeftNav').classList.add('payload-disabled')
+    });
+  </script>
+
+</body>

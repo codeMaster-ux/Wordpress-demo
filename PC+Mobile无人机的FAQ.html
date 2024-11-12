@@ -1,0 +1,254 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .drone-accordion {
+      width: 100%;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 24rem;
+      margin: 0 auto;
+
+      >div {
+        border: 1px solid #ccc;
+        border-radius: 16rem;
+        width: 100%;
+
+        .drone-accordion-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          transition: background-color 0.3s ease;
+          height: 98rem;
+          padding: 0 43rem 0 36rem;
+
+          span {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            color: #171A1B;
+          }
+
+          img {
+            width: 48rem;
+            height: 48rem;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .drone-accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+
+          >div {
+            padding: 0 36rem 39rem 36rem;
+            font-size: 16rem;
+            font-weight: 500;
+            line-height: 24rem;
+            color: #666;
+            display: flex;
+            flex-direction: column;
+            gap: 16rem;
+
+            p {
+              color: #171A1B;
+            }
+
+            div {
+              display: flex;
+
+              span:first-child {
+                font-size: 13rem;
+                margin: 0 4rem;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .drone-accordion-header.drone-accordion-active img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_44.png');
+    }
+
+    .drone-accordion-header img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png');
+    }
+
+    @media (max-width: 767px) {
+      .drone-accordion {
+        width: 100%;
+        gap: 13rem;
+
+        >div {
+          border: 0.5px solid #ccc;
+          border-radius: 7rem;
+          width: 100%;
+
+          .drone-accordion-header {
+            height: auto;
+            padding: 13rem 13rem 13rem 12rem;
+
+            span {
+              font-size: 14rem;
+              line-height: 16rem;
+            }
+
+            img {
+              width: 20rem;
+              height: 20rem;
+            }
+          }
+
+          .drone-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+
+            >div {
+              padding: 0 12rem 13rem 12rem;
+              font-size: 12rem;
+              font-weight: 500;
+              line-height: 14rem;
+              color: #666;
+              display: flex;
+              flex-direction: column;
+              gap: 8rem;
+
+              p {
+                font-size: 13rem;
+                color: #171A1B;
+                line-height: 19rem;
+              }
+
+              div {
+                display: flex;
+
+                span:first-child {
+                  font-size: 10rem;
+                  margin: 0 4rem;
+                }
+              }
+            }
+          }
+
+
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drone-accordion">
+    <div>
+      <div class="drone-accordion-header">
+        <span>What is the typical flight time of a drone?</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <p>Flight time varies depending on the drone model and use. Consumer drones typically range from 20 to 30
+            minutes, professional drones usually last 30 to 60 minutes, and some industrial drones can exceed 60
+            minutes,
+            with certain models even capable of flying for over 2 hours.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="drone-accordion-header">
+        <span>How do drones achieve flight positioning?</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <p>Drones typically use GPS for positioning, providing flight paths and route guidance. Advanced drones may
+            also employ RTK (Real-Time Kinematic) technology for higher positioning accuracy. Additionally, multisensor
+            fusion technologies, such as visual positioning systems and inertial navigation systems, are used to enhance
+            flight stability and precision.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="drone-accordion-header">
+        <span>Under what weather conditions can drones fly?</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <p>Drone flight capabilities vary under different weather conditions. Generally, most drones can safely fly
+            in mild wind speeds and temperature ranges. Extreme weather conditions, such as strong winds, heavy rain, or
+            high temperatures, may affect drone flight stability or safety. Users should refer to the drone's
+            specifications and weather forecasts to determine suitability for flight.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="drone-accordion-header">
+        <span>What are the legalities and regulations of drone flight?</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <p>Drone flight regulations differ by country and region. Generally, users must comply with local aviation
+            laws, including:</p>
+          <div><span>●</span><span>Not flying over no-fly zones or restricted areas.</span></div>
+          <div><span>●</span><span>Adhering to flight altitude limits.</span></div>
+          <div><span>●</span><span>Avoiding flying in densely populated or sensitive areas.</span></div>
+          <div><span>●</span><span>Registering flights or obtaining specific permits (e.g., for commercial use).</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="drone-accordion-header">
+        <span>What should be considered for drone maintenance and care?</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <p>Drone maintenance and care include:</p>
+          <div><span>●</span><span>Regularly cleaning the drone and camera lens to keep sensors and lenses free of dust
+              and dirt.</span></div>
+          <div><span>●</span><span>Checking the condition of the battery and battery connectors to ensure good
+              contact.</span></div>
+          <div><span>●</span><span>Updating firmware and software to maintain optimal performance and safety.</span>
+          </div>
+          <div><span>●</span><span>Regularly inspecting the body and propellers for wear and tear, and replacing damaged
+              parts as needed.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.drone-accordion-header').forEach(header => {
+      header.addEventListener('click', function () {
+        const openItem = document.querySelector('.drone-accordion-header.drone-accordion-active');
+
+        // 如果有其他面板打开，先关闭它
+        if (openItem && openItem !== this) {
+          openItem.classList.remove('drone-accordion-active');
+          openItem.nextElementSibling.style.maxHeight = '0';
+        }
+
+        // 切换当前面板
+        this.classList.toggle('drone-accordion-active');
+        const content = this.nextElementSibling;
+
+        if (this.classList.contains('drone-accordion-active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+  </script>
+
+</body>

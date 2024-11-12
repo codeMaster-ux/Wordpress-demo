@@ -1,0 +1,172 @@
+<head>
+  <style>
+    .cr-container {
+      display: flex;
+      margin-left: calc((100vw - 1400rem)/2);
+      padding: 76rem 0 0 0;
+
+      .blog-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        cursor: grab;
+        user-select: none;
+        scrollbar-width: none;
+        /* For Firefox */
+        -ms-overflow-style: none;
+        /* For Internet Explorer and Edge */
+        font-family: "Helvetica", sans-serif;
+        padding-left: 9rem;
+        padding-bottom: 110rem;
+        gap: 16rem;
+        padding-right: 48rem;
+
+        >div {
+          width: 360rem;
+          min-width: 360rem;
+          color: white;
+          height: 260rem;
+          background: #ffffff;
+          box-shadow: 0px 6rem 24rem 0px rgba(0, 0, 0, 0.04);
+          padding: 30rem 35rem;
+
+          h3 {
+            color: #162C5B;
+            font-size: 16rem;
+            font-weight: 400;
+            text-align: CENTER;
+            line-height: 28rem;
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 400;
+            text-align: CENTER;
+            color: #7c8fb3;
+            line-height: 14rem;
+            margin-top: 16rem;
+          }
+
+        }
+
+      }
+
+      /* Hide scrollbar for Webkit browsers */
+      .blog-scroll-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .blog-scroll-container:active {
+        cursor: grabbing;
+      }
+
+      >div {
+        padding-top: 108rem;
+
+        h2 {
+          font-size: 48rem;
+          font-family: "Fjalla One", sans-serif;
+          font-weight: 400;
+          text-align: LEFT;
+          color: #162C5B;
+          line-height: 56rem;
+          margin-bottom: 33rem;
+        }
+
+        button {
+          width: 140rem;
+          height: 48rem;
+          background: #1f1f1f;
+          border-radius: 52rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          border: none;
+          font-size: 14rem;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 16rem;
+        }
+      }
+
+      img {
+        width: 128rem;
+        height: 128rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cr-container">
+    <div>
+      <h2>Customer Reviews</h2>
+      <button>Contact Us</button>
+    </div>
+    <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_29.png">
+    <div class="blog-scroll-container" id="crScrollContainer">
+      <div>
+        <h3>"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles, our nighttime patrols have
+          become much safer and more efficient. The image quality is outstanding, and the operation is very simple."
+        </h3>
+        <p>Security Company Manager</p>
+      </div>
+      <div>
+        <h3>"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles, our nighttime patrols have
+          become much safer and more efficient. The image quality is outstanding, and the operation is very simple."
+        </h3>
+        <p>Security Company Manager</p>
+      </div>
+      <div>
+        <h3>"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles, our nighttime patrols have
+          become much safer and more efficient. The image quality is outstanding, and the operation is very simple."
+        </h3>
+        <p>Security Company Manager</p>
+      </div>
+      <div>
+        <h3>"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles, our nighttime patrols have
+          become much safer and more efficient. The image quality is outstanding, and the operation is very simple."
+        </h3>
+        <p>Security Company Manager</p>
+      </div>
+      <div>
+        <h3>"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles, our nighttime patrols have
+          become much safer and more efficient. The image quality is outstanding, and the operation is very simple."
+        </h3>
+        <p>Security Company Manager</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const crScrollContainer = document.getElementById('crScrollContainer');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    crScrollContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      crScrollContainer.classList.add('blog-active');
+      startX = e.pageX - crScrollContainer.offsetLeft;
+      scrollLeft = crScrollContainer.scrollLeft;
+    });
+
+    crScrollContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      crScrollContainer.classList.remove('blog-active');
+    });
+
+    crScrollContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      crScrollContainer.classList.remove('blog-active');
+    });
+
+    crScrollContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - crScrollContainer.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust scroll speed by changing the multiplier (2)
+      crScrollContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>

@@ -1,0 +1,449 @@
+<head>
+  <style>
+    .work-container {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48rem;
+
+      .workCollapsible {
+        width: 100%;
+        height: 560rem;
+        transition: height 0.5s ease-out;
+        position: relative;
+        overflow: hidden;
+
+        .content {
+          .first-cl {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+
+            >div:nth-child(1) {
+              display: flex;
+              align-items: center;
+              position: relative;
+              border-bottom: 1px solid #edf2fd;
+              width: 30rem;
+
+              img {
+                min-width: 44rem;
+                min-height: 44rem;
+                position: absolute;
+                bottom: -22rem;
+                left: -44rem;
+              }
+            }
+
+            >div:nth-child(2) {
+              position: relative;
+              width: 50%;
+              border-bottom: 1px solid #edf2fd;
+              border-left: 1px solid #edf2fd;
+              display: flex;
+              align-items: end;
+              padding: 93rem 0 12rem 20rem;
+
+              h4 {
+                font-size: 24rem;
+                font-weight: 500;
+                color: #162c5b;
+                line-height: 32rem;
+              }
+
+              span {
+                background: #edf2fd;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+
+                &:nth-child(1) {
+                  width: 9rem;
+                  height: 9rem;
+                  left: -5rem;
+                  bottom: -5rem;
+                }
+
+                &:nth-child(2) {
+                  width: 11rem;
+                  height: 11rem;
+                  top: 0rem;
+                  left: -5.5rem;
+                }
+              }
+            }
+          }
+
+          .second-cl {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+
+            >div {
+              position: relative;
+              width: 50%;
+              border-left: 1px solid #edf2fd;
+              display: flex;
+              padding: 12rem 0 54rem 20rem;
+
+              p {
+                font-size: 16rem;
+                font-weight: 300;
+                color: #576788;
+                line-height: 32rem;
+                text-align: left;
+              }
+            }
+          }
+
+          .three-cl {
+            width: 100%;
+            display: flex;
+
+            >div:nth-child(1) {
+              position: relative;
+              width: 50.1%;
+              border-bottom: 1px solid #edf2fd;
+              border-right: 1px solid #edf2fd;
+              display: flex;
+              align-items: end;
+              padding: 0 0 12rem 0;
+
+              h4 {
+                font-size: 24rem;
+                font-weight: 500;
+                color: #162c5b;
+                line-height: 32rem;
+              }
+
+              span {
+                background: #edf2fd;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                width: 9rem;
+                height: 9rem;
+                right: -5rem;
+                bottom: -5rem;
+              }
+            }
+
+            >div:nth-child(2) {
+              display: flex;
+              align-items: center;
+              position: relative;
+              border-bottom: 1px solid #edf2fd;
+              width: 30rem;
+
+              img {
+                min-width: 44rem;
+                height: 44rem;
+                position: absolute;
+                bottom: -22rem;
+                right: -44rem;
+              }
+            }
+          }
+
+          .four-cl {
+            width: 100%;
+            display: flex;
+
+            >div {
+              position: relative;
+              width: 50.1%;
+              border-right: 1px solid #edf2fd;
+              display: flex;
+              padding: 12rem 26rem 54rem 0;
+
+              p {
+                font-size: 16rem;
+                font-weight: 300;
+                color: #576788;
+                line-height: 32rem;
+                text-align: left;
+              }
+            }
+          }
+
+          .five-cl {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+
+            >div:nth-child(1) {
+              display: flex;
+              align-items: center;
+              position: relative;
+              border-bottom: 1px solid #edf2fd;
+              width: 30rem;
+
+              img {
+                min-width: 44rem;
+                min-height: 44rem;
+                position: absolute;
+                bottom: -22rem;
+                left: -44rem;
+              }
+            }
+
+            >div:nth-child(2) {
+              position: relative;
+              width: 50%;
+              border-bottom: 1px solid #edf2fd;
+              border-left: 1px solid #edf2fd;
+              display: flex;
+              align-items: end;
+              padding: 0 0 12rem 20rem;
+
+              h4 {
+                font-size: 24rem;
+                font-weight: 500;
+                color: #162c5b;
+                line-height: 32rem;
+              }
+
+              span {
+                background: #edf2fd;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+
+                &:nth-child(1) {
+                  width: 9rem;
+                  height: 9rem;
+                  left: -5rem;
+                  bottom: -5rem;
+                }
+
+                &:nth-child(2) {
+                  width: 11rem;
+                  height: 11rem;
+                  top: 0rem;
+                  left: -5.5rem;
+                }
+              }
+            }
+          }
+
+          .six-cl {
+            width: 100%;
+            display: flex;
+
+            >div {
+              position: relative;
+              width: 50.1%;
+              border-right: 1px solid #edf2fd;
+              display: flex;
+              padding: 12rem 26rem 36rem 0;
+
+              span {
+                width: 0;
+                height: 0;
+                border-left: 5.5rem solid transparent;
+                /* 宽度的一半 */
+                border-right: 5.5rem solid transparent;
+                /* 宽度的一半 */
+                border-top: 8rem solid #edf2fd;
+                /* 背景色和高度 */
+                position: absolute;
+                bottom: 0;
+                right: -5.5rem;
+              }
+
+              p {
+                font-size: 16rem;
+                font-weight: 300;
+                color: #576788;
+                line-height: 32rem;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+
+      .workCollapsible.workOpen {
+        height: 2000rem;
+        /* 可根据需要调整展开后的高度 */
+      }
+
+      .work-btn {
+        padding: 0;
+        font-size: 16rem;
+        font-weight: 500;
+        color: white;
+        border: none;
+        border-radius: 6rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 275rem;
+        height: 60rem;
+        border: 1px solid rgba(14, 106, 237, 0.3);
+        border-radius: 6rem;
+        color: #0e6aed;
+        line-height: 60rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 13rem;
+
+
+
+        img {
+          width: 28rem;
+          height: 28rem;
+        }
+
+      }
+
+      .work-rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="work-container">
+    <div class="workCollapsible" id="workCollapsibleSection">
+      <div class="content">
+        <div class="first-cl">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_88.png" alt="">
+          </div>
+          <div>
+            <span></span>
+            <span></span>
+            <h4>Requirement Analysis and Planning</h4>
+          </div>
+        </div>
+        <div class="second-cl">
+          <div>
+            <p>We work closely with you to conduct a detailed requirements analysis to understand your project goals,
+              functional requirements, and technical specifications. Through initial discussions and requirement
+              gathering, we create a project plan and schedule, ensuring all key needs are addressed and setting clear
+              goals for each project phase.</p>
+          </div>
+        </div>
+        <div class="three-cl">
+          <div>
+            <span></span>
+            <h4>Design and Development</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_89.png" alt="">
+          </div>
+        </div>
+        <div class="four-cl">
+          <div>
+            <p>Once requirements are determined, our engineers start the design phase. We use advanced tools and
+              technologies for HDL programming, logic design, and verification. During this process, we maintain regular
+              communication with you to share design progress, technical solutions, and key decisions to ensure that the
+              design solution meets your requirements.</p>
+          </div>
+        </div>
+        <div class="five-cl">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_90.png" alt="">
+          </div>
+          <div>
+            <span></span>
+            <h4>Prototype Verification</h4>
+          </div>
+        </div>
+        <div class="second-cl">
+          <div>
+            <p>After the design phase, we will make a prototype and perform detailed functional verification and
+              performance testing. <br /></br>We will review the prototype with you, gather feedback, and make necessary
+              design
+              adjustments based on test results. This phase ensures the final product meets all functional and
+              performance standards.</p>
+          </div>
+        </div>
+        <div class="three-cl">
+          <div>
+            <span></span>
+            <h4>System Integration and Testing</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_91.png" alt="">
+          </div>
+        </div>
+        <div class="four-cl">
+          <div>
+            <p>We integrate the FPGA design into the system and conduct comprehensive testing, including functionality,
+              performance, and reliability tests.
+              <br /><br />Throughout the process, we collaborate with you to ensure that the system integration goes
+              smoothly, all test results meet expectations, and any issues that arise are resolved.
+            </p>
+          </div>
+        </div>
+        <div class="five-cl">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_92.png" alt="">
+          </div>
+          <div>
+            <span></span>
+            <h4>Production and Delivery</h4>
+          </div>
+        </div>
+        <div class="second-cl">
+          <div>
+            <p>Once design validation and system testing are completed, we move to production. <br /></br>We offer
+              integrated production services, ensuring consistent quality in mass production. We will deliver the
+              product on time and provide necessary technical support to ensure your project progresses smoothly.</p>
+          </div>
+        </div>
+        <div class="three-cl">
+          <div>
+            <span></span>
+            <h4>Continuous Improvement and Feedback</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_93.png" alt="">
+          </div>
+        </div>
+        <div class="six-cl">
+          <div>
+            <span></span>
+            <p>After the project is completed, we will collect your feedback and evaluate the project’s success and
+              areas for improvement.
+              <br /><br /> We use this feedback for ongoing improvements, refining our design processes and
+              service quality to better meet your evolving needs and enhance overall project effectiveness and customer
+              satisfaction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div onclick="toggleButton()" class="work-btn"><span id="workToggleText">Show
+        More</span><img id="workToggleImage" src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_94.png" alt="">
+    </div>
+  </div>
+
+  <script>
+    function toggleButton() {
+      const workToggleText = document.getElementById('workToggleText')
+      const workToggleImage = document.getElementById('workToggleImage')
+      const workCollapsibleSection = document.getElementById('workCollapsibleSection');
+      workCollapsibleSection.classList.toggle('workOpen');
+      if (workToggleText.innerText === 'Show More') {
+        workToggleText.innerText = 'Show Less';
+        workToggleImage.classList.add('work-rotate')
+      } else {
+        workToggleText.innerText = 'Show More';
+        workToggleImage.classList.remove('work-rotate')
+
+      }
+    }
+  </script>
+
+</body>

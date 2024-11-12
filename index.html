@@ -1,0 +1,2360 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <!-- <link rel="stylesheet" href="CSS/多步骤表单终版.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #multiStepFormContact {
+      font-family: "Helvetica", sans-serif;
+      background: #f9f9f9;
+      height: 979rem;
+      width: 100%;
+      position: relative;
+      margin: 0;
+
+      .msf-step {
+        display: none;
+        width: 824rem;
+        margin: 0 auto;
+
+        .error {
+          font-size: 11rem;
+          font-weight: 500;
+          color: #af2c2c;
+          line-height: 13rem;
+          margin-top: 8rem;
+          display: block;
+          position: absolute;
+          margin-left: 9rem;
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+
+          .error-icon {
+            width: 15rem;
+            height: 15rem;
+          }
+        }
+
+        input[type="radio"] {
+          width: 30rem;
+          height: 30rem;
+        }
+
+        input[type="radio"]:focus,
+        input[type="checkbox"]:focus {
+          outline: none;
+        }
+
+        input[type="checkbox"] {
+          width: 26rem;
+          height: 26rem;
+          box-shadow: none !important;
+        }
+
+        /* 隐藏默认的选择箭头 */
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: url("https://www.eipeks.com/wp-content/uploads/2024/09/msf-icon.png") no-repeat right center;
+          background-size: 50rem;
+          padding-right: 30rem;
+          position: relative;
+        }
+
+        .msf-custom-select {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+
+          select {
+            width: 100%;
+          }
+        }
+
+        .msf-custom-select::after {
+          content: "";
+          background: url("https://www.eipeks.com/wp-content/uploads/2024/09/msf-icon.png") no-repeat;
+          background-size: 50rem;
+          position: absolute;
+          right: 6rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50rem;
+          height: 50rem;
+          pointer-events: none;
+          transition: transform 0.3s ease;
+        }
+
+        .msf-custom-select.open::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+
+        select:focus,
+        input:focus {
+          outline: 1px solid #0E6AED;
+          box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+        }
+
+        h2,
+        input,
+        p,
+        select,
+        textarea,
+        ::-webkit-input-placeholder {
+          color: #162c5b;
+        }
+
+        h2 {
+          width: 500rem;
+          font-size: 36rem;
+          font-weight: 700;
+          line-height: 40rem;
+          text-align: center;
+        }
+
+        fieldset {
+          border: none;
+        }
+
+        .msf-item-main {
+          width: 100%;
+
+          input,
+          select,
+          textarea {
+            border: none;
+            background: #ffffff;
+            border-radius: 8rem;
+            box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+          }
+
+          label {
+            font-size: 18rem;
+            line-height: 21rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 12rem;
+            padding-left: 8rem;
+            color: #576788;
+
+            span {
+              color: #ff0101;
+            }
+          }
+
+          .input-bg-cl {
+            width: 824rem;
+            height: 72rem;
+            background: #ffffff;
+            border-radius: 8rem;
+            box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 8rem 0 24rem;
+            gap: 0;
+
+            input {
+              margin: 0;
+            }
+
+            label {
+              font-size: 20rem;
+              font-weight: 700;
+              line-height: 23rem;
+              color: #162C5B;
+              padding: 0;
+              margin: 0 15rem 0 16rem;
+            }
+
+            .input-container {
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.5s ease, visibility 0.5s ease;
+              flex: 1;
+              box-sizing: border-box;
+              border-radius: 5px;
+              height: 56rem;
+
+              textarea {
+                width: 100%;
+                overflow: auto;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                background: #FAFAFA;
+                box-shadow: none;
+                font-size: 13rem;
+                font-weight: 500;
+                line-height: 15rem;
+                outline: none;
+                height: 100%;
+                padding: 13rem 0;
+              }
+
+              ::-webkit-input-placeholder {
+                color: #BBC4D6;
+                /* line-height: 56rem; */
+              }
+            }
+
+
+            .input-container.show {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        .step-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 8rem;
+          position: absolute;
+          bottom: 315rem;
+          width: 100%;
+          left: 0;
+
+          div {
+            width: 48rem;
+            height: 48rem;
+            background: #f9f9f9;
+            border: 1px solid rgba(187, 196, 214, 0.5);
+            border-radius: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            img {
+              width: 18rem;
+              height: 18rem;
+            }
+          }
+
+          button {
+            cursor: pointer;
+            width: 172rem;
+            height: 48rem;
+            background: #0e6aed;
+            border-radius: 8rem;
+            border: none;
+            color: #fff;
+            font-size: 16rem;
+            font-weight: 400;
+            line-height: 19rem;
+          }
+
+          button:hover {
+            background: #162C5B;
+          }
+        }
+      }
+
+      .msf-step.msf-active {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .msf-step-00 {
+        width: 634rem;
+        padding: 96rem 0 0 0;
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+
+          .name_all_cl {
+            width: 100%;
+
+            >div {
+              width: 100%;
+              height: 90rem;
+              position: relative;
+              margin-bottom: -18rem;
+
+              .error {
+                bottom: 0;
+              }
+            }
+          }
+
+          >div {
+
+
+            input {
+              width: 100%;
+              padding-left: 24rem;
+              font-size: 20rem;
+              font-weight: 700;
+              line-height: 23rem;
+              height: 72rem;
+            }
+
+            select {
+              height: 72rem;
+            }
+
+            &:nth-child(1) {
+              div {
+                display: flex;
+                gap: 34rem;
+              }
+            }
+
+            .iti {
+              width: 100%;
+
+              .iti__selected-flag {
+                padding: 0 6rem 0 8rem;
+              }
+
+              .iti__flag {
+                width: 20rem;
+
+                .iti__us {
+                  height: 11rem;
+                }
+              }
+
+              .iti__country-name {
+                margin-right: 6rem !important;
+                font-size: 14rem !important;
+                line-height: 16rem !important;
+                font-weight: 500 !important;
+                color: #545966 !important;
+              }
+            }
+
+            #msf-phone {
+              padding-left: 80rem;
+            }
+          }
+
+        }
+
+        .step-buttons {
+          button:nth-child(1) {
+            background: #0e6aed;
+            width: 124rem;
+            height: 48rem;
+          }
+
+          button:nth-child(1):hover {
+            background: #4E97FF;
+          }
+
+          button:nth-child(2) {
+            background: #162C5B;
+            width: 124rem;
+            height: 48rem;
+          }
+
+          button:nth-child(2):hover {
+            background: #1F3D7D;
+          }
+        }
+      }
+
+      .msf-step-01 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+
+          select {
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            height: 72rem;
+          }
+        }
+
+        p {
+          font-size: 11rem;
+          font-weight: 500;
+          color: #7c8fb3;
+          line-height: 16rem;
+          text-align: center;
+          width: 743rem;
+          margin-top: 68rem;
+        }
+      }
+
+      .msf-step-02 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 56rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+
+          .msf-item-line {
+            display: flex;
+            width: 100%;
+            gap: 36rem;
+
+            >div {
+              width: 100%;
+            }
+          }
+
+          select,
+          input {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 100%;
+          }
+        }
+      }
+
+      .msf-step-03 {
+        width: 960rem;
+        padding: 76rem 0 0 0;
+
+        .custom-file-upload {
+          color: #0E6AED !important;
+          /* 蓝色 */
+          cursor: pointer;
+          text-decoration: underline !important;
+          font-size: 14rem !important;
+          text-decoration: none;
+          font-weight: 500 !important;
+          line-height: 16rem !important;
+          margin-top: 15rem;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+
+          .msf-item-line {
+            display: flex;
+            width: 100%;
+            gap: 36rem;
+
+            >div {
+              width: 100%;
+            }
+          }
+
+          textarea {
+            width: 100%;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding: 24rem;
+            height: 136rem;
+          }
+
+          select,
+          input {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 100%;
+          }
+        }
+      }
+
+      .msf-step-04 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+
+          select {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 100%;
+          }
+        }
+      }
+
+      .msf-step-05 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 23rem 0 5rem 0;
+        }
+
+        p {
+          font-size: 16rem;
+          font-weight: 400;
+          text-align: center;
+          color: #162c5b;
+          line-height: 19rem;
+          margin-bottom: 36rem;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 28rem;
+          width: 100%;
+
+          .msf-custom-select {
+            width: 460rem;
+
+            label {
+              display: none;
+            }
+          }
+
+          .cancel-icon {
+            width: 20rem;
+            height: 20rem;
+            background: url("https://www.eipeks.com/wp-content/uploads/2024/09/drone_75.png") no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
+          }
+
+          .msf-item-list,
+          .msf-selected-list {
+            display: flex;
+            gap: 16rem;
+            flex-wrap: wrap;
+
+            .selected-item {
+              height: 40rem;
+              border-radius: 8rem;
+              font-size: 14rem;
+              font-weight: 500;
+              color: #0e6aed;
+              line-height: 16rem;
+              padding: 0 16rem 0 12rem;
+              display: flex;
+              align-items: center;
+              gap: 4rem;
+              background: rgba(14, 106, 237, 0.04);
+              border: 1rem solid #0e6aed;
+              cursor: pointer;
+
+              img {
+                width: 18rem;
+                height: 18rem;
+              }
+            }
+
+            .item {
+
+              height: 48rem;
+              border-radius: 8rem;
+              font-size: 14rem;
+              font-weight: 500;
+              color: #0e6aed;
+              line-height: 16rem;
+              padding: 0 16rem 0 12rem;
+              display: flex;
+              align-items: center;
+              gap: 4rem;
+              background: #f9f9f9;
+              border: 1rem solid #ecedf0;
+              cursor: pointer;
+
+              img {
+                width: 18rem;
+                height: 18rem;
+              }
+            }
+
+            .disabled-item {
+              background: #f9f9f9;
+              border: 1px solid #ecedf0;
+              color: #bbc4d6;
+            }
+
+            .item:hover {
+              background: rgba(14, 106, 237, 0.04);
+            }
+          }
+
+          select {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 460rem;
+          }
+        }
+
+        .step-buttons {
+          position: static;
+          margin-top: 68rem;
+        }
+      }
+
+      .msf-step-06 {
+        width: 606rem;
+        padding: 76rem 0 0 0;
+
+        h2 {
+          width: 100%;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 84rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          gap: 36rem;
+          width: 100%;
+          padding: 0 21rem;
+
+          select {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 460rem;
+          }
+
+          >div {
+            width: 100%;
+            height: 72rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 6rem 0 24rem;
+            gap: 16rem !important;
+
+            input {
+              font-size: 20rem;
+              font-weight: 700;
+              line-height: 23rem;
+              padding-left: 24rem;
+              box-shadow: none;
+              margin: 0;
+            }
+
+            label {
+              font-size: 20rem;
+              font-weight: 600;
+              line-height: 23rem;
+              color: #162c5b;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              align-items: center;
+              gap: 16rem;
+
+              span {
+                line-height: 1;
+                color: #162C5B;
+              }
+            }
+          }
+        }
+
+        p {
+          font-size: 14rem;
+          font-weight: 500;
+          color: #7c8fb3;
+          line-height: 16rem;
+          margin-top: 68rem;
+          text-align: center;
+          width: 734rem;
+        }
+      }
+
+      .msf-step-07 {
+        width: 896rem;
+        padding: 76rem 0 0 0;
+
+        h2 {
+          width: 535rem;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 8rem 0;
+        }
+
+        p {
+          font-size: 16rem;
+          font-weight: 700;
+          text-align: center;
+          line-height: 19rem;
+          margin-bottom: 36rem;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+          padding: 0 21rem;
+
+          .msf-item-line {
+            display: flex;
+            gap: 24rem;
+
+            >div {
+              width: 100%;
+              height: 72rem;
+              background: #ffffff;
+              border-radius: 8rem;
+              box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+              display: flex;
+              align-items: center;
+              padding: 0 6rem 0 24rem;
+
+              input {
+                font-size: 20rem;
+                font-weight: 700;
+                line-height: 23rem;
+                padding-left: 24rem;
+                box-shadow: none;
+                margin: 0 16rem 0 0;
+                height: 26rem;
+                width: 26rem;
+              }
+
+              label {
+                font-size: 20rem;
+                font-weight: 700;
+                line-height: 23rem;
+                color: #162c5b;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                padding: 0;
+              }
+            }
+          }
+        }
+
+        .step-buttons {
+          bottom: 236rem;
+        }
+      }
+
+      .msf-step-08 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        h2 {
+          width: 535rem;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+          padding: 0 21rem;
+
+          select {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+          }
+
+          .msf-item-line {
+            display: flex;
+            flex-direction: column;
+
+            >div {
+              width: 100%;
+              height: 72rem;
+              display: flex;
+              align-items: center;
+              gap: 24rem;
+
+              >div {
+                width: 219rem;
+                background: #ffffff;
+                border-radius: 8rem;
+                box-shadow: 0px 8px 12px 0px rgba(0, 57, 138, 0.05);
+                padding: 0 6rem 0 24rem;
+                height: 72rem;
+                display: flex;
+                align-items: center;
+                gap: 16rem;
+
+                input {
+                  font-size: 20rem;
+                  font-weight: 700;
+                  line-height: 23rem;
+                  padding-left: 24rem;
+                  box-shadow: none;
+                  margin: 0;
+                }
+
+                label {
+                  font-size: 20rem;
+                  font-weight: 700;
+                  line-height: 23rem;
+                  color: #162c5b;
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  align-items: center;
+                  gap: 16rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .msf-step-09 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        h2 {
+          width: 512rem;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+
+          select {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+          }
+
+          .msf-item-line {
+            display: flex;
+            width: 100%;
+            gap: 24rem;
+
+            >div:nth-child(1) {
+              width: 100%;
+              background: #ffffff;
+              border-radius: 8rem;
+              box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+              height: 72rem;
+              display: flex;
+              align-items: center;
+              gap: 16rem;
+              padding-left: 24rem;
+
+              input {
+                font-size: 20rem;
+                font-weight: 700;
+                line-height: 23rem;
+                padding-left: 24rem;
+                box-shadow: none;
+                margin: 0;
+
+              }
+
+              label {
+                font-size: 20rem;
+                font-weight: 700;
+                line-height: 23rem;
+                color: #162c5b;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                gap: 16rem;
+              }
+            }
+
+            .msf-please-specify {
+              width: 200rem;
+              min-width: 200rem;
+              box-shadow: 0 8rem 12rem 0 rgba(0, 57, 138, 0.05);
+              height: 72rem;
+              background: #ffffff;
+              display: flex;
+              justify-content: center;
+              border-radius: 8rem;
+
+              input {
+                width: 120rem;
+                font-size: 16rem;
+                font-weight: 500;
+                color: #FF6600;
+                line-height: 19rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                height: 72rem;
+                box-shadow: none;
+                outline: none;
+                text-align: center;
+              }
+
+              ::-webkit-input-placeholder {
+                color: #BBC4D6;
+                padding: 0;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .step-buttons {
+          bottom: 236rem;
+        }
+      }
+
+      .msf-step-10 {
+        width: 824rem;
+        padding: 76rem 0 0 0;
+
+        h2 {
+          width: 512rem;
+        }
+
+        >span {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 19rem;
+          text-align: center;
+          color: #0e6aed;
+          margin: 20rem 0 36rem 0;
+        }
+
+        .msf-item-main {
+          display: flex;
+          flex-direction: column;
+          gap: 36rem;
+          width: 100%;
+
+          input {
+            height: 72rem;
+            font-size: 20rem;
+            font-weight: 700;
+            line-height: 23rem;
+            padding-left: 24rem;
+            width: 100%;
+          }
+        }
+
+      }
+    }
+
+    @media (max-width: 767px) {
+      .iti {
+        width: 100%;
+
+        .iti__selected-flag {
+          padding: 0 6rem 0 8rem;
+        }
+
+        .iti__flag {
+          width: 20rem;
+
+          .iti__us {
+            height: 11rem;
+          }
+        }
+
+        .iti__country-name {
+          margin-right: 6rem !important;
+          font-size: 14rem !important;
+          line-height: 16rem !important;
+          font-weight: 400 !important;
+          color: #545966 !important;
+        }
+      }
+
+      #multiStepFormContact {
+        height: 756rem;
+        min-height: calc(100vh - 60rem);
+        padding: 0;
+        width: 100vw;
+
+        .msf-step {
+          width: 100%;
+
+          .error {
+            margin-top: 4rem;
+          }
+
+          input[type="radio"] {
+            width: 18rem !important;
+            min-width: 18rem !important;
+            height: 18rem;
+          }
+
+          input[type="checkbox"] {
+            min-width: 18rem !important;
+            height: 18rem !important;
+          }
+
+          input[type="checkbox"]:focus {
+            outline: none;
+          }
+
+          h2 {
+            width: 100%;
+            font-size: 20rem;
+            line-height: 24rem;
+          }
+
+          .msf-item-main {
+            width: 100%;
+
+            label {
+              font-size: 12rem;
+              line-height: 14rem;
+              margin-bottom: 8rem;
+            }
+
+            .input-bg-cl {
+              width: 100%;
+              height: 52rem;
+              padding: 0 4rem 0 16rem;
+
+              label {
+                font-size: 16rem;
+                line-height: 19rem;
+                margin: 0 8rem;
+              }
+
+              .input-container {
+                border-radius: 0;
+                height: 44rem;
+
+                textarea {
+                  padding: 13rem 0;
+                  border-radius: 8rem;
+                }
+              }
+            }
+          }
+
+          .step-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8rem;
+            position: absolute;
+            bottom: 120rem;
+            width: 100%;
+            left: 0;
+
+            >div:nth-child(1) {
+              height: 44rem;
+              width: 48rem;
+              border-radius: 8rem;
+            }
+
+            button {
+              height: 44rem;
+              font-size: 14rem;
+              line-height: 16rem;
+            }
+          }
+        }
+
+        .msf-step-00 {
+          width: 100%;
+          padding: 79rem 16rem 0 16rem;
+
+
+
+          .msf-item-main {
+            gap: 28rem;
+
+            >div {
+              input {
+                padding-left: 16rem;
+                font-size: 16rem;
+                line-height: 19rem;
+                height: 52rem;
+              }
+
+              select {
+                height: 52rem;
+              }
+
+              &:nth-child(1) {
+                div {
+                  gap: 12rem;
+                }
+              }
+
+              #msf-phone {
+                padding-left: 72rem;
+              }
+            }
+
+            .name_all_cl {
+              width: 100%;
+
+              >div {
+                width: 100%;
+                height: 75rem;
+                position: relative;
+                margin-bottom: -18rem;
+
+                .error {
+                  bottom: 0;
+                }
+              }
+            }
+          }
+
+          .step-buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 16rem;
+
+            >div:nth-child(1) {
+              display: none;
+            }
+
+            button {
+              width: 172rem !important;
+              font-size: 16rem;
+              font-weight: 400;
+              line-height: 19rem;
+              height: 44rem !important;
+            }
+          }
+        }
+
+        .msf-step-01 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            select {
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+              height: 52rem;
+            }
+
+          }
+
+
+          p {
+            width: 100%;
+            margin-top: 64rem;
+          }
+        }
+
+        .msf-step-02 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 32rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            .msf-item-line {
+              gap: 28rem;
+              flex-direction: column;
+            }
+
+            select,
+            input {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+          }
+
+        }
+
+        .msf-step-03 {
+          width: 100%;
+          padding: 50rem 16rem 0 16rem;
+
+          .custom-file-upload {
+            margin-top: 12rem;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 30rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            .msf-item-line {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              gap: 28rem;
+            }
+
+            textarea {
+              font-size: 16rem;
+              line-height: 19rem;
+              padding: 16rem;
+              height: 92rem;
+            }
+
+            select,
+            input {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+          }
+
+        }
+
+        .msf-step-04 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          h2 {
+            width: 307rem;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            select {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+          }
+
+        }
+
+        .msf-step-05 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            text-align: center;
+            margin: 12rem 0 4rem 0;
+          }
+
+          p {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin-bottom: 20rem;
+          }
+
+          .msf-item-main {
+            gap: 12rem;
+
+            .msf-custom-select {
+              width: 100%;
+
+              label {
+                display: block;
+              }
+            }
+
+            .cancel-icon {
+              width: 16rem;
+              height: 16rem;
+            }
+
+            .msf-selected-list {
+              /* margin-bottom: 16rem; */
+            }
+
+            .msf-item-list {
+              margin-top: 4rem;
+            }
+
+            .msf-item-list,
+            .msf-selected-list {
+              gap: 8rem;
+
+              .selected-item {
+                height: 36rem;
+                font-size: 14rem;
+                line-height: 16rem;
+                padding: 0 16rem 0 16rem;
+                gap: 4rem;
+
+                img {
+                  width: 20rem;
+                  height: 20rem;
+                }
+              }
+
+              .item {
+                height: 36rem;
+                font-size: 14rem;
+                line-height: 16rem;
+                gap: 4rem;
+              }
+            }
+
+            select {
+              height: 52rem;
+              font-size: 16rem;
+              font-weight: 700;
+              line-height: 19rem;
+              padding-left: 16rem;
+              width: 100%;
+            }
+          }
+
+        }
+
+        .msf-step-06 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+            flex-direction: column;
+            padding: 0;
+
+            select {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+              width: 100%;
+            }
+
+            >div {
+              width: 100%;
+              height: 52rem;
+              border-radius: 8rem;
+              padding: 0 6rem 0 16rem;
+              gap: 8rem !important;
+
+              input {
+                font-size: 16rem;
+                line-height: 19rem;
+                padding-left: 16rem;
+              }
+
+              label {
+                font-size: 16rem;
+                line-height: 19rem;
+                gap: 8rem;
+              }
+            }
+          }
+
+          p {
+            font-size: 11rem;
+            line-height: 13rem;
+            margin-top: 64rem;
+            width: 100%;
+          }
+        }
+
+        .msf-step-07 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          h2 {
+            width: 100%;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 4rem 0;
+          }
+
+          p {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin-bottom: 20rem;
+          }
+
+          .msf-item-main {
+            gap: 12rem;
+            width: 100%;
+            padding: 0;
+
+            .msf-item-line {
+              display: flex;
+              gap: 12rem;
+              flex-wrap: wrap;
+
+              >div {
+                height: 52rem;
+                width: auto;
+                padding: 0 15rem 0 15rem;
+
+                input {
+                  font-size: 16rem;
+                  line-height: 19rem;
+                  padding-left: 0;
+                  margin: 0 8rem 0 0;
+                  height: 18rem !important;
+                  width: 18rem !important;
+                }
+
+                label {
+                  font-size: 15rem;
+                  line-height: 20rem;
+                }
+              }
+            }
+          }
+
+          .step-buttons {
+            bottom: 72rem;
+          }
+        }
+
+        .msf-step-08 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          h2 {
+            width: 100%;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+            padding: 0;
+
+            select {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+
+            .msf-item-line {
+
+              >div {
+                height: 52rem;
+                gap: 16rem;
+
+                >div {
+                  width: 139rem;
+                  padding: 0 6rem 0 16rem;
+                  height: 52rem;
+                  gap: 8rem;
+
+                  input {
+                    font-size: 16rem;
+                    line-height: 19rem;
+                    padding-left: 16rem;
+                  }
+
+                  label {
+                    font-size: 16rem;
+                    line-height: 19rem;
+                    gap: 8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .msf-step-09 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          h2 {
+            width: 100%;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            select {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+
+            .msf-item-line {
+              gap: 4rem;
+              flex-direction: column;
+
+              >div:nth-child(1) {
+                height: 52rem;
+                gap: 8rem;
+                padding-left: 16rem;
+                padding-right: 12rem;
+                padding: 12rem 12rem 12rem 16rem;
+
+                input {
+                  font-size: 16rem;
+                  line-height: 19rem;
+                  padding-left: 16rem;
+
+                }
+
+                label {
+                  font-size: 16rem;
+                  line-height: 19rem;
+                  gap: 8rem;
+                }
+              }
+
+              .msf-please-specify {
+                width: 100%;
+                min-width: 100;
+                height: 44rem;
+                box-shadow: none;
+
+                input {
+                  width: 100%;
+                  height: 44rem;
+                  color: #FF6600;
+                }
+
+                ::-webkit-input-placeholder {
+                  color: #BBC4D6;
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+
+        .msf-step-10 {
+          width: 100%;
+          padding: 63rem 16rem 0 16rem;
+
+          h2 {
+            width: 100%;
+          }
+
+          >span {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin: 12rem 0 40rem 0;
+          }
+
+          .msf-item-main {
+            gap: 28rem;
+
+            input {
+              height: 52rem;
+              font-size: 16rem;
+              line-height: 19rem;
+              padding-left: 16rem;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form id="multiStepFormContact">
+    <div class="msf-step msf-step-00 msf-active">
+      <div class="msf-item-main">
+        <div class="msf-item-line">
+          <label for="name">Name<span>*</span></label>
+          <div class="name_all_cl">
+            <div>
+              <input type="text" name="firstName" placeholder="First Name" required>
+              <span id="firstNameError" class="error"></span>
+            </div>
+            <div>
+              <input type="text" name="lastName" placeholder="Last Name" required>
+              <span id="lastNameError" class="error"></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="email">Email<span>*</span></label>
+          <input type="text" id="email" name="email" placeholder="Email address">
+          <span id="emailError" class="error"></span>
+        </div>
+        <div class="custom_msf_phone_ls">
+          <label for="phone">Phone<span>*</span></label>
+          <input name="phone" id="msf-phone" type="tel">
+          <span id="phoneError" class="error"></span>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <!-- <button type="button" onclick="nextStep('submit')">Submit</button> -->
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 1-->
+    <div class="msf-step msf-step-01 ">
+      <h2>What industry does your company belong to?</h2>
+      <span>1 / 10</span>
+      <div class="msf-item-main">
+        <div class="msf-custom-select" id="msf-custom-select">
+          <select name="industrySelect">
+            <option value="Select">Select</option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Retail">Retail</option>
+            <option value="Wholesale">Wholesale</option>
+            <option value="Service">Service</option>
+            <option value="Technology">Technology</option>
+          </select>
+        </div>
+        <div class="input-bg-cl">
+          <input type="checkbox" id="other-input1">
+          <label for="other-input1">Other</label>
+          <div class="input-container">
+            <textarea rows="1" name="industryOther" placeholder="please specify"></textarea>
+          </div>
+        </div>
+      </div>
+      <p>In accordance with the laws of the country and region where EIPEKS is located, we provide a default
+        non-disclosure agreement (NDA). Once you submit your product information, we assume you have agreed to and
+        signed the NDA, ensuring your information is strictly protected. We are committed to upholding the terms of
+        the
+        agreement and safeguarding your privacy and security. Please refer to our <a
+          href="https://www.eipeks.com/nda/">NDA</a> and <a href="https://www.eipeks.com/privacy-policy/">privacy
+          policy</a>.</p>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 2 -->
+    <div class="msf-step msf-step-02 ">
+      <h2>Company Information</h2>
+      <span>2 / 10</span>
+      <div class="msf-item-main">
+        <div class="msf-item-line">
+          <div>
+            <label>Company Name: </label>
+            <input type="text" name="companyName" placeholder="Company Name">
+          </div>
+          <div>
+            <label>Company Employees Size :</label>
+            <div class="msf-custom-select">
+              <select name="companyEmployeesSize">
+                <option value="Select">Select</option>
+                <option value="1-10">1-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="201-500">201-500</option>
+                <option value="Over 500">Over 500</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label>Company Website: </label>
+          <input type="text" name="companyWebsite" placeholder="Company Website">
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 3 -->
+    <div class="msf-step msf-step-03 ">
+      <h2>Which product would you like to start with?</h2>
+      <span>3 / 10</span>
+      <div class="msf-item-main">
+        <div>
+          <label>Please describe the product you need to develop: </label>
+          <textarea name="describeProduct" rows="10"
+            placeholder="Describe Your Product, Starting From Any Aspect You Prefer."></textarea>
+        </div>
+        <div class="msf-item-line">
+          <div>
+            <label>Do you have any reference products? </label>
+            <input type="text" name="referenceProducts" placeholder="Reference Product Link">
+          </div>
+          <div>
+            <label for="card-number">Do you have detailed attachments for the project?</label>
+            <div class="msf-custom-select">
+              <select name="projectAttachments" id="projectAttachments">
+                <option value="Select">Select</option>
+                <option value="有">Yes, will provide later</option>
+                <option value="没有">No</option>
+              </select>
+            </div>
+            <input type="file" id="attachment" name="file_url" style="display: none;">
+            <!-- 自定义文本样式按钮 -->
+            <label for="file-upload" id="customFileUpload" class="custom-file-upload" style="display: none;">
+              Upload File
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 4 项目阶段-->
+    <div class="msf-step msf-step-04 ">
+      <h2>What stage is your project currently in?</h2>
+      <span>4 / 10</span>
+      <div class="msf-item-main">
+        <div class="msf-custom-select">
+          <select name="projectStage">
+            <option value="Select">Select</option>
+            <option value="Concept Stage">Concept Stage</option>
+            <option value="Design Stage">Design Phase</option>
+            <option value="Prototype Phase">Prototype Phase</option>
+            <option value="Mass production preparation stage">Mass production preparation stage</option>
+          </select>
+        </div>
+        <div class="input-bg-cl">
+          <input type="checkbox" id="other-input2">
+          <label for="other-input2">Other</label>
+          <div class="input-container">
+            <textarea rows="1" name="projectStageOther" placeholder="please specify"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 5 具体任务-->
+    <div class="msf-step msf-step-05 ">
+      <h2>Do you have specific tasks that you would like us to complete?</h2>
+      <span>5 / 10</span>
+      <p> (Multiple choices are allowed)</p>
+      <div class="msf-item-main">
+        <div class="input-bg-cl">
+          <input type="checkbox">
+          <label for="other-input2">Other</label>
+          <div class="input-container">
+            <textarea rows="1" name="projectStageOther" placeholder="please specify"></textarea>
+          </div>
+        </div>
+        <div id="msf-selected-list" class="msf-selected-list"></div>
+        <div class="msf-custom-select">
+          <label>Project Phases:</label>
+          <select id="msf-category-select" name="specific_task">
+            <option value="designPhase">Design Phase</option>
+            <option value="prototypePhase">Prototype Phase</option>
+            <option value="massProductionPreparationStage">Mass Production Preparation Stage</option>
+          </select>
+        </div>
+        <div class="msf-item-list" id="msf-item-list"></div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 6 -->
+    <div class="msf-step msf-step-06 ">
+      <h2>Can you accept development?</h2>
+      <span>6 / 10</span>
+      <div class="msf-item-main">
+        <div>
+          <label><input type="radio" name="accept_development" value="是"><span>Yes</span></label>
+        </div>
+        <div>
+          <label> <input type="radio" name="accept_development" value="否"> <span>No</span></label>
+        </div>
+      </div>
+      <p>The project budget typically starts at $20,000 and may increase depending on the complexity of the design
+        requirements. The time to reach the manufacturing stage can vary from 3 to 18 months, depending on the
+        complexity, your product, and your specific needs for our services.</p>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 7 -->
+    <div class="msf-step msf-step-07 ">
+      <h2>What production materials can you provide?</h2>
+      <span>7 / 10</span>
+      <p> (Multiple Choices)</p>
+      <div class="msf-item-main">
+        <div class="msf-item-line">
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="Sketches" />Sketches</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="specific_material" value="2D Drawings" />2D Drawings</label>
+          </div>
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="3D Models" />3D Models</label>
+          </div>
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="Renderings" />Renderings</label>
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="Bill of Materials (BOM)" />Bill of
+              Materials <br /> (BOM)</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="specific_material" value="Test Reports" />Test Reports</label>
+          </div>
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="Prototype Samples" />Prototype
+              Samples</label>
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div>
+            <label> <input type="checkbox" name="specific_material"
+                value="Technical Specification Documents" />Technical Specification
+              Documents</label>
+          </div>
+          <div>
+            <label> <input type="checkbox" name="specific_material" value="Complete Production Files" />Complete
+              Production
+              Files</label>
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div class="input-bg-cl">
+            <input type="checkbox" id="other-input3">
+            <label for="other-input3" style="margin-right: 12rem;">Other</label>
+            <div class="input-container">
+              <textarea rows="1" name="specific_material_ohter" placeholder="please specify"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 8 -->
+    <div class="msf-step msf-step-08 ">
+      <h2>How long a development cycle can you accept?</h2>
+      <span>8 / 10</span>
+      <div class="msf-item-main">
+        <div class="msf-custom-select">
+          <select name="development_cycle_select">
+            <option value="Select">Select</option>
+            <option value="1~3 months">1~3 months</option>
+            <option value="3~6 months">3~6 months</option>
+            <option value="6~12 months">6~12 months</option>
+            <option value="Over 1 year">Over 1 year</option>
+          </select>
+        </div>
+        <div class="msf-item-line">
+          <label>Do you need software development?</label>
+          <div>
+            <div>
+              <label><input type="radio" name="need_software_development" value="是" />Yes</label>
+            </div>
+            <div>
+              <label><input type="radio" name="need_software_development" value="否" />No</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 9 -->
+    <div class="msf-step msf-step-09 ">
+      <h2>Have you conducted market research?</h2>
+      <span>9 / 10</span>
+      <div class="msf-item-main">
+        <div class="msf-item-line">
+          <div>
+            <label><input type="radio" name="market_research" value="Market research completed, intended price" />Market
+              research completed,
+              intended price</label>
+          </div>
+          <div class="msf-please-specify">
+            <input type="text" name="market_research_price" id="market_research_price" placeholder="Please specify">
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div>
+            <label> <input type="radio" name="market_research" value="Market
+              research completed, pricing not yet" />Market
+              research completed, pricing not yet
+              determinede</label>
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div>
+            <label> <input type="radio" name="market_research" value="Market research not conducted" />Market
+              research not conducted</label>
+          </div>
+        </div>
+        <div class="msf-item-line">
+          <div class="input-bg-cl">
+            <input type="checkbox" id="other-input4">
+            <label for="other-input4">Other</label>
+            <div class="input-container">
+              <textarea rows="1" name="market_research_other" placeholder="please specify"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="nextStep()">Next Step</button>
+      </div>
+    </div>
+    <!-- Step 10 -->
+    <div class="msf-step msf-step-10 ">
+      <h2>What is your target MOQ (Minimum Order Quantity)?</h2>
+      <span>10 / 10</span>
+      <div class="msf-item-main">
+        <div>
+          <label for="MOQ">MOQ (Minimum Order Quantity) <span>*</span></label>
+          <input type="text" name="order_quantity" placeholder="Target Quantity (Required)">
+          <span id="MOQError" class="error"></span>
+        </div>
+        <div>
+          <label>What is your budget for this project? </label>
+          <input type="text" name="budget" placeholder="Budget Amount">
+        </div>
+      </div>
+      <div class="step-buttons">
+        <div onclick="prevStep()"><img src="https://www.eipeks.com/wp-content/uploads/2024/08/conatct-100.png" alt="">
+        </div>
+        <button type="button" onclick="handleSubmit()">Submit</button>
+      </div>
+    </div>
+  </form>
+  <div id="formMessage"></div>
+
+  <script>
+    // 监听步骤九的点击输入事件
+    document.querySelectorAll('input[name="market_research"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        const priceInput = document.getElementById('market_research_price');
+
+        if (this.value === "Market research completed, intended price") {
+          priceInput.disabled = false;
+          setTimeout(() => {
+            priceInput.focus();
+          }, 50);
+        } else {
+          priceInput.disabled = true;
+          priceInput.value = '';  // 清空输入框
+        }
+      });
+    });
+
+    //点击下一步
+    function nextStep(val) {
+      const form = document.getElementById('multiStepFormContact');
+      const formData = Object.fromEntries(new FormData(form));
+      const errorMessage = '<img src="https://www.eipeks.com/wp-content/uploads/2024/10/error-icon.png" class="error-icon" alt="Error Icon"> This field is required'
+      console.log(formData);
+      const emailError = document.getElementById('emailError');
+      const firstNameError = document.getElementById('firstNameError');
+      const lastNameError = document.getElementById('lastNameError');
+      const phoneError = document.getElementById('phoneError');
+      console.log(currentStep)
+      if (currentStep === 0) {
+        if (!formData.email) {
+          emailError.innerHTML = errorMessage
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+          emailError.innerHTML = '<img src="https://www.eipeks.com/wp-content/uploads/2024/10/error-icon.png" class="error-icon" alt="Error Icon"> Please specify a valid emai address';
+        } else {
+          emailError.textContent = '';
+        }
+        if (!formData.firstName) {
+          firstNameError.innerHTML = errorMessage
+        } else {
+          firstNameError.textContent = '';
+        }
+        if (!formData.lastName) {
+          lastNameError.innerHTML = errorMessage
+        } else {
+          lastNameError.textContent = '';
+        }
+        if (!formData.phone) {
+          phoneError.innerHTML = errorMessage;
+        } else {
+          phoneError.textContent = '';
+        }
+        if (!emailError.textContent && !firstNameError.textContent && !lastNameError.textContent && !phoneError.textContent) {
+          if (val === 'submit') {
+            if (confirm("Are you sure you want to submit? After submitting, you won't be able to edit your custom product request.")) {
+              handleBasicInfoSubmit();
+            }
+            return
+          }
+          if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+      } else {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      }
+    }
+
+
+    // 其他Other类型输入框显示事件并获取焦点
+    document.body.addEventListener('change', function (event) {
+      if (event.target.matches('input[type="checkbox"]')) {
+        const container = event.target.closest('.input-bg-cl')?.querySelector('.input-container');
+        const inputField = container?.querySelector('textarea');
+        // 如果未显示，则显示并获取焦点
+        if (container && inputField) {
+          if (event.target.checked) {
+            // 显示并获取焦点
+            container.classList.add('show');
+            setTimeout(() => {
+              inputField.focus();
+            }, 50);
+          } else {
+            // 隐藏并清除内容
+            container.classList.remove('show');
+            inputField.value = '';
+          }
+        }
+      }
+    });
+
+    // 获取上传按钮和文本链接
+    const fileInput = document.getElementById('attachment');
+    const customUploadLabel = document.querySelector('.custom-file-upload');
+    // 监听文本链接的点击事件，触发文件上传
+    customUploadLabel.addEventListener('click', function () {
+      fileInput.click();
+    });
+    // 监听文件上传后的事件，替换文本
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        // 获取文件名
+        const fileName = fileInput.files[0].name;
+
+        // 替换label文本为文件名
+        customUploadLabel.textContent = fileName;
+      }
+    });
+    // 获取select和file input元素
+    const projectAttachmentsSelect = document.getElementById('projectAttachments');
+    const fileUploadInput = document.getElementById('customFileUpload');
+
+    // 添加事件监听器，当select的值发生变化时触发
+    projectAttachmentsSelect.addEventListener('change', function () {
+      // 检查选择的值是否为 'Yes, will provide later'
+      if (projectAttachmentsSelect.value === '有') {
+        // 显示文件上传按钮
+        fileUploadInput.style.display = 'block';
+      } else {
+        // 隐藏文件上传按钮
+        fileUploadInput.style.display = 'none';
+      }
+    });
+
+    // 提交表单
+    function handleSubmit() {
+      const form = document.getElementById('multiStepFormContact');
+      const formValidData = Object.fromEntries(new FormData(form));
+      const MOQError = document.getElementById('MOQError');
+      MOQError.textContent = '';
+      if (!formValidData.order_quantity) {
+        MOQError.innerHTML = '<img src="https://www.eipeks.com/wp-content/uploads/2024/10/error-icon.png" class="error-icon" alt="Error Icon"> This field is required';
+      } else {
+        handleBasicInfoSubmit()
+      }
+    }
+    // 基本信息表单提交事件
+    function handleBasicInfoSubmit() {
+      console.log('Submitting form...');
+      const form = document.getElementById('multiStepFormContact');
+      const formData = new FormData(form);
+      // 添加 name 字段到 formData
+      formData.append('name', `${formData.get('firstName')} ${formData.get('lastName')}`);
+      formData.append('file_url', document.getElementById('attachment').files[0]);
+
+      // 将Set转换为数组
+      const array = Array.from(selectedItems);
+
+      // 包裹每个元素并用【】表示
+      const wrappedArray = array.map(item => `【${item}】`);
+
+      let resultString = '';
+
+      // 判断数组长度，并根据长度生成更美观的字符串
+      if (wrappedArray.length === 0) {
+        resultString = '';  // 空集合返回空字符串
+      } else if (wrappedArray.length === 1) {
+        resultString = wrappedArray[0];  // 单个元素，直接返回
+      } else if (wrappedArray.length === 2) {
+        resultString = wrappedArray.join(",");  // 两个元素，使用 "and" 连接
+      } else {
+        // 三个及以上元素，最后一个元素前加 "and"
+        resultString = wrappedArray.slice(0, -1).join(",") + "," + wrappedArray[wrappedArray.length - 1];
+      }
+      formData.append('specific_task_list', resultString);
+      formData.append('action', 'handle_custom_form'); // 添加action参数
+      fetch('/wp-admin/admin-ajax.php', {
+        method: 'POST',
+        body: formData
+      }).then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // alert('Form submitted successfully!');
+            window.location.href = 'https://www.eipeks.com/thank-you/';
+          } else {
+            alert('Form submission failed.');
+          }
+        }).catch(error => {
+          console.error('Error:', error);
+        });
+    };
+
+    const msfPhaseData = {
+      designPhase: ['Product Design', 'PCB Development & Manufacturing', 'Software Development'],
+      prototypePhase: ['Prototyping', 'Assembly & Testing'],
+      massProductionPreparationStage: ['Finished product manufacturing', 'Production process optimization', 'Packaging design']
+    };
+
+    const categorySelect = document.getElementById('msf-category-select');
+    const itemList = document.getElementById('msf-item-list');
+    const selectedList = document.getElementById('msf-selected-list');
+
+    let selectedItems = new Set();
+    function updateItemList(category) {
+      itemList.innerHTML = '';
+      if (category && msfPhaseData[category]) {
+        msfPhaseData[category].forEach(item => {
+          const div = document.createElement('div');
+          div.textContent = item;
+          div.className = selectedItems.has(item) ? 'item disabled-item' : 'item';
+          div.addEventListener('click', () => {
+            if (!selectedItems.has(item)) {
+              addItem(item);
+            }
+          });
+
+          // Add image before item text
+          const img = document.createElement('img');
+          if (div.className.includes('disabled-item')) {
+            img.src = 'https://www.eipeks.com/wp-content/uploads/2024/09/drone_76-1.png';
+
+          } else {
+            img.src = 'https://www.eipeks.com/wp-content/uploads/2024/09/drone_74.png';
+          }
+          div.prepend(img);
+
+          itemList.appendChild(div);
+        });
+
+      }
+
+    }
+    function addItem(item) {
+      if (selectedItems.has(item)) {
+        return;
+      }
+      selectedItems.add(item);
+      const div = document.createElement('div');
+      div.textContent = item;
+      div.className = 'selected-item';
+      const cancelIcon = document.createElement('span');
+      cancelIcon.className = 'cancel-icon';
+      cancelIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        removeItem(item);
+      });
+      div.appendChild(cancelIcon);
+      selectedList.appendChild(div);
+      updateItemList(categorySelect.value);
+    }
+    categorySelect.addEventListener('change', (event) => {
+      const category = event.target.value;
+      updateItemList(category);
+    })
+    window.onload = function () {
+      updateItemList('designPhase');
+    };
+    function removeItem(item) {
+      selectedItems.delete(item);
+      const items = Array.from(selectedList.children);
+      items.forEach(child => {
+        if (child.textContent.includes(item)) {
+          selectedList.removeChild(child);
+        }
+      });
+
+      updateItemList(categorySelect.value);
+    }
+
+    var inputs = document.querySelector("#msf-phone");
+    var itis = window.intlTelInput(inputs, {
+      initialCountry: "us",
+      nationalMode: false, // 设置为 false 来显示区域号
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+    itis.setNumber("+1 ");
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".msf-step");
+
+    function showStep(step) {
+      steps.forEach((el, index) => {
+        el.classList.toggle("msf-active", index === step);
+      });
+    }
+
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+  </script>
+</body>

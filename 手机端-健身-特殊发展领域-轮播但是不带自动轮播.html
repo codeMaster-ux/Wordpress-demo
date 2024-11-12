@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+
+  <style>
+    .sourcingSpecial_carousel {
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
+      font-family: "Outfit", sans-serif;
+      height: 224rem;
+      position: relative;
+
+      /* Firefox */
+      .sourcingSpecial_carousel_container::-webkit-scrollbar {
+        display: none;
+        /* Safari 和 Chrome */
+      }
+
+      .sourcingSpecial_carousel_container {
+        display: flex;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overflow: auto;
+        /* 或者 overflow: scroll; */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+        .sourcingSpecial_carousel_item {
+          width: 100%;
+          flex: 0 0 auto;
+          padding: 16rem 20rem;
+          margin-right: 8rem;
+          border-radius: 10rem;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          background: #fff;
+          border-radius: 10rem;
+
+          .aline {
+            width: 20rem;
+            height: 2rem;
+            background: #ff6600;
+            margin: 8rem 0 12rem 0;
+          }
+
+          h4 {
+            font-size: 15rem;
+            line-height: 18rem;
+            font-weight: 500;
+            color: #111;
+          }
+
+          p {
+            font-size: 12rem;
+            line-height: 14rem;
+            margin-top: 8rem;
+            font-weight: 300;
+            color: #333;
+
+            span {
+              font-weight: 500;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .sourcingSpecial_carousel_dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+
+        .sourcingSpecial_dot {
+          height: 6rem;
+          width: 6rem;
+          margin: 0 2rem;
+          background-color: rgba(255, 255, 255, 0.40);
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease, transform 0.6s ease;
+        }
+
+        .sourcingSpecial_dot.sourcingSpecial_active {
+          background-color: #fff;
+          transform: scale(1.5);
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sourcingSpecial_carousel">
+    <div class="sourcingSpecial_carousel_container">
+      <div class="sourcingSpecial_carousel_item">
+        <h4>Customized Solutions</h4>
+        <div class="aline"></div>
+        <p>
+          <span>Brand Customization:</span>
+          We provide packaging design, label customization, and other services tailored to your brand needs, ensuring
+          your
+          products perfectly align with your brand image.
+        </p>
+        <p>
+          <span>Personalized Product Selection: </span>
+          Combining market trends and consumer demands, we recommend the most suitable private label products for you.
+        </p>
+      </div>
+      <div class="sourcingSpecial_carousel_item">
+        <h4>Quick Market Response</h4>
+        <div class="aline"></div>
+        <p>
+          <span>Efficient Coordination:</span>
+          Leveraging our mature supply chain system, we expedite product integration and procurement processes to ensure
+          rapid product launches.
+        </p>
+        <p>
+          <span>Flexible Adjustments: </span>
+          Based on market feedback and sales performance, we flexibly adjust product strategies to maximize market
+          benefits.
+        </p>
+      </div>
+      <div class="sourcingSpecial_carousel_item">
+        <h4>Cost Optimization</h4>
+        <div class="aline"></div>
+        <p>
+          <span>Lower Sourcing Costs: </span>
+          Through bulk purchasing and professional negotiations, we help you obtain the most competitive prices.
+        </p>
+        <p>
+          <span>Time and Resource Savings: </span>
+          Reduce the time and costs associated with self-development and production, allowing you to focus on brand
+          marketing and market promotion.
+        </p>
+      </div>
+      <div class="sourcingSpecial_carousel_item">
+        <h4>Comprehensive Support</h4>
+        <div class="aline"></div>
+        <p>
+          <span>Professional Team:</span>
+          Our team has extensive industry experience, providing full-cycle support from product selection and supplier
+          negotiations to logistics management.
+        </p>
+        <p>
+          <span>Market Insights: </span>
+          We offer the latest market analysis and trend reports to help you make informed sourcing decisions.
+        </p>
+      </div>
+    </div>
+    <div class="sourcingSpecial_carousel_dots">
+      <span class="sourcingSpecial_dot sourcingSpecial_active"></span>
+      <span class="sourcingSpecial_dot"></span>
+      <span class="sourcingSpecial_dot"></span>
+      <span class="sourcingSpecial_dot"></span>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#file_upload-button').value = "no file";
+
+      console.log(document.getElementById('form-field-field_c5f23c1'))
+    })
+    document.addEventListener('DOMContentLoaded', function () {
+      const sourcingSpecialCarousel = document.querySelector('.sourcingSpecial_carousel_container');
+      const sourcingSpecialDots = document.querySelectorAll('.sourcingSpecial_dot');
+      let sourcingSpecialCurrentIndex = 0;
+      const sourcingSpecialTotalItems = document.querySelectorAll('.sourcingSpecial_carousel_item').length;
+
+      function sourcingSpecialUpdateDots() {
+        sourcingSpecialDots.forEach(dot => dot.classList.remove('sourcingSpecial_active'));
+        sourcingSpecialDots[sourcingSpecialCurrentIndex].classList.add('sourcingSpecial_active');
+      }
+      sourcingSpecialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          sourcingSpecialCurrentIndex = index;
+          sourcingSpecialCarousel.scrollTo({
+            left: sourcingSpecialCarousel.scrollWidth / sourcingSpecialTotalItems * sourcingSpecialCurrentIndex,
+            behavior: 'smooth'
+          });
+          sourcingSpecialUpdateDots();
+        });
+      });
+      // Update the sourcingSpecialCurrentIndex based on scroll position
+      sourcingSpecialCarousel.addEventListener('scroll', () => {
+        let index = Math.round(sourcingSpecialCarousel.scrollLeft / (sourcingSpecialCarousel.scrollWidth / sourcingSpecialTotalItems));
+        if (index !== sourcingSpecialCurrentIndex) {
+          sourcingSpecialCurrentIndex = index;
+          sourcingSpecialUpdateDots();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

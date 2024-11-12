@@ -1,0 +1,260 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .mblc-t-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: "Helvetica", sans-serif;
+
+      .mblc-t-sliders {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        touch-action: pan-y;
+
+        img {
+          width: 100%;
+          display: block;
+          object-fit: cover;
+          height: 236rem;
+        }
+
+        .mblc-t-slide {
+          min-width: 100%;
+          box-sizing: border-box;
+          position: relative;
+
+          >div {
+            padding: 0 16rem;
+
+            >div:nth-child(1) {
+              height: 185rem;
+              overflow: auto;
+              margin-top: 12rem;
+            }
+
+            >div:nth-child(2) {
+              height: auto;
+              width: 100%;
+              background-color: #fff;
+              padding-top: 20rem;
+            }
+
+            h3 {
+              font-size: 20rem;
+              font-weight: 400;
+              color: #162C5B;
+              line-height: 23rem;
+              margin: 0 0 8rem 0;
+              font-family: "Fjalla One", sans-serif;
+            }
+
+            p {
+              font-size: 12rem;
+              font-weight: 500;
+              color: #576788;
+              line-height: 14rem;
+            }
+
+            ul {
+              padding-left: 20rem !important;
+              margin-top: 10rem;
+              gap: 10rem;
+              display: flex;
+              flex-direction: column;
+
+              li {
+                font-size: 12rem;
+                font-weight: 400;
+                line-height: 14rem;
+                color: #7C8FB3;
+
+                p {
+                  margin-top: 4rem;
+                }
+
+                h4 {
+                  color: #162C5B;
+                }
+              }
+            }
+
+            button {
+              height: 36rem;
+              width: 156rem;
+              background: #333;
+              color: #fff;
+              font-size: 12rem;
+              line-height: 14rem;
+              font-weight: 400;
+              border-radius: 48rem;
+              border: none;
+            }
+          }
+        }
+      }
+
+
+      .mblc-t-indicators {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 219rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        span {
+          height: 6rem;
+          width: 6rem;
+          background: rgba(255, 255, 255, 0.40);
+          border-radius: 50%;
+          display: inline-block;
+          margin: 0 2px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        span.mblc-t-active {
+          background: #ffffff;
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mblc-t-slider">
+    <div class="mblc-t-sliders">
+      <div class="mblc-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_65.webp">
+        <div>
+          <div>
+            <h3>Starry Sky Camera</h3>
+            <p>Specifically designed for astronomical observation at night, capturing faint starlight and providing
+              outstanding night sky images. Utilizing high-sensitivity sensors and advanced noise reduction processing,
+              it
+              captures clear, detailed star images in low-light environments. Supporting long exposure and multi-frame
+              synthesis to enhance image quality, it ensures rich star detail without significant noise. Equipped with a
+              large-aperture lens and a high-precision autofocus system for precise celestial positioning and tracking,
+              ideal for astronomy enthusiasts and professionals to capture phenomena like nebulae, star clusters, and
+              planets.
+            </p>
+          </div>
+          <div><a href="#drone2-form"><button>Development services</button></a></div>
+        </div>
+      </div>
+      <div class="mblc-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_64-1.webp">
+        <div>
+          <div>
+            <h3>Black Light Camera</h3>
+            <p>Designed for all-weather surveillance, excelling in night and low-light conditions with advanced AI-ISP
+              (Artificial Intelligence Image Signal Processor) technology, switching modes automatically between day and
+              night to ensure optimal image quality and energy efficiency.
+            </p>
+            <ul>
+              <li>
+                <h4>Day Mode</h4>
+                <p>
+                  <strong>Traditional ISP technology:</strong> During daytime, employing conventional image
+                  signal
+                  processing techniques to ensure image quality while maintaining power consumption equivalent to
+                  traditional AOV (visual analytics and optimization) devices.
+                </p>
+              </li>
+              <li>
+                <h4>Night Mode</h4>
+                <p><strong>AI-ISP technology:</strong> At night, utilizing AI-ISP technology to slightly
+                  increase power
+                  consumption while reducing the energy consumption associated with constant illumination from fill
+                  lights.</p>
+                <p><strong>Full-color night vision:</strong> Using AI technology to filter out irrelevant data,
+                  achieving
+                  full-color images, and enhancing object recognition.</p>
+                <p>
+                  <strong>Energy-saving effect:</strong> Significantly
+                  reducing the
+                  activation time of infrared lights, resulting in substantial power savings.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div><a href="#drone2-form"><button>Development services</button></a></div>
+        </div>
+      </div>
+      <div class="mblc-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_66.webp">
+        <div>
+          <div>
+            <h3>Mid-Far Infrared Night Vision Device</h3>
+            <p>Using advanced mid-far infrared technology to provide long-distance high-precision night vision in
+              extremely low-light conditions. Featuring high-sensitivity infrared sensors and professional optical
+              systems, it detects and captures distant thermal radiation signals, converting them into clear images.
+              With
+              various imaging modes like white-hot, black-hot, and rainbow, it suits different environments and target
+              recognition needs. Supporting high-magnification optical zoom and digital zoom, it enlarges details for
+              precise target location and identification. Its rugged design and protection grade (e.g., IP67) ensure
+              stable operation in harsh environments, ideal for military reconnaissance, border monitoring, search and
+              rescue, and security patrols, significantly enhancing night operations' safety and efficiency.
+            </p>
+          </div>
+          <div><a href="#drone2-form"><button>Development services</button></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="mblc-t-indicators">
+      <span class="mblc-t-indicator" onclick="mblcCurrentSlide(0)"></span>
+      <span class="mblc-t-indicator" onclick="mblcCurrentSlide(1)"></span>
+      <span class="mblc-t-indicator" onclick="mblcCurrentSlide(2)"></span>
+    </div>
+  </div>
+
+  <script>
+    let mblcTCurrentIndex = 0;
+    const mblcTSlides = document.querySelector('.mblc-t-sliders');
+    let mblcTStartX = 0;
+    let mblcTIsDragging = false;
+
+    function mblcsShowSlide(index) {
+      const mblcsTotalSlides = document.querySelectorAll('.mblc-t-slide').length;
+      mblcTCurrentIndex = (index + mblcsTotalSlides) % mblcsTotalSlides;
+      mblcTSlides.style.transform = `translateX(-${mblcTCurrentIndex * 100}%)`;
+      document.querySelectorAll('.mblc-t-indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('mblc-t-active', i === mblcTCurrentIndex);
+      });
+    }
+
+    function mblcCurrentSlide(index) {
+      mblcsShowSlide(index);
+    }
+
+    mblcTSlides.addEventListener('touchstart', (e) => {
+      mblcTStartX = e.touches[0].clientX;
+      mblcTIsDragging = true;
+    });
+
+    mblcTSlides.addEventListener('touchmove', (e) => {
+      if (mblcTIsDragging) {
+        const currentX = e.touches[0].clientX;
+        const diff = mblcTStartX - currentX;
+        if (diff > 50) {
+          mblcsShowSlide(mblcTCurrentIndex + 1);
+          mblcTIsDragging = false;
+        } else if (diff < -50) {
+          mblcsShowSlide(mblcTCurrentIndex - 1);
+          mblcTIsDragging = false;
+        }
+      }
+    });
+
+    mblcTSlides.addEventListener('touchend', () => {
+      mblcTIsDragging = false;
+    });
+
+    mblcsShowSlide(mblcTCurrentIndex); // Initialize first slide
+  </script>
+</body>

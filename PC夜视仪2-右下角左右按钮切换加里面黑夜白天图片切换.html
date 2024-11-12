@@ -1,0 +1,465 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .blc-slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: "Helvetica", sans-serif;
+      padding: 96rem 0 110rem 0;
+
+      .button-container {
+        display: flex;
+        gap: 16rem;
+        margin-top: 28rem;
+        justify-content: end;
+        padding: 0 100rem;
+
+        button {
+          background-color: transparent;
+          border: none;
+          width: 40rem;
+          height: 40rem;
+          cursor: pointer;
+          background-size: cover;
+        }
+
+        #blcPrevBtn {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_32.png');
+        }
+
+        #blcPrevBtn:disabled {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_34.png');
+        }
+
+        #blcNextBtn {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_31-1.png');
+        }
+
+        #blcNextBtn:disabled {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_33.png');
+        }
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 300%;
+        overflow: hidden;
+
+        .slider-item {
+          width: 100vw;
+          display: flex;
+
+          >div:nth-child(1) {
+            padding-top: 38rem;
+            padding-right: 108rem;
+            padding-left: 100rem;
+
+            h3 {
+              font-family: "Fjalla One", sans-serif;
+              font-size: 48rem;
+              font-weight: 400;
+              color: #162c5b;
+              line-height: 56rem;
+
+            }
+
+            p {
+              font-size: 20rem;
+              font-weight: 400;
+              color: #576788;
+              line-height: 28rem;
+              margin: 28rem 0 48rem 0;
+            }
+
+            >div {
+              display: flex;
+              gap: 12rem;
+
+              :nth-child(1) {
+                button {
+                  width: 184rem;
+                  height: 48rem;
+                  background: #333333;
+                  border-radius: 48rem;
+                  font-size: 14rem;
+                  font-weight: 400;
+                  color: #ffffff;
+                  line-height: 16rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: none;
+                }
+
+                button:hover {
+                  background: #FF813A;
+                }
+              }
+            }
+          }
+
+          >div:nth-child(2) {
+            display: flex;
+            padding-right: 100rem;
+
+            img {
+              width: 476rem;
+              min-width: 476rem;
+              background-color: #eff0f2;
+            }
+
+            >div {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_08.webp');
+              background-repeat: no-repeat;
+              background-size: 662rem auto;
+              background-position: right;
+              width: 662rem;
+              padding: 20rem 20rem 18rem 18rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              transition: background-image 1s ease;
+
+              h4 {
+                font-size: 16rem;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 19rem;
+              }
+
+              p {
+                font-size: 14rem;
+                font-weight: 400;
+                line-height: 16rem;
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: 12rem;
+              }
+
+              .day-night {
+                width: 110rem;
+                height: 36rem;
+                background: rgba(255, 255, 255, 0.40);
+                border-radius: 52rem;
+                display: flex;
+                align-items: center;
+                padding: 0 4rem;
+
+                span {
+                  font-size: 14rem;
+                  font-weight: 400;
+                  color: #ffffff;
+                  line-height: 16rem;
+                  cursor: pointer;
+                  width: 53rem;
+                  height: 28rem;
+                  background: transparent;
+                  border-radius: 52rem;
+                  font-size: 14rem;
+                  font-weight: 400;
+                  line-height: 16rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+
+              .day-night span.blc-active {
+                color: #162c5b;
+                background: #ffffff;
+              }
+            }
+          }
+
+        }
+
+        .slider-item-two {
+          width: 100vw;
+          display: flex;
+
+          >div:nth-child(1) {
+            padding-top: 38rem;
+            padding-right: 108rem;
+            padding-left: 100rem;
+
+            h3 {
+              font-family: "Fjalla One", sans-serif;
+              font-size: 48rem;
+              font-weight: 400;
+              color: #162c5b;
+              line-height: 56rem;
+
+            }
+
+            p {
+              font-size: 20rem;
+              font-weight: 400;
+              color: #576788;
+              line-height: 28rem;
+              margin: 28rem 0 72rem 0;
+            }
+
+            >div {
+              display: flex;
+              gap: 12rem;
+
+              :nth-child(1) {
+                button {
+                  width: 184rem;
+                  height: 48rem;
+                  background: #333333;
+                  border-radius: 48rem;
+                  font-size: 14rem;
+                  font-weight: 400;
+                  color: #ffffff;
+                  line-height: 16rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: none;
+                }
+
+                button:hover {
+                  background: #FF813A;
+                }
+              }
+
+            }
+          }
+
+          >div:nth-child(2) {
+            display: flex;
+            padding-right: 100rem;
+
+            img {
+              width: 476rem;
+              min-width: 476rem;
+              background-color: #eff0f2;
+            }
+
+            >div {
+              background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_44.webp');
+              background-repeat: no-repeat;
+              background-size: 662rem auto;
+              background-position: right;
+              width: 662rem;
+              padding: 20rem 20rem 18rem 18rem;
+              display: flex;
+              transition: background-image 1s ease;
+              align-items: end;
+
+              h4 {
+                font-size: 16rem;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 19rem;
+              }
+
+              p {
+                font-size: 14rem;
+                font-weight: 400;
+                line-height: 16rem;
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: 12rem;
+              }
+            }
+          }
+
+        }
+
+        .slider-item-three {
+          width: 100vw;
+          display: flex;
+          gap: 28rem;
+          padding: 0 100rem;
+
+          >div {
+            display: flex;
+            background-color: #FAFAFA;
+            height: 440rem;
+            gap: 36rem;
+            width: 100%;
+            padding: 0 30rem 0 40rem;
+            align-items: center;
+
+            img {
+              width: 280rem;
+              height: 280rem;
+              object-fit: contain;
+            }
+
+            >div {
+              position: relative;
+              height: 100%;
+              padding-top: 62rem;
+
+              h4 {
+                font-family: "Fjalla One", sans-serif;
+                font-size: 48rem;
+                font-weight: 400;
+                color: #162c5b;
+                line-height: 56rem;
+              }
+
+              button {
+                width: 184rem;
+                height: 48rem;
+                background: #333333;
+                border-radius: 48rem;
+                font-size: 14rem;
+                font-weight: 400;
+                color: #ffffff;
+                line-height: 16rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                position: absolute;
+                bottom: 62rem;
+                cursor: pointer;
+              }
+
+              button:hover {
+                background: #FF813A;
+              }
+
+              p {
+                font-size: 20rem;
+                font-weight: 400;
+                color: #576788;
+                line-height: 28rem;
+                margin: 20rem 0 0 0;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blc-slider-container">
+    <div class="slider" id="blcSlider">
+      <div class="slider-item">
+        <div>
+          <h3>Black Light Camera</h3>
+          <p>Designed for all-weather surveillance, excelling in night and low-light conditions with advanced AI-ISP
+            (Artificial Intelligence Image Signal Processor) technology, switching modes automatically between day and
+            night to ensure optimal image quality and energy efficiency.</p>
+          <div><a href="#drone2-form"><button>Development services</button></a></div>
+        </div>
+        <div>
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_19.webp" alt="">
+          <div id="blcBackgroundContainer">
+            <div class="day-night">
+              <span id="blcDayBtn" class="blc-active" onclick="blcShowDay()">Day</span>
+              <span id="blcNightBtn" onclick="blcShowNight()">Night</span>
+            </div>
+            <div>
+              <h4>Traditional ISP technology</h4>
+              <p>During daytime, employing conventional image signal processing techniques to ensure image quality while
+                maintaining power consumption equivalent to traditional AOV (visual analytics and optimization) devices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item-two">
+        <div>
+          <h3>Mid-Far Infrared Night Vision Device</h3>
+          <p>Using advanced mid-far infrared technology to provide long-distance high-precision night vision in
+            extremely low-light conditions.</p>
+          <div><a href="#drone2-form"><button>Development services</button></a></div>
+        </div>
+        <div>
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_39.webp" alt="">
+          <div>
+            <div>
+              <p>Featuring high-sensitivity infrared sensors and professional optical systems, it detects and captures
+                distant thermal radiation signals, converting them into clear images. With various imaging modes like
+                white-hot, black-hot, and rainbow, it suits different environments and target recognition needs.
+                Supporting high-magnification optical zoom and digital zoom, it enlarges details for precise target
+                location and identification. Its rugged design and protection grade (e.g., IP67) ensure stable operation
+                in harsh environments, ideal for military reconnaissance, border monitoring, search and rescue, and
+                security patrols, significantly enhancing night operations' safety and efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item-three">
+        <div>
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_46.webp">
+          <div>
+            <h4>ISP Customization Service</h4>
+            <p>Customize image signal processors (ISPs) based on customer requirements to optimize image quality for
+              various application scenarios.</p>
+            <a href="#drone2-form"><button>Development services</button></a>
+          </div>
+        </div>
+        <div>
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_45.webp">
+          <div>
+            <h4>Digital Image Processing</h4>
+            <p>We Provide advanced digital image processing technologies, including noise reduction, contrast
+              enhancement, and color correction, ensuring optimal images in all lighting conditions.</p>
+            <a href="#drone2-form"><button>Development services</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button id="blcPrevBtn" onclick="blcMoveSlide(-1)" disabled></button>
+      <button id="blcNextBtn" onclick="blcMoveSlide(1)"></button>
+    </div>
+  </div>
+
+  <script>
+    function blcShowDay() {
+      document.getElementById('blcBackgroundContainer').style.backgroundImage = "url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_08.webp')";
+      document.getElementById('blcDayBtn').classList.add('blc-active');
+      document.getElementById('blcNightBtn').classList.remove('blc-active');
+    }
+
+    function blcShowNight() {
+      document.getElementById('blcBackgroundContainer').style.backgroundImage = "url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_79.webp')";
+      document.getElementById('blcDayBtn').classList.remove('blc-active');
+      document.getElementById('blcNightBtn').classList.add('blc-active');
+    }
+    let blcCurrentIndex = 0;
+    const blcTotalItems = 3;
+
+    function blcUpdateButtons() {
+      document.getElementById('blcPrevBtn').disabled = blcCurrentIndex === 0;
+      document.getElementById('blcNextBtn').disabled = blcCurrentIndex === blcTotalItems - 1;
+    }
+
+    function blcUpdateCounter() {
+      document.getElementById('blcSliderCounter').innerHTML = `<span>${blcCurrentIndex + 1}</span> / ${blcTotalItems}`;
+    }
+
+    function blcMoveSlide(direction) {
+      blcCurrentIndex += direction;
+
+      if (blcCurrentIndex < 0) {
+        blcCurrentIndex = 0;
+      } else if (blcCurrentIndex >= blcTotalItems) {
+        blcCurrentIndex = blcTotalItems - 1;
+      }
+
+      const blcOffset = -blcCurrentIndex * 100 / blcTotalItems;
+      document.getElementById('blcSlider').style.transform = `translateX(${blcOffset}%)`;
+
+      blcUpdateButtons();
+      blcUpdateCounter();
+    }
+
+    blcUpdateButtons();
+    blcUpdateCounter();
+
+  </script>
+
+</body>

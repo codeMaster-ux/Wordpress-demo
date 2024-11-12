@@ -1,0 +1,101 @@
+<head>
+
+  <style>
+    .header_menu_services {
+      list-style-type: none;
+      width: 100%;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 28rem;
+      column-gap: 84rem;
+
+      >div {
+        margin-bottom: 16rem;
+        padding-top: 8rem;
+        width: 228rem;
+        height: 40rem;
+
+        &:nth-child(4),
+        &:nth-child(8) {
+          width: 300rem;
+        }
+
+        a {
+          display: inline-block;
+          position: relative;
+          color: #162C5B;
+          font-size: 16rem;
+          font-weight: 700;
+          line-height: 19rem;
+          text-decoration: none;
+        }
+
+        a::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 1px;
+          background: #0E6AED;
+          transition: width 0.3s;
+          position: absolute;
+          bottom: -11rem;
+          left: 0;
+        }
+
+        /* 增加列表项之间的间距 */
+        a:hover {
+          color: #0E6AED;
+        }
+
+        a:hover::after {
+          width: 100%;
+        }
+
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .footer_menu_four {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        padding-left: 8rem;
+
+        >div {
+          width: 50%;
+          margin-bottom: 24rem;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="header_menu_services">
+    <div>
+      <a href="https://www.eipeks.com/blog/">Product Design</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/news/">Industrial Design </a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/nda/">Mechanical Design</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/customer/e-commerce-brand/">Software Product Development</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/customer/offline-independent-brand/">Prototyping</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/customer/emerging-brand/">3d Printing Service</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/customer/emerging-brand/">Manufacturing</a>
+    </div>
+    <div>
+      <a href="https://www.eipeks.com/customer/emerging-brand/">Sourcing Agent</a>
+    </div>
+  </nav>
+</body>

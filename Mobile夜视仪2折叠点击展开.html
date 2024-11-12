@@ -1,0 +1,164 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </link>
+  <style>
+    .pdnvdm-container {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .pdnvdmCollapsible {
+        width: 100%;
+        height: 0;
+        transition: height 0.5s ease-out;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 16rem;
+
+        >div:nth-child(1) {
+          margin-top: 16rem;
+        }
+
+        >div {
+          border: 1px solid #f4f6f8;
+          border-radius: 12rem;
+
+          img {
+            border-radius: 12rem;
+            width: 100%;
+          }
+
+          h3 {
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+            color: #162C5B;
+            text-align: left;
+            margin: 12rem 0 8rem 0;
+            padding: 0 12rem;
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 400;
+            line-height: 14rem;
+            color: #7C8FB3;
+            text-align: left;
+            padding: 0 12rem 0 12rem;
+          }
+
+          button {
+            background: #333;
+            height: 36rem;
+            width: 168rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border: none;
+            border-radius: 36rem;
+            margin: 16rem auto 20rem auto;
+            font-size: 12rem;
+            font-weight: 400;
+            line-height: 14rem;
+          }
+        }
+
+      }
+
+      .pdnvdmCollapsible.pdnvdmOpen {
+        transition: height 0.5s ease-out;
+        height: auto;
+        /* 可根据需要调整展开后的高度 */
+      }
+
+      .word-btn {
+        padding: 0;
+        font-size: 12rem;
+        font-weight: 400;
+        color: white;
+        border: none;
+        border-radius: 40rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 200rem;
+        height: 36rem;
+        border: 1px solid #0E6AED;
+        color: #0e6aed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10rem;
+        margin-top: 16rem;
+
+        img {
+          width: 18rem;
+          height: 18rem;
+        }
+      }
+
+      .pdnvdm-rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pdnvdm-container">
+    <div class="pdnvdmCollapsible" id="pdnvdmCollapsibleSection">
+      <div>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_35.webp" alt="">
+        <h3>OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager</h3>
+        <p>The OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning functions.
+          With high sensitivity, reliability, and day-night use, it’s perfect for security monitoring, military
+          reconnaissance, and night operations, offering precise observation, ranging, and positioning.</p>
+        <a href="#drone2-form"><button>Development services</button></a>
+      </div>
+      <div>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_35.webp" alt="">
+        <h3>OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager</h3>
+        <p>The OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning functions.
+          With high sensitivity, reliability, and day-night use, it’s perfect for security monitoring, military
+          reconnaissance, and night operations, offering precise observation, ranging, and positioning.</p>
+        <a href="#drone2-form"><button>Development services</button></a>
+      </div>
+      <div>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_35.webp" alt="">
+        <h3>OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager</h3>
+        <p>The OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning functions.
+          With high sensitivity, reliability, and day-night use, it’s perfect for security monitoring, military
+          reconnaissance, and night operations, offering precise observation, ranging, and positioning.</p>
+        <a href="#drone2-form"><button>Development services</button></a>
+      </div>
+    </div>
+    <div class="word-btn" onclick="pdnvdmToggleButton()"> <span id="pdnvdmToggleText">Show More</span> <img
+        src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_94.png" id="pdnvdmToggleImage"></div>
+  </div>
+
+  <script>
+    function pdnvdmToggleButton() {
+      const pdnvdmToggleText = document.getElementById('pdnvdmToggleText')
+      const pdnvdmToggleImage = document.getElementById('pdnvdmToggleImage')
+      const pdnvdmCollapsibleSection = document.getElementById('pdnvdmCollapsibleSection');
+      pdnvdmCollapsibleSection.classList.toggle('pdnvdmOpen');
+      if (pdnvdmToggleText.innerText === 'Show More') {
+        pdnvdmToggleText.innerText = 'Show Less';
+        pdnvdmToggleImage.classList.add('pdnvdm-rotate')
+      } else {
+        pdnvdmToggleText.innerText = 'Show More';
+        pdnvdmToggleImage.classList.remove('pdnvdm-rotate')
+
+      }
+    }
+  </script>
+
+</body>

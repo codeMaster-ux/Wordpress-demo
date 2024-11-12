@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .mobile_thermal_slider_container {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      background: #E9ECF0;
+      font-family: "Lato", sans-serif;
+      padding-left: 16rem;
+
+      .mobile_thermal_slider {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #0252A6 #D9D9D9;
+        padding-bottom: 12rem;
+
+        img {
+          width: 284rem;
+          height: 284rem;
+          object-fit: cover;
+          background: #fff
+        }
+
+        img:not(:last-child) {
+          margin-right: 10px;
+          /* 根据需要调整 margin-right 的值 */
+        }
+
+      }
+
+      .mobile_thermal_text {
+        margin-top: 10rem;
+        padding-right: 16rem;
+        height: 138rem;
+
+        h2 {
+          font-size: 14rem;
+          font-weight: 600;
+          line-height: 16rem;
+        }
+
+        p {
+          font-size: 12rem;
+          font-weight: 400;
+          line-height: 16rem;
+          margin-top: 8rem;
+        }
+      }
+
+      .mobile_thermal_slide_number {
+        margin-top: 4rem;
+        font-size: 12rem;
+        line-height: 14rem;
+        color: #555;
+        text-align: right;
+        padding-right: 16rem;
+        color: #999999;
+
+        span {
+          color: #000;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mobile_thermal_slider_container">
+    <div class="mobile_thermal_slider" id="mobile_thermal_slider">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-04.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-01.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-02.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-03.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-05.webp" />
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/07/mobile-thermal-image-06.webp" />
+      <!-- Repeat this block for each additional image -->
+    </div>
+    <div class="mobile_thermal_slide_number" id="mobile_thermal_slide_number"><span>1</span>/6</div>
+    <div class="mobile_thermal_text" id="mobile_thermal_text">
+      <h2>Thermal Imaging Network Camera</h2>
+      <p>
+        The Reach-3 boasts powerful monitoring and surveillance capabilities, equipped with an uncooled thermal imager
+        and a visible light HD camera, providing stable, clear thermal imaging even in extreme weather and dark
+        environments, suitable for LAN installation or analog security camera video networks.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    let mobileThermalCurrentSlide = 0;
+
+    const mobileThermalSlides = [
+      {
+        title: "Thermal Imaging Network Camera",
+        description:
+          "The Reach-3 boasts powerful monitoring and surveillance capabilities, equipped with an uncooled thermal imager and a visible light HD camera, providing stable, clear thermal imaging even in extreme weather and dark environments, suitable for LAN installation or analog security camera video networks.",
+      },
+      {
+        title: "Thermal Imaging Tactical Vision",
+        description:
+          "ErlangSight is a multifunctional monocular thermal imager for head-mounted or handheld use, offering high-resolution thermal image options (640x480 or 384x288), excellent thermal sensitivity (NETD<40mk @f1.0), adaptive wide dynamic image processing, and PIP (Picture-in-Picture) functionality, perfect for real-time observation and monitoring in various environments.",
+      },
+      {
+        title: "Vehicle-Mounted Thermal Imager",
+        description:
+          "The DriCam series is designed to enhance driver vision in total darkness, fog, rain, snow, and headlight glare conditions. It provides real-time clear thermal images, with optional 640x480 and 384x288 resolutions, IP67 sealing, and analog video output, compatible with vehicle displays.",
+      },
+      {
+        title: "Infrared Thermal Imaging Module (Shutterless)",
+        description:
+          "The SmartCor series features advanced WDR wide dynamic image processing and multiple scene modes, meeting different application needs with leading shutterless technology, ensuring uninterrupted real-time infrared images. Ideal for UAVs, handheld thermal devices, and surveillance systems.",
+      },
+      {
+        title: "Infrared Thermal Imaging Module (With Shutter)",
+        description:
+          "The SmartCor-S640 offers high sensitivity, continuous digital zoom, and WDR image processing, delivering high-quality thermal image videos. Using shutter imaging technology, it ensures excellent real-time video performance. Suitable for UAVs, handheld thermal imagers, thermal night vision systems, driving vision enhancement, and security monitoring applications.",
+      },
+      {
+        title: "Expansion Board",
+        description:
+          "The IPC expansion board is designed to integrate directly into the thermal IP network, providing IP network services, ONVIF communication, analog, and H.264 video output, widely used in thermal security monitoring systems and UAVs.",
+      },
+
+    ];
+
+    document.getElementById("mobile_thermal_slider").addEventListener("scroll", () => {
+      const mobile_thermal_slider = document.getElementById("mobile_thermal_slider");
+      const mobileThermalSlideWidth = document.querySelector(".mobile_thermal_slider img").clientWidth;
+      const mobileThermalNewSlide = Math.round(mobile_thermal_slider.scrollLeft / mobileThermalSlideWidth);
+      if (mobileThermalNewSlide !== mobileThermalCurrentSlide) {
+        mobileThermalCurrentSlide = mobileThermalNewSlide;
+        document.getElementById(
+          "mobile_thermal_text"
+        ).innerHTML = `<h2>${mobileThermalSlides[mobileThermalCurrentSlide].title}</h2><p>${mobileThermalSlides[mobileThermalCurrentSlide].description}</p>`;
+        document.getElementById("mobile_thermal_slide_number").innerHTML = '<span>' + `${mobileThermalCurrentSlide + 1}` + '</span>' + `/${mobileThermalSlides.length}`;
+      }
+    });
+  </script>
+</body>
+
+</html>

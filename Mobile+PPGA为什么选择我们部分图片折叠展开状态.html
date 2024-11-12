@@ -1,0 +1,198 @@
+<head></head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="common.css" />
+<style>
+  .choose_carousel_content {
+    font-family: "Helvetica", sans-serif;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    gap: 8rem;
+
+    .choose_banner {
+      position: relative;
+      flex: 1;
+      height: 458rem;
+      color: white;
+      overflow: hidden;
+      transition: flex 0.5s ease;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    }
+
+    .choose_banner.choose-expanded {
+      flex: 3.33;
+    }
+
+    .choose_banner.choose-expanded .content_expend {
+      display: block;
+      position: absolute;
+      top: 48rem;
+      left: 36rem;
+
+      h3 {
+        font-size: 32rem;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 48rem;
+      }
+
+      p {
+        font-size: 16rem;
+        font-weight: 300;
+        color: #ffffff;
+        line-height: 32rem;
+        margin-top: 8rem;
+        width: 434rem;
+      }
+    }
+
+    .choose_banner:not(.choose-expanded) .content_expend {
+      display: none;
+    }
+
+    .choose_banner.choose-expanded .content_close {
+      display: none;
+    }
+
+    .choose_banner:not(.choose-expanded) .content_close {
+      display: flex;
+    }
+
+    .content_close {
+      position: absolute;
+      bottom: 48rem;
+      padding: 0 16rem;
+      height: 66rem;
+      display: flex;
+      align-items: center;
+
+      h3 {
+        font-size: 20rem;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 28rem;
+        text-align: center;
+      }
+    }
+
+    >div:nth-child(1) {
+      .content_close {
+        padding: 0 10rem;
+      }
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="choose_carousel_content">
+    <!-- 1 -->
+    <div class="choose_banner choose-expanded" id="choose-banner1" onclick="toggleBanner(1)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_27.webp" />
+      <div class="content_expend">
+        <h3>Functional Safety Support</h3>
+        <p>We follow international safety standards like ISO 26262 for automotive electronics
+          and IEC 61508 for industrial systems to ensure functional safety.</p>
+      </div>
+      <div class="content_close">
+        <h3>Functional Safety Support</h3>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="choose_banner" id="choose-banner2" onclick="toggleBanner(2)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_32.webp" />
+      <div class="content_expend">
+        <h3>Cost Reduction</h3>
+        <p>
+          We cut project costs by optimizing design and development processes. Early detailed analysis and planning
+          help avoid later design changes and extra costs.
+        </p>
+      </div>
+      <div class="content_close">
+        <h3>Cost Reduction</h3>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="choose_banner" id="choose-banner3" onclick="toggleBanner(3)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_28.webp" />
+      <div class="content_expend">
+        <h3>Diverse Project Scope</h3>
+        <p>
+          We conduct thorough technical feasibility analyses to assess the technical and commercial potential of your
+          project, providing data for future design.
+        </p>
+      </div>
+      <div class="content_close">
+        <h3>Diverse Project Scope</h3>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="choose_banner" id="choose-banner4" onclick="toggleBanner(4)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_29.webp" />
+      <div class="content_expend">
+        <h3>Integrated Service</h3>
+        <p>
+          We provide a complete range of services from FPGA design and development to validation and production,
+          including hardware design, logic development, system integration, and testing, to ensure that each project
+          stage can be seamlessly connected and ultimately deliver high-quality products that meet customer needs.
+        </p>
+      </div>
+      <div class="content_close">
+        <h3>Integrated Service</h3>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="choose_banner" id="choose-banner5" onclick="toggleBanner(5)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_31.webp" />
+      <div class="content_expend">
+        <h3>Flexibility</h3>
+        <p>
+          Our FPGA design services are highly flexible. We can quickly adapt to market changes and adjust product
+          features or development timelines as needed.
+        </p>
+      </div>
+      <div class="content_close">
+        <h3>Flexibility</h3>
+      </div>
+    </div>
+    <!-- 6 -->
+    <div class="choose_banner" id="choose-banner6" onclick="toggleBanner(6)">
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_30.webp" />
+      <div class="content_expend">
+        <h3>Transparency</h3>
+        <p>
+          We promise to maintain high transparency throughout the project. We provide detailed progress reports,
+          design documents, and test results, keeping you informed about every stage and progress of the project.
+        </p>
+      </div>
+      <div class="content_close">
+        <h3>Transparency</h3>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleBanner(bannerId) {
+      const banner = document.getElementById(`banner${bannerId}`);
+      banner.classList.toggle("choose-expanded");
+
+      const banners = document.querySelectorAll(".choose_banner");
+      banners.forEach((b) => {
+        if (b !== banner) {
+          b.classList.remove("choose-expanded");
+        }
+      });
+    }
+
+  </script>
+</body>

@@ -1,0 +1,248 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .pcb-case-scroll-container {
+      width: 100%;
+      display: flex;
+      overflow-x: auto;
+      cursor: grab;
+      user-select: none;
+      scrollbar-width: none;
+      /* For Firefox */
+      -ms-overflow-style: none;
+      /* For Internet Explorer and Edge */
+      font-family: "Helvetica", sans-serif;
+      margin-left: calc((100vw - 1400rem)/2);
+      padding-bottom: 84rem;
+
+      img {
+        user-drag: none;
+        /* 禁止用户拖动图片 */
+        -webkit-user-drag: none;
+        /* 禁止在Webkit浏览器中拖动图片 */
+        pointer-events: none;
+        /* 禁止图片响应鼠标事件 */
+      }
+
+      >div {
+        border-radius: 8rem;
+        margin-right: 36rem;
+        box-shadow: 0 12rem 20rem 0 rgba(0, 0, 0, 0.04);
+        min-width: 332rem;
+
+        img {
+          background: #efefef;
+          width: 332rem;
+          height: 332rem;
+          border-radius: 8rem;
+        }
+
+        .pcb-case-text-container {
+          padding: 20rem 15rem 20rem 20rem;
+          position: relative;
+
+          h3 {
+            font-size: 20rem;
+            font-weight: 500;
+            line-height: 23rem;
+            color: #162C5B;
+          }
+
+          >div {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 8rem;
+            margin-top: 16rem;
+
+            span {
+              font-size: 12rem;
+              font-weight: 500;
+              line-height: 14rem;
+              color: #BBC4D6;
+              margin-right: 16rem;
+              display: inline-block;
+            }
+
+          }
+
+
+        }
+      }
+
+      >div:nth-child(10) {
+        .pcb-case-text-container {
+          >div {
+            padding-right: 30rem;
+          }
+        }
+      }
+    }
+
+    /* Hide scrollbar for Webkit browsers */
+    .pcb-case-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pcb-case-scroll-container:active {
+      cursor: grabbing;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .pcb-case-scroll-container {
+        white-space: normal;
+        cursor: default;
+        padding: 0 0 28rem 22rem;
+        width: 100%;
+        background: #fff;
+        margin: 0;
+
+        >div {
+          min-width: 196rem !important;
+          width: 196rem !important;
+          box-shadow: 0 12rem 20rem 0 rgba(0, 0, 0, 0.04);
+          margin-right: 12rem;
+
+          img {
+            width: 196rem;
+            height: 196rem;
+          }
+
+          .pcb-case-text-container {
+            padding: 10rem 0 0 12rem;
+            height: 44rem;
+
+            h3 {
+              font-size: 14rem;
+              font-weight: 400;
+              line-height: 16rem;
+            }
+
+            >div {
+              display: none;
+            }
+
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="pcb-case-scroll-container" id="pcb-case-scrollContainer">
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_11.webp">
+      <div class="pcb-case-text-container">
+        <h3>Rehabilitation Glove</h3>
+        <div><span>Sensor Integration</span> <span>Low Power Design</span> <span>Wireless Communication</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_10.webp">
+      <div class="pcb-case-text-container">
+        <h3>Quantum Smart Headphone</h3>
+        <div><span>Audio Processing</span> <span>Wireless Communication</span> <span>Miniaturized Design</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_09.webp">
+      <div class="pcb-case-text-container">
+        <h3>Jump Rope</h3>
+        <div><span>Sensor Integration</span> <span>Low Power Design</span> <span>Wireless Communication</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_08.webp">
+      <div class="pcb-case-text-container">
+        <h3>Intelligent Pull-up Bar</h3>
+        <div><span>Sensor Integration</span> <span>Wireless Communication</span> <span>Low Power Design</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_07.webp">
+      <div class="pcb-case-text-container">
+        <h3>Bluetooth Speaker</h3>
+        <div><span>Audio Processing</span> <span>Wireless Communication</span> <span>Power Management</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_06.webp">
+      <div class="pcb-case-text-container">
+        <h3>Dual-Camera Drone</h3>
+        <div><span>Flight Control</span> <span>Camera Control</span> <span>Wireless Communication</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_05.webp">
+      <div class="pcb-case-text-container">
+        <h3>Outdoor LCD Advertising Display</h3>
+        <div><span>Display Control</span> <span>Environmental Adaptation Design</span> <span>Wireless
+            Communication</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_04.webp">
+      <div class="pcb-case-text-container">
+        <h3>Electric Vehicle Charging Station</h3>
+        <div><span>Battery Management</span> <span>Power Management</span> <span>Communication Protocol</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_03.webp">
+      <div class="pcb-case-text-container">
+        <h3>Household Electric Oven</h3>
+        <div><span>Temperature Control</span> <span>User Interface</span> <span>Power Management</span></div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_02.webp">
+      <div class="pcb-case-text-container">
+        <h3>Air Purifier</h3>
+        <div><span>Sensor Integration</span> <span>Fan Control</span><span>User Interface</span> </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://www.eipeks.com/wp-content/uploads/2024/08/pcb_case_01.webp">
+      <div class="pcb-case-text-container">
+        <h3>Pet Dryer Box</h3>
+        <div><span>Temperature Control</span> <span>Temperature Control</span> <span>User Interface</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scrollContainer = document.getElementById('pcb-case-scrollContainer');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    scrollContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      scrollContainer.classList.add('pcb-case-active');
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollContainer.classList.remove('pcb-case-active');
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollContainer.classList.remove('pcb-case-active');
+    });
+
+    scrollContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust scroll speed by changing the multiplier (2)
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>

@@ -1,0 +1,556 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .drone-accordion {
+      width: 1200rem;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      .included-accessories {
+        .drone-accordion-content {
+          padding-right: 60rem;
+
+          >div:first-child {
+            padding-top: 28rem;
+          }
+
+          >div {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 60rem;
+
+            div {
+              width: 180rem;
+              display: flex;
+              flex-direction: column;
+              gap: 12rem;
+              margin-bottom: 40rem;
+
+              img {
+                width: 100%;
+              }
+
+              h4 {
+                font-size: 13rem;
+                font-weight: 400;
+                color: #333333;
+                line-height: 15rem;
+              }
+            }
+          }
+        }
+      }
+
+      .application-fields {
+        .drone-accordion-content {
+          row-gap: 20rem;
+
+          >div:first-child {
+            padding-top: 28rem;
+          }
+
+          >div:last-child {
+            padding-bottom: 40rem;
+          }
+
+          >div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10rem;
+
+            h4 {
+              font-size: 16rem;
+              font-weight: 700;
+              color: #333333;
+              line-height: 19rem;
+            }
+
+            p {
+              font-size: 14rem;
+              font-weight: 400;
+              color: #666666;
+              line-height: 20rem;
+            }
+          }
+        }
+      }
+
+      .product-specifications {
+        .drone-accordion-content {
+
+          >div:nth-child(1) {
+            padding: 24rem 0 0;
+          }
+
+          >div {
+            display: flex;
+            flex-direction: column;
+
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              border: none;
+            }
+
+            th {
+              color: white;
+              height: 56rem;
+              font-size: 14rem;
+              font-weight: 700;
+              color: #333333;
+              line-height: 16rem;
+              background-color: #f8F9FB;
+              border: none;
+              border-bottom: 1px solid #EDEFF2;
+              text-align: left;
+              padding-left: 20rem;
+            }
+
+            td {
+              text-align: left;
+              height: 48rem;
+              padding-left: 20rem;
+              font-size: 15rem;
+              font-weight: 400;
+              line-height: 18rem;
+              color: #666;
+              border: none;
+            }
+
+            td:nth-child(1) {
+              color: #333333;
+            }
+
+            tr:nth-child(even) {
+              background-color: #F8F9FB;
+            }
+
+            tr:hover {
+              background-color: #ddd;
+            }
+
+          }
+        }
+      }
+
+      >div {
+        width: 100%;
+
+        .drone-accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .drone-accordion-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          transition: background-color 0.3s ease;
+          height: 48rem;
+          border-bottom: 1px solid #EEEEEE;
+
+          span {
+            font-size: 14rem;
+            font-weight: 700;
+            line-height: 24rem;
+            color: #4C71A7;
+          }
+
+          img {
+            width: 24rem;
+            height: 24rem;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .drone-accordion-header.drone-accordion-active img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_09.png');
+    }
+
+    .drone-accordion-header img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_10.png');
+    }
+
+    @media (max-width: 767px) {
+      .drone-accordion {
+        width: 100%;
+        padding: 0 16rem;
+
+        .included-accessories {
+
+          .drone-accordion-content {
+            padding-right: 0;
+
+            >div:first-child {
+              padding-top: 16rem;
+            }
+
+            >div:last-child {
+              padding-bottom: 9rem;
+            }
+
+            >div {
+              flex-wrap: wrap;
+              column-gap: 0;
+              justify-content: space-between;
+
+              div {
+                width: 48.5%;
+                gap: 8rem;
+                margin-bottom: 15rem;
+
+                img {
+                  width: 100%;
+                  height: 120rem;
+                  object-fit: cover;
+                }
+
+                h4 {
+                  font-size: 12rem;
+                  line-height: 14rem;
+                }
+              }
+            }
+          }
+        }
+
+        .application-fields {
+          .drone-accordion-content {
+            row-gap: 16rem;
+
+            >div:first-child {
+              padding-top: 16rem;
+            }
+
+            >div:last-child {
+              padding-bottom: 24rem;
+            }
+
+            >div {
+              row-gap: 6rem;
+
+              h4 {
+                font-size: 14rem;
+                line-height: 16rem;
+              }
+
+              p {
+                line-height: 16rem;
+              }
+            }
+          }
+        }
+
+        .product-specifications {
+          .drone-accordion-content {
+            >div:nth-child(1) {
+              padding: 8rem 0 0rem;
+            }
+
+            >div {
+              th {
+                height: 32rem;
+                font-size: 12rem;
+                line-height: 14rem;
+                padding-left: 8rem;
+              }
+
+              td {
+                text-align: left;
+                height: 32rem;
+                padding: 4rem 0;
+                padding-left: 8rem;
+                font-size: 12rem;
+                line-height: 14rem;
+              }
+            }
+          }
+        }
+
+        >div {
+          .drone-accordion-header {
+            height: 40rem;
+
+            span {
+              font-size: 13rem;
+            }
+
+            img {
+              width: 20rem;
+              height: 20rem;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drone-accordion">
+    <div class="included-accessories">
+      <div class="drone-accordion-header">
+        <span>Included accessories:</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_01.webp" alt="">
+            <h4>Intelligent Self-Balancing Charger</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_02.webp" alt="">
+            <h4>1080P Three-Axis Stabilized Camera</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_03.webp" alt="">
+            <h4>Smart Integrated Ground Station Remote Controller</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_04.webp" alt="">
+            <h4>RTK Precision Positioning System (Base Station Version)</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_05.webp" alt="">
+            <h4>Fire Hose Assembly</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_06.webp" alt="">
+            <h4>Intelligent Self-Balancing Charger</h4>
+          </div>
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/cleaning_product_07.webp" alt="">
+            <h4>1080P Three-Axis Stabilized Camera</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="application-fields">
+      <div class="drone-accordion-header">
+        <span>Application Fields:</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <h4>(1) Multi-Mode Intelligent Cleaning</h4>
+          <p>The 3WWDZF6-50DS supports various flight modes, including manual, automatic, altitude hold, and point
+            targeting. These features enable precise positioning and stable hovering, allowing the drone to easily
+            tackle complex cleaning tasks on building facades.</p>
+        </div>
+        <div>
+          <h4>(2) High Load Capacity</h4>
+          <p>This cleaning drone has a maximum payload capacity of 80 kg, which supports extended continuous cleaning
+            operations. Under standard load conditions, the battery provides an impressive endurance of up to 50
+            minutes, meeting the high-efficiency cleaning demands of large areas.</p>
+        </div>
+        <div>
+          <h4>(3) Efficient Flight Performance</h4>
+          <p>The 3WWDZF6-50DS exhibits exceptional flight performance, with a maximum ascent speed that can reach 5 m/s.
+            Additionally, the horizontal flight speed can achieve up to 20 m/s in attitude mode, ensuring rapid coverage
+            of the cleaning area and significantly enhancing operational efficiency.</p>
+        </div>
+        <div>
+          <h4>(4) Precise Hovering and Positioning</h4>
+          <p>Equipped with a dual-satellite positioning system that includes both GPS and BeiDou, the drone achieves a
+            hovering accuracy of up to 0.5 meters. This feature ensures that the drone can accurately align itself with
+            cleaning targets, even in complex environments.</p>
+        </div>
+        <div>
+          <h4>(5) Adaptability to Harsh Environments</h4>
+          <p>The 3WWDZF6-50DS boasts an IP56 protection rating, which signifies its robust dust and water-resistant
+            design. This allows the drone to operate effectively under various weather conditions, ensuring that it can
+            perform cleaning tasks successfully, even in light rain.</p>
+        </div>
+        <div>
+          <h4>(6) Convenient Operation and Quick Deployment</h4>
+          <p>The drone can be conveniently controlled through a ground station app or a remote controller, allowing for
+            easy remote operation. Additionally, its design supports quick folding, enabling transport and deployment in
+            less than 5 minutes, which significantly enhances on-site operational efficiency.</p>
+        </div>
+      </div>
+    </div>
+    <div class="product-specifications">
+      <div class="drone-accordion-header">
+        <span>Product Specifications: </span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-accordion-content">
+        <div>
+          <table>
+            <colgroup>
+              <col style="width: 30%;">
+              <col style="width: 70%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model</td>
+                <td>3WWDZF6-50DS</td>
+              </tr>
+              <tr>
+                <td>Symmetric Motor Wheelbase</td>
+                <td>2980 mm</td>
+              </tr>
+              <tr>
+                <td>Dimensions (Unfolded)</td>
+                <td>3070 mm x 2680 mm x 1180 mm (without flaps)</td>
+              </tr>
+              <tr>
+                <td>Folding Method</td>
+                <td>Downward folding</td>
+              </tr>
+              <tr>
+                <td>Blade Size</td>
+                <td>Diameter × Pitch: 55 x 7 inches</td>
+              </tr>
+              <tr>
+                <td>Maximum Ascent Speed</td>
+                <td>5 m/s</td>
+              </tr>
+              <tr>
+                <td>Maximum Descent Speed</td>
+                <td>2 m/s</td>
+              </tr>
+              <tr>
+                <td>Horizontal Flight Speed</td>
+                <td>Positioning Mode: 5 m/s, Moving Mode: 8 m/s</td>
+              </tr>
+              <tr>
+                <td>Attitude Mode</td>
+                <td>20 m/s</td>
+              </tr>
+              <tr>
+                <td>Maximum Tilt Angle</td>
+                <td>Positioning Mode: 30°, Moving Mode: 30°, Attitude Mode: 30°</td>
+              </tr>
+              <tr>
+                <td>Maximum Rotation Rate</td>
+                <td>120°/s</td>
+              </tr>
+              <tr>
+                <td>Maximum Rotation Angle</td>
+                <td>360°</td>
+              </tr>
+              <tr>
+                <td>Maximum Tolerable Wind Speed</td>
+                <td>Level 7</td>
+              </tr>
+              <tr>
+                <td>Maximum Load</td>
+                <td>80 kg (Battery life: 30 minutes)</td>
+              </tr>
+              <tr>
+                <td>Standard Load</td>
+                <td>50 kg (Battery life: 50 minutes)</td>
+              </tr>
+              <tr>
+                <td>Aircraft Weight</td>
+                <td>39.5 kg</td>
+              </tr>
+              <tr>
+                <td>Flight Time</td>
+                <td>≥ 60 minutes (at sea level, no load, ≥ 20°C)</td>
+              </tr>
+              <tr>
+                <td>Operating Temperature</td>
+                <td>-40°C to +70°C</td>
+              </tr>
+              <tr>
+                <td>Flight Altitude</td>
+                <td>≥ 5000 meters</td>
+              </tr>
+              <tr>
+                <td>Flight Humidity</td>
+                <td>&lt; 90%</td>
+              </tr>
+              <tr>
+                <td>Flight Mode</td>
+                <td>Manual, Automatic, Fixed Height, Fixed Point, Moving, Attitude</td>
+              </tr>
+              <tr>
+                <td>Satellite Positioning Module</td>
+                <td>GPS/Global or BDSS dual-mode GPS and BeiDou Satellite (Triple Positioning)</td>
+              </tr>
+              <tr>
+                <td>Hovering Accuracy</td>
+                <td>Vertical: ± 0.5 m (when GPS is functioning properly), Horizontal: ± 0.5 m (when
+                  GPS is
+                  functioning properly)</td>
+              </tr>
+              <tr>
+                <td>Protection Level</td>
+                <td>IP56 (dust and water resistant, capable of flying in light rain)</td>
+              </tr>
+              <tr>
+                <td>Body Material</td>
+                <td>Carbon fiber, lightweight, high strength, corrosion-resistant</td>
+              </tr>
+              <tr>
+                <td>Control Method</td>
+                <td>APP ground station / remote control</td>
+              </tr>
+              <tr>
+                <td>Flight Indicator Lights</td>
+                <td>6 lights, distinguishable at the tail</td>
+              </tr>
+              <tr>
+                <td>Operating Time</td>
+                <td>From transport state to flight state ≤ 5 minutes (2 people)</td>
+              </tr>
+              <tr>
+                <td>Task Load</td>
+                <td>Multiple interfaces available, can carry multiple task loads simultaneously</td>
+              </tr>
+              <tr>
+                <td>Safety System</td>
+                <td>Includes identification, key flight, and background data monitoring functions
+                </td>
+              </tr>
+              <tr>
+                <td>Control Authority</td>
+                <td>Can switch between different control stations during flight or hover, maintaining normal operation
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      document.querySelectorAll('.drone-accordion-content').forEach(div => {
+        div.style.maxHeight = div.scrollHeight + 'px';
+      })
+    };
+    document.querySelectorAll('.drone-accordion-header').forEach(header => {
+      header.classList.add('drone-accordion-active');
+      const content = header.nextElementSibling;
+      header.addEventListener('click', function () {
+        this.classList.toggle('drone-accordion-active');
+        if (this.classList.contains('drone-accordion-active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0' + 'px';
+        }
+      });
+    });
+  </script>
+
+</body>

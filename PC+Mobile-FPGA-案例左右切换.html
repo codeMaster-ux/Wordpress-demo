@@ -1,0 +1,374 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .fpga-product-cases {
+      font-family: "Helvetica", sans-serif;
+
+      .fpga-carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        .fpga-carousel {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+          gap: 118rem;
+
+
+          .fpga-carousel-card {
+            min-width: 1165rem;
+            background-color: #FAFBFF;
+            border-radius: 12rem;
+            height: 550rem;
+            padding: 32rem;
+            display: flex;
+            gap: 32rem;
+
+            img {
+              width: 390rem;
+              height: 486rem;
+              object-fit: contain;
+            }
+
+
+            >div {
+              flex: 1;
+
+              h3 {
+                font-size: 32rem;
+                font-weight: 500;
+                color: #162c5b;
+                line-height: 32rem;
+              }
+
+              h4 {
+                font-size: 24rem;
+                font-weight: 500;
+                color: #162c5b;
+                line-height: 28rem;
+                margin: 24rem 0 12rem 0;
+              }
+
+              li,
+              p {
+                font-size: 16rem;
+                font-weight: 300;
+                color: #576788;
+                line-height: 32rem;
+              }
+
+              ul {
+                padding-left: 15rem;
+              }
+            }
+          }
+
+        }
+
+        .fpga-carousel-button-cl {
+          width: 1383rem;
+          position: relative;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          display: flex;
+          justify-content: space-between;
+
+          /* 控制按钮 */
+          .fpga-carousel-button {
+            color: white;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+
+            img {
+              width: 54rem;
+            }
+          }
+
+          .fpga-carousel-button.left {
+            left: 0;
+          }
+
+          .fpga-carousel-button.right {
+            right: 0;
+          }
+        }
+      }
+
+
+      /* 指示器样式 */
+      .fpga-carousel-indicators {
+        margin-top: 60rem;
+        display: flex;
+        justify-content: center;
+        gap: 28rem;
+
+        >div {
+          width: 10rem;
+          height: 10rem;
+          background-color: #D9D9D9;
+          cursor: pointer;
+        }
+
+        >div.active {
+          background-color: #0E6AED;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .fpga-product-cases {
+        .fpga-carousel-container {
+          width: 100%;
+
+          .fpga-carousel {
+            gap: 0;
+            width: 100%;
+
+            .fpga-carousel-card {
+              min-width: 100%;
+              background-color: #FAFBFF;
+              border-radius: 12rem;
+              height: auto;
+              padding: 8rem 9rem 16rem 9rem;
+              flex-direction: column;
+              gap: 16rem;
+
+              img {
+                width: 100%;
+                height: 150rem;
+                object-fit: cover;
+                border-radius: 8rem;
+              }
+
+
+              >div {
+                flex: none;
+
+                h3 {
+                  font-size: 14rem;
+                  line-height: 16rem;
+                }
+
+                h4 {
+                  font-size: 12rem;
+                  line-height: 16rem;
+                  margin: 8 0;
+                }
+
+                li,
+                p {
+                  font-size: 12rem;
+                  line-height: 16rem;
+                }
+              }
+            }
+
+          }
+
+          .fpga-carousel-button-cl {
+            width: 100%;
+            position: relative;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+
+            /* 控制按钮 */
+            .fpga-carousel-button {
+              color: white;
+              border: none;
+              cursor: pointer;
+              background: transparent;
+
+              img {
+                width: 24rem;
+              }
+            }
+
+            .fpga-carousel-button.left {
+              left: 0;
+            }
+
+            .fpga-carousel-button.right {
+              right: 0;
+            }
+          }
+        }
+
+        /* 指示器样式 */
+        .fpga-carousel-indicators {
+          margin-top: 12rem;
+          gap: 0;
+
+          >div {
+            width: 13rem;
+            height: 3rem;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fpga-product-cases">
+    <div class="fpga-carousel-container">
+      <div class="fpga-carousel">
+        <div class="fpga-carousel-card">
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_64.webp" alt="">
+          <div>
+            <h3>Medical Image Analysis System</h3>
+            <h4>Purpose</h4>
+            <p>This system performs real-time analysis of medical images, such as CT or MRI scans, to help doctors
+              diagnose diseases. FPGA is used to accelerate image processing and deep learning model inference,
+              improving the speed and accuracy of image analysis.</p>
+            <h4>Technologies Involved</h4>
+            <ul>
+              <li>Image Processing Acceleration: FPGA speeds up image preprocessing, denoising, and feature
+                extraction.</li>
+              <li>Deep Learning Model Acceleration: It implement hardware acceleration of deep learning models
+                such as Convolutional Neural Networks (CNNs) to enable fast image classification and lesion
+                detection.</li>
+              <li>Parallel Processing: It uses FPGA’s parallel computing power to handle large volumes of
+                medical image data, enhancing system responsiveness.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="fpga-carousel-card">
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_65.webp" alt="">
+          <div>
+            <h3>High-Speed Data Acquisition System</h3>
+            <h4>Purpose</h4>
+            <p>This system is used for real-time collection and processing of high-speed sensor data in research
+              experiments. It needs to handle large data streams and perform complex data analysis to support precise
+              experiments and real-time decision-making.</p>
+            <h4>Technologies Involved</h4>
+            <ul>
+              <li>High-Bandwidth Interface: It uses high-speed serial interfaces (like LVDS, SerDes) to support
+                real-time transmission of large amounts of data.</li>
+              <li>Data Flow Processing: It implements high-speed data processing algorithms and improve data throughput
+                through pipeline structure and parallel processing.</li>
+              <li>Real-Time Signal Processing: It uses FPGA’s hardware description language (HDL) for complex signal
+                processing tasks like filtering and Fourier transforms, etc.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fpga-carousel-card">
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_67.webp" alt="">
+          <div>
+            <h3>Smart Home Voice Control System</h3>
+            <h4>Purpose</h4>
+            <p>This system controls home appliances through voice commands in a smart home environment. FPGA is used to
+              speed up voice recognition and natural language processing, providing a smooth voice interaction
+              experience.</p>
+            <h4>Technologies Involved</h4>
+            <ul>
+              <li>Voice Recognition Acceleration: It uses FPGA to speed up voice signal processing and keyword
+                detection, reducing the delay from voice command to response.</li>
+              <li>Natural Language Processing: It achieves rapid parsing and understanding of voice commands and
+                optimizes natural language processing tasks through FPGA.</li>
+              <li>Low-Latency Processing: FPGA’s high-speed parallel processing ensures immediate system response to
+                user commands.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fpga-carousel-card">
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_66.webp" alt="">
+          <div>
+            <h3>Autonomous Driving Decision System</h3>
+            <h4>Purpose</h4>
+            <p>This system is used in self-driving cars to process data from cameras, radar, and lidar, and make
+              real-time decisions to control the vehicle. FPGAs are used here to accelerate complex AI algorithms such
+              as path planning and environmental perception.</p>
+            <h4>Technologies Involved</h4>
+            <ul>
+              <li>Real-Time Data Fusion: FPGA combines data from multiple sensors for real-time environment perception
+                and decision-making.</li>
+              <li>AI Accelerator: FPGA provides AI acceleration for self-driving applications, speeding up deep learning
+                model inference.</li>
+              <li>Parallel Computing: FPGA’s parallel processing boosts efficiency for complex computing tasks like
+                object detection and trajectory prediction.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="fpga-carousel-button-cl">
+        <button class="fpga-carousel-button left" id="fpgaCasePrevBtn"><img
+            src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_87_left.png" alt=""></button>
+        <button class="fpga-carousel-button right" id="fpgaCaseNextBtn"><img
+            src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_87_right.png" alt=""></button>
+      </div>
+    </div>
+
+    <div class="fpga-carousel-indicators">
+      <div data-index="0"></div>
+      <div data-index="1"></div>
+      <div data-index="2"></div>
+      <div data-index="3"></div>
+    </div>
+  </div>
+  <script>
+    const fpgaCarousel = document.querySelector('.fpga-carousel');
+    const fpgaCaseCards = document.querySelectorAll('.fpga-carousel-card');
+    const fpgaCaseIndicators = document.querySelectorAll('.fpga-carousel-indicators div');
+    let fpgaCaseCurrentIndex = 1;
+
+    function getOffsetAdjustment() {
+      if (window.innerWidth <= 767) {
+        return 0; // For mobile or smaller screens
+      } else {
+        return 118; // For larger screens
+      }
+    }
+    // 更新轮播图位置和指示器
+    function updateFpgaCaseCarousel() {
+      const offset = -((fpgaCaseCurrentIndex * (fpgaCaseCards[0].offsetWidth + getOffsetAdjustment())) - (fpgaCarousel.offsetWidth / 2 - fpgaCaseCards[0].offsetWidth / 2));
+      fpgaCarousel.style.transform = `translateX(${offset}px)`;
+
+      // 更新指示器的活动状态
+      fpgaCaseIndicators.forEach(indicator => indicator.classList.remove('active'));
+      fpgaCaseIndicators[fpgaCaseCurrentIndex].classList.add('active');
+    }
+
+    // 上一张
+    document.getElementById('fpgaCasePrevBtn').addEventListener('click', () => {
+      if (fpgaCaseCurrentIndex > 0) {
+        fpgaCaseCurrentIndex--;
+      } else {
+        fpgaCaseCurrentIndex = fpgaCaseCards.length - 1;  // 回到最后一个
+      }
+      updateFpgaCaseCarousel();
+    });
+
+    // 下一张
+    document.getElementById('fpgaCaseNextBtn').addEventListener('click', () => {
+      if (fpgaCaseCurrentIndex < fpgaCaseCards.length - 1) {
+        fpgaCaseCurrentIndex++;
+      } else {
+        fpgaCaseCurrentIndex = 0;  // 回到第一个
+      }
+      updateFpgaCaseCarousel();
+    });
+
+    // 点击指示器直接跳转到对应卡片
+    fpgaCaseIndicators.forEach(indicator => {
+      indicator.addEventListener('click', (e) => {
+        fpgaCaseCurrentIndex = parseInt(e.target.getAttribute('data-index'));
+        updateFpgaCaseCarousel();
+      });
+    });
+
+    // 初始化
+    updateFpgaCaseCarousel();
+    window.addEventListener('resize', updateFpgaCaseCarousel); // 监听窗口大小变化，调整轮播图位置
+  </script>
+
+</body>

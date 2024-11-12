@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .products-technical-container {
+      display: flex;
+      width: 100%;
+      height: 940rem;
+      font-family: "lato", sans-serif;
+
+      .products-technical-button-list {
+        display: flex;
+        margin-left: 28rem;
+        margin-top: 36rem;
+
+
+        a {
+          button {
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+            width: 193rem;
+            height: 48rem;
+            cursor: pointer;
+          }
+
+          &:nth-child(1) {
+            button {
+              color: #ffffff;
+              background: #363d4e;
+              border: #363d4e;
+            }
+          }
+
+          &:nth-child(2) {
+            button {
+              background: #fafafa;
+              border: 1rem solid #1a58f7;
+              color: #1A58F7;
+              margin-left: 28rem;
+
+            }
+          }
+        }
+
+
+
+      }
+    }
+
+    .left-section {
+      width: 1000rem;
+      position: relative;
+
+      #product-image {
+        width: 1000rem;
+        height: 940rem;
+        object-fit: cover;
+      }
+
+    }
+
+    .right-section {
+      width: 920rem;
+      padding: 180rem 0 0 29rem;
+      box-sizing: border-box;
+
+      h2,
+      p {
+        margin-left: 28rem;
+      }
+
+      h2 {
+        font-size: 28rem;
+        font-weight: 900;
+        color: #111111;
+        line-height: 32rem;
+      }
+
+      p {
+        margin: 16rem 0 70rem 28rem;
+        font-size: 18rem;
+        color: #333333;
+        line-height: 21rem;
+        width: 630rem;
+      }
+    }
+
+    #product-list {
+      list-style: none;
+      padding: 0;
+      display: inline-flex;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 16rem;
+        cursor: pointer;
+        transition: color 0.3s;
+        font-size: 16rem;
+        display: inline-block;
+        line-height: 32rem;
+      }
+    }
+
+    #product-list li.active,
+    #product-list li:hover {
+      color: #FF6600;
+    }
+
+    #product-list li .arrow {
+      margin-right: 10rem;
+      color: transparent;
+    }
+
+    #product-list li.active .arrow,
+    #product-list li:hover .arrow {
+      color: #FF6600;
+    }
+
+    #product-text {
+      width: 440rem;
+      height: 260rem;
+      background: rgba(229, 95, 6, 0.36);
+      font-size: 18rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 24rem;
+      padding: 0 22rem;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 8rem;
+      bottom: 120rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="products-technical-container">
+    <div class="left-section">
+      <img id="product-image" src="">
+      <div id="product-text"></div>
+    </div>
+    <div class="right-section">
+      <h2>Digital Night Vision Device</h2>
+      <p>It adopts digital technology to achieve high-definition night vision and is suitable for various application
+        scenarios.</p>
+      <ul id="product-list">
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/darkness_07.webp"
+          data-text="The OWL-201 features a high-performance 1-inch target solid-state low-light device of the second generation. It offers high sensitivity, reliability, and versatility for day and night use, making it ideal for security monitoring, night observation, and special operations, providing excellent visual enhancement."
+          class="active">
+          <span class="arrow">▶</span> OWL-201 Super Digital Head-Mounted Night Vision Device
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_01.webp"
+          data-text="The OWL-208 integrates digital low-light, infrared observation, and target positioning functions. It offers high sensitivity, digital fusion processing, day and night use, low latency, and the capability to fuse low-light and infrared images, making it suitable for night image capturing.">
+          <span class="arrow">▶</span> OWL-208 Super Digital Fusion Head-Mounted Night Vision Goggles
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_02.webp"
+          data-text="The OWL-M108 is a high-performance digital low-light night vision scope with high sensitivity, reliability, and day-night use. Compatible with various mainstream gun mounts, it offers recording and digital image storage capabilities, which are ideal for night combat and observation missions.">
+          <span class="arrow">▶</span> OWL-M108 Super Digital Low-Light Night Vision Scope
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_03.webp"
+          data-text="The OWL-M118 is a high-performance digital low-light night vision scope featuring day-night use and resistance to bright light. It fits various mainstream gun mounts and can expand digital image storage, making it ideal for night combat and precise shooting tasks.">
+          <span class="arrow">▶</span> OWL-M118 Super Digital Low-Light Night Vision Scope
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_04.webp"
+          data-text="The OWL-M208 utilizes a high-performance 1-inch target solid-state low-light device of the second generation. It offers high sensitivity, reliability, and day-night versatility, and it is suitable for night observation and precise shooting with various mainstream gun types.">
+          <span class="arrow">▶</span> OWL-M208 Super Digital Low-Light Night Vision Scope
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_05.webp"
+          data-text="The OWL-M218 uses a high-performance 1-inch target solid-state low-light device of the second generation. With high sensitivity, high reliability and universal day and night features, this product is compatible with a variety of mainstream gun mounts and can also expand the digital image storage function, making it suitable for night combat and precision shooting missions.">
+          <span class="arrow">▶</span> OWL-M218 Super Digital Low-Light Night Vision Scope
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_06.webp"
+          data-text="The OWL-RH108 integrates low-light and infrared observation functions. With high sensitivity, reliability, and day-night use, it is suitable for security monitoring, military reconnaissance, and night operations, offering efficient observation and positioning capabilities.">
+          <span class="arrow">▶</span> OWL-RH108 Super Digital Fusion Infrared Night Vision Thermal Imager
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_07.webp"
+          data-text="The OWL-RH208 combines low-light and infrared observation, laser ranging, and target positioning functions. With high sensitivity, reliability, and day-night use, it’s perfect for security monitoring, military reconnaissance, and night operations, offering precise observation, ranging, and positioning.">
+          <span class="arrow">▶</span> OWL-RH208 Super Digital Fusion Infrared Night Vision Thermal Imager
+        </li>
+        <li data-image="https://www.eipeks.com/wp-content/uploads/2024/07/super_digital_08.webp"
+          data-text="The OWL-RH218 is a multifunctional driving assistance device integrating low-light and infrared observation, wide-field image stitching, large-screen display, and control functions. It features high sensitivity, reliability, and day-night versatility, making it particularly suitable for vehicle safety monitoring and navigation in nighttime driving conditions.">
+          <span class="arrow">▶</span> OWL-RH218 Super Digital Vehicle-Mounted Fusion Infrared Night Vision Thermal
+          Imager
+        </li>
+        <!-- Add more list items as needed -->
+      </ul>
+      <div class="products-technical-button-list">
+        <a href="#my-darkness-start-form"><button>Direct purchase</button></a>
+        <a href="#my-darkness-start-form"><button> Development services</button></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productList = document.getElementById('product-list');
+      const productImage = document.getElementById('product-image');
+      const productText = document.getElementById('product-text');
+
+      function updateContent(item) {
+        const imageSrc = item.getAttribute('data-image');
+        const textContent = item.getAttribute('data-text');
+
+        productImage.src = imageSrc;
+        productText.textContent = textContent;
+
+        const activeItem = productList.querySelector('.active');
+        if (activeItem) {
+          activeItem.classList.remove('active');
+        }
+        item.classList.add('active');
+      }
+
+      productList.addEventListener('mouseover', function (e) {
+        if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
+          const item = e.target.tagName === 'LI' ? e.target : e.target.parentElement;
+          updateContent(item);
+        }
+      });
+
+      // Initialize the first item as active
+      const firstItem = productList.querySelector('li');
+      if (firstItem) {
+        updateContent(firstItem);
+      }
+    });
+  </script>
+</body>
+
+</html>

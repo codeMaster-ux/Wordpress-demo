@@ -1,0 +1,169 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .drone-pioneer-cl {
+      width: 100%;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      margin: 0 auto;
+      color: #333;
+
+      >div {
+        border-radius: 8rem;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(2rem);
+
+        .drone-pioneer-cl-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          transition: background-color 0.3s ease;
+          height: 44rem;
+          padding: 0 12rem;
+
+          span {
+            font-size: 12rem;
+            font-weight: 700;
+            line-height: 14rem;
+          }
+
+          img {
+            width: 12rem;
+            height: 12rem;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .drone-pioneer-cl-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+
+          >div {
+            font-size: 12rem;
+            font-weight: 500;
+            line-height: 14rem;
+            color: #333;
+            padding: 0 12rem 12rem 12rem;
+
+            .studies-drone-final-resultes {
+              font-weight: 700;
+              margin-bottom: 5rem;
+            }
+
+            div:not(:first-child) {
+              span {
+                color: #FF6F0F;
+              }
+
+              span:first-child {
+                font-size: 10rem;
+                margin: 0 4rem;
+              }
+            }
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 500;
+            line-height: 18rem;
+            padding: 0 12rem 12rem 12rem;
+          }
+        }
+
+      }
+    }
+
+    .drone-pioneer-cl-header.drone-pioneer-cl-active img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_09.png');
+    }
+
+    .drone-pioneer-cl-header img {
+      content: url('https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_08.png');
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drone-pioneer-cl">
+    <div>
+      <div class="drone-pioneer-cl-header drone-pioneer-cl-active" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_34.webp') no-repeat center
+          ;background-size: cover">
+        <span>Pioneer Farm Drone</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_08.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-pioneer-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">Final Results:</div>
+          <div><span>●</span><span>Increased Crop Yield:</span>Crop yield in the orchard increased by 20% after
+            deploying the drone.</div>
+          <div style="margin: 8rem 0;"><span>●</span><span>Resource Savings:</span> Pesticide usage was reduced by 15%,
+            effectively lowering operating costs.</div>
+          <div><span>●</span><span>Improved Production Efficiency:</span>Overall production efficiency improved by 25%,
+            optimizing resource allocation and operational processes.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="drone-pioneer-cl-header">
+        <span>Project Background</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-pioneer-cl-content">
+        <p>Traditional crop management methods struggle to accurately assess crop health and determine the exact amounts
+          of fertilizers and pesticides needed, often leading to significant resource wastage over time. The orchard
+          management team sought to enhance crop health monitoring accuracy and optimize fertilization and spraying
+          efficiency using advanced drone technology, aiming for higher productivity and better resource utilization.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="drone-pioneer-cl-header">
+        <span>Application Process</span>
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/drone_45.png" alt="Toggle Icon">
+      </div>
+      <div class="drone-pioneer-cl-content">
+        <p>We developed the Pioneer Farm Drone specifically for this orchard, equipping it with multispectral sensors
+          and an automatic spraying system.The drone uses high-resolution sensors to monitor crop health and soil
+          moisture in real-time and applies intelligent algorithms to analyze data, creating precise fertilization and
+          spraying plans. Equipped with a 16-foot spray boom and a high-output 28 GPM pump, it delivers wide coverage,
+          sharp edges, and precise spraying close to the canopy, minimizing chemical drift and significantly improving
+          spraying effectiveness and resource utilization.Additionally, the spray boom is fully compatible with various
+          interchangeable nozzles, allowing flexible adjustments based on different operational needs.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.drone-pioneer-cl-header').forEach(header => {
+      header.addEventListener('click', function () {
+        const dronePioneerOpenItem = document.querySelector('.drone-pioneer-cl-header.drone-pioneer-cl-active');
+
+        // 如果有其他面板打开，先关闭它
+        if (dronePioneerOpenItem && dronePioneerOpenItem !== this) {
+          dronePioneerOpenItem.classList.remove('drone-pioneer-cl-active');
+          dronePioneerOpenItem.nextElementSibling.style.maxHeight = '0';
+        }
+
+        // 切换当前面板
+        this.classList.toggle('drone-pioneer-cl-active');
+        const dronePioneerContent = this.nextElementSibling;
+
+        if (this.classList.contains('drone-pioneer-cl-active')) {
+          dronePioneerContent.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          dronePioneerContent.style.maxHeight = '0';
+        }
+      });
+    });
+
+    // 默认展开第一个面板
+    const dronePioneerSirstContent = document.querySelector('.drone-pioneer-cl .drone-pioneer-cl-content');
+    dronePioneerSirstContent.style.maxHeight = dronePioneerSirstContent.scrollHeight + 'px';
+  </script>
+
+</body>

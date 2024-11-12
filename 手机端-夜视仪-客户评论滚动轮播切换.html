@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .reviews_carousel {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      font-family: "Lato", sans-serif;
+
+      /* Firefox */
+      .reviews_carousel_container::-webkit-scrollbar {
+        display: none;
+        /* Safari 和 Chrome */
+      }
+
+      .reviews_carousel_container {
+        display: flex;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overflow: auto;
+        /* 或者 overflow: scroll; */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+
+
+        .reviews_carousel_item {
+          width: 257rem;
+          height: 128rem;
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          box-sizing: border-box;
+          padding: 16rem 12rem;
+          border: 1rem solid #ccc;
+          margin-right: 8rem;
+          font-size: 12rem;
+          line-height: 16rem;
+          border-radius: 8rem;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .reviews_carousel_dots {
+        margin-top: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+
+        .reviews_dot {
+          height: 4rem;
+          width: 4rem;
+          margin: 0 2rem;
+          background-color: #999;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease, transform 0.6s ease;
+        }
+
+        .reviews_dot.reviews_active {
+          background-color: #333;
+          transform: scale(1.5);
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reviews_carousel">
+    <div class="reviews_carousel_container">
+      <div class="reviews_carousel_item">"Since using the OWL-208 Super Digital Fusion Head-Mounted Night Vision
+        Goggles, our
+        nighttime patrols have become much safer and more efficient. The image quality is outstanding, and the operation
+        is very simple."</div>
+      <div class="reviews_carousel_item">"We have always relied on EIPEKS' thermal imaging and night vision solutions
+        for our
+        security operations. Their commitment to quality and customization is unparalleled."</div>
+      <div class="reviews_carousel_item">"EIPEKS' custom ISP solutions have significantly improved the performance of
+        our
+        imaging devices, giving us a competitive edge in the market."</div>
+      <div class="reviews_carousel_item">"Thanks to EIPEKS for providing the Reach-3 Thermal Imaging Network Camera. It
+        has
+        shown excellent performance and reliability in our surveillance system, especially for dusk and nighttime
+        monitoring."</div>
+    </div>
+    <div class="reviews_carousel_dots">
+      <span class="reviews_dot reviews_active"></span>
+      <span class="reviews_dot"></span>
+      <span class="reviews_dot"></span>
+      <span class="reviews_dot"></span>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.querySelector('.reviews_carousel_container');
+      const dots = document.querySelectorAll('.reviews_dot');
+      let currentIndex = 0;
+      const totalItems = document.querySelectorAll('.reviews_carousel_item').length;
+      let isInteracting = false;
+      let interactionTimeout;
+
+      function updateDots() {
+        dots.forEach(dot => dot.classList.remove('reviews_active'));
+        dots[currentIndex].classList.add('reviews_active');
+      }
+
+      function autoScroll() {
+        if (!isInteracting) {
+          currentIndex = (currentIndex + 1) % totalItems;
+          carousel.scrollTo({
+            left: carousel.scrollWidth / totalItems * currentIndex,
+            behavior: 'smooth'
+          });
+          updateDots();
+        }
+      }
+
+      let autoScrollInterval;
+
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(autoScroll, 3000);
+      }
+
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+      }
+
+
+      function handleInteractionStart() {
+        isInteracting = true;
+        stopAutoScroll();
+        clearTimeout(interactionTimeout);
+      }
+
+      function handleInteractionEnd() {
+        isInteracting = false;
+        interactionTimeout = setTimeout(startAutoScroll, 3000);  // Resume auto scroll after 3 seconds of inactivity
+      }
+
+      // Intersection Observer to start auto-scroll when carousel is in view
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          startAutoScroll();
+        } else {
+          stopAutoScroll();
+        }
+      }, { threshold: 0.5 });
+
+      observer.observe(document.querySelector('.reviews_carousel'));
+
+      // Detect user interactions to pause auto-scroll
+      carousel.addEventListener('touchstart', handleInteractionStart);
+      carousel.addEventListener('touchend', handleInteractionEnd);
+      carousel.addEventListener('mousedown', handleInteractionStart);
+      carousel.addEventListener('mouseup', handleInteractionEnd);
+      carousel.addEventListener('wheel', handleInteractionStart);
+      carousel.addEventListener('wheelend', handleInteractionEnd);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          carousel.scrollTo({
+            left: carousel.scrollWidth / totalItems * currentIndex,
+            behavior: 'smooth'
+          });
+          updateDots();
+          handleInteractionStart();
+          handleInteractionEnd();
+        });
+      });
+
+      // Update the currentIndex based on scroll position
+      carousel.addEventListener('scroll', () => {
+        let index = Math.round(carousel.scrollLeft / (carousel.scrollWidth / totalItems));
+        if (index !== currentIndex) {
+          currentIndex = index;
+          updateDots();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

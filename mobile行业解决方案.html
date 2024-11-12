@@ -1,0 +1,328 @@
+<head>
+  <style>
+    .drone-industry-cl {
+      width: 100%;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 16rem;
+      margin: 0 auto;
+      color: #333;
+
+      >div {
+        border-radius: 8rem;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(2rem);
+
+        .drone-industry-cl-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          cursor: pointer;
+          position: relative;
+          transition: background-color 0.3s ease;
+          height: 188rem;
+          padding: 0 8rem 8rem 8rem;
+          border-radius: 8rem;
+
+          >div {
+            width: 100%;
+            height: 36rem;
+            background: rgba(0, 0, 0, 0.50);
+            border-radius: 36rem;
+            backdrop-filter: blur(2rem);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 12rem 0 20rem;
+
+            >div {
+              width: 28px;
+              height: 28px;
+              background: rgba(255, 255, 255, 0.24);
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 16rem;
+                height: 16rem;
+                transition: transform 0.3s ease;
+              }
+            }
+
+            span {
+              font-size: 14rem;
+              font-weight: 500;
+              line-height: 14r6em;
+              color: #fff;
+            }
+
+          }
+
+        }
+
+        .drone-industry-cl-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+          margin: 4rem 0;
+
+          >div {
+            font-size: 12rem;
+            font-weight: 500;
+            line-height: 14rem;
+            color: #666;
+            padding: 12rem 8rem 16rem 8rem;
+            background: #fafafa;
+            border-radius: 8rem;
+
+            .studies-drone-final-resultes {
+              font-weight: 700;
+              margin-bottom: 12rem;
+              font-size: 13rem;
+              line-height: 15rem;
+              color: #333333;
+            }
+
+            div:not(:first-child) {
+              span:first-child {
+                font-size: 10rem;
+                margin: 0 3rem;
+              }
+
+              display: flex;
+            }
+          }
+
+          p {
+            font-size: 12rem;
+            font-weight: 500;
+            line-height: 18rem;
+            padding: 0 12rem 12rem 12rem;
+          }
+        }
+
+      }
+    }
+
+    .drone-industry-cl-header.drone-industry-cl-active img {
+      /* content: url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png'); */
+      animation: droneIndustryRotateAnimation 0.5s forwards;
+      /* 应用动画 */
+    }
+
+    @keyframes droneIndustryRotateAnimation {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    @keyframes droneIndustryRotateAnimations {
+      from {
+        transform: rotate(180deg);
+      }
+
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+    .drone-industry-cl-header img {
+      animation: droneIndustryRotateAnimations 0.5s forwards;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="drone-industry-cl">
+    <!-- one -->
+    <div>
+      <div class="drone-industry-cl-header drone-industry-cl-active" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_34.webp') no-repeat center
+          ;background-size: cover">
+        <div><span>Construction and Building</span>
+          <div class="drone-industry-toggle-img">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png" alt="Toggle Icon">
+          </div>
+        </div>
+      </div>
+      <div class="drone-industry-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">The construction and building industry demands high precision and
+            efficiency. our drone solutions can meet these needs and provide comprehensive support for project
+            management.</div>
+          <div><span>●</span><span>Real-Time Site Monitoring: Drones capture high-definition images and data from the
+              construction site in real time, providing instant progress reports and quality assessments to ensure the
+              project stays on track.</span></div>
+          <div style="margin: 8rem 0;">
+            <span>●</span>3D Modeling and Mapping: Drones generate high-precision 3D models and terrain maps,
+            offering detailed visual data for design validation and construction planning, reducing manual errors and
+            increasing work efficiency.
+          </div>
+          <div><span>●</span>Data Integration and Intelligent Analysis: It can Automatically generate precise analysis
+            reports and integrate data from multiple sources, helping construction teams make more informed decisions,
+            optimize workflows, and reduce costs.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- two -->
+    <div>
+      <div class="drone-industry-cl-header" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_31.webp') no-repeat center
+          ;background-size: cover">
+        <div><span>Mining and Resource Management</span>
+          <div class="drone-industry-toggle-img">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png" alt="Toggle Icon">
+          </div>
+        </div>
+      </div>
+      <div class="drone-industry-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">Resource Exploration and Assessment: Drones efficiently conduct
+            large-scale geological surveys, capturing high-resolution images and 3D terrain data of mining areas. This
+            data provides reliable references for resource evaluation and development planning.</div>
+          <div><span>●</span><span>Real-Time Site Monitoring: Drones capture high-definition images and data from the
+              construction site in real time, providing instant progress reports and quality assessments to ensure the
+              project stays on track.</span></div>
+          <div style="margin: 8rem 0;">
+            <span>●</span>Mine Safety Monitoring: Real-time monitoring of mining sites with drones helps quickly
+            identify potential safety hazards such as landslides, collapses, or gas leaks, aiding in the timely
+            prevention and management of incidents to ensure the safety of personnel and equipment.
+          </div>
+          <div><span>●</span>Mine Management and Optimization: Data collected by drones accurately reflects the
+            real-time status of mining sites, supporting dynamic management and optimization of production processes,
+            improving resource utilization and production efficiency.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- three -->
+    <div>
+      <div class="drone-industry-cl-header" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_32.webp') no-repeat center
+          ;background-size: cover">
+        <div><span>Agriculture and Environmental Monitoring</span>
+          <div class="drone-industry-toggle-img">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png" alt="Toggle Icon">
+          </div>
+        </div>
+      </div>
+      <div class="drone-industry-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">Precision Crop Monitoring and Management: Drones monitor the growth
+            status of crops in real-time, identifying pests and nutrient deficiencies, offering precise agricultural
+            management recommendations to improve yield and quality.</div>
+          <div><span>●</span><span>Real-Time Site Monitoring: Drones capture high-definition images and data from the
+              construction site in real time, providing instant progress reports and quality assessments to ensure the
+              project stays on track.</span></div>
+          <div style="margin: 8rem 0;">
+            <span>●</span>Smart Spraying and Fertilization: Through precise positioning and control, drones efficiently
+            spray pesticides and fertilizers, reducing chemical usage and environmental impact, promoting sustainable
+            agricultural practices.
+          </div>
+          <div><span>●</span>Environmental Data Collection and Analysis: Drones monitor soil, water sources, and climate
+            changes, providing detailed environmental data to support ecological protection and resource management,
+            helping achieve sustainability goals.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- four -->
+    <div>
+      <div class="drone-industry-cl-header" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_37.webp') no-repeat center
+          ;background-size: cover">
+        <div><span>Film Production</span>
+          <div class="drone-industry-toggle-img">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png" alt="Toggle Icon">
+          </div>
+        </div>
+      </div>
+      <div class="drone-industry-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">Our drone technology offers new perspectives and creative
+            possibilities for film production, assisting industry professionals in creating visually impactful works.
+          </div>
+          <div><span>●</span><span>Dynamic Aerial Filming and Creative Shooting: Drones capture challenging aerial shots
+              with unique angles and smooth dynamic footage, enhancing narrative effects and visual impact in
+              films.</span></div>
+          <div style="margin: 8rem 0;">
+            <span>●</span>High Stability and HD Imaging: Equipped with advanced stabilization systems and
+            high-definition cameras, our drones deliver stable, clear images in various complex environments, meeting
+            the high standards of professional film production.
+          </div>
+          <div><span>●</span>Flexible Operation and Multi-Scene Application: Adapting to diverse shooting needs, drones
+            can be used in films, commercials, documentaries, and other production scenarios, enabling seamless
+            execution of creative ideas.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- five -->
+    <div>
+      <div class="drone-industry-cl-header" style="background:url('https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_33.webp') no-repeat center
+          ;background-size: cover">
+        <div><span>Emergency Response and Safety</span>
+          <div class="drone-industry-toggle-img">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_35.png" alt="Toggle Icon">
+          </div>
+        </div>
+      </div>
+      <div class="drone-industry-cl-content">
+        <div>
+          <div class="studies-drone-final-resultes">Rapid Deployment and Site Inspection: Drones quickly reach accident
+            or disaster sites, conducting real-time inspections and information gathering, helping emergency teams in
+            understanding the situation and making timely decisions.
+          </div>
+          <div><span>●</span><span>Real-Time Site Monitoring: Drones capture high-definition images and data from the
+              construction site in real time, providing instant progress reports and quality assessments to ensure the
+              project stays on track.</span></div>
+          <div style="margin: 8rem 0;">
+            <span>●</span>Disaster Assessment and Response Support: Comprehensive post-disaster assessment data obtained
+            from aerial perspectives provides a scientific basis for rescue and recovery efforts, improving the
+            efficiency and effectiveness of emergency response.
+          </div>
+          <div><span>●</span>Continuous Patrol and Area Monitoring: Drones perform extended aerial patrols, monitoring
+            sensitive areas in real time, preventing potential security threats, and enhancing the coverage and accuracy
+            of regional safety management.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.drone-industry-cl-header').forEach(header => {
+
+      header.addEventListener('click', function (event) {
+        event.stopPropagation();
+        const droneIndustryOpenItem = document.querySelector('.drone-industry-cl-header.drone-industry-cl-active');
+
+        // 切换当前面板
+        this.classList.toggle('drone-industry-cl-active');
+        const droneIndustryContent = this.nextElementSibling;
+
+        if (this.classList.contains('drone-industry-cl-active')) {
+          droneIndustryContent.style.maxHeight = droneIndustryContent.scrollHeight + 'px';
+        }
+      });
+    });
+    document.querySelectorAll('.drone-industry-toggle-img').forEach(header => {
+      header.addEventListener('click', function () {
+        // 在这里处理点击事件
+        const droneIndustryContents = this.closest('.drone-industry-cl-header').nextElementSibling;
+        if (parseFloat(droneIndustryContents.style.maxHeight) > 0) {
+          droneIndustryContents.style.maxHeight = 0
+        }
+      });
+    });
+    // // 默认展开第一个面板
+    const droneIndustrySirstContent = document.querySelector('.drone-industry-cl .drone-industry-cl-content');
+    droneIndustrySirstContent.style.maxHeight = droneIndustrySirstContent.scrollHeight + 'px';
+  </script>
+
+</body>

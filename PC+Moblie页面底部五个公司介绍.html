@@ -1,0 +1,337 @@
+<head>
+  <link rel="stylesheet" href="CSS/common.css">
+  <style>
+    .company-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      cursor: grab;
+      user-select: none;
+      scrollbar-width: none;
+      /* For Firefox */
+      -ms-overflow-style: none;
+      /* For Internet Explorer and Edge */
+      font-family: "Helvetica", sans-serif;
+      margin-left: calc((100vw - 1400rem)/2);
+      height: 414rem;
+      align-items: center;
+
+      img {
+        user-drag: none;
+        /* 禁止用户拖动图片 */
+        -webkit-user-drag: none;
+        /* 禁止在Webkit浏览器中拖动图片 */
+        pointer-events: none;
+        /* 禁止图片响应鼠标事件 */
+      }
+
+      >div {
+        border-radius: 8rem;
+        color: white;
+        margin-right: 24rem;
+        padding: 20rem 20rem 0 20rem;
+        border-radius: 8rem;
+        background: #fff;
+        box-shadow: 0 8rem 32rem 0 rgba(0, 0, 0, 0.04);
+        height: 246rem;
+        min-width: 432rem;
+
+        h3 {
+          display: none;
+        }
+
+        .company-img-container {
+          width: 100%;
+          position: relative;
+          display: flex;
+          height: 149rem;
+          justify-content: space-between;
+
+          .pc-show-img {
+            width: 214rem;
+            height: 149rem;
+            object-fit: cover;
+            border-radius: 8rem;
+
+          }
+
+          .mobile-show-img {
+            display: none;
+          }
+
+          .item-left {
+            >div {
+              background: #162C5B;
+              display: inline-flex;
+              align-items: center;
+              column-gap: 4rem;
+              height: 32rem;
+              border-radius: 40rem;
+              justify-content: center;
+              padding: 0 10rem 0 9rem;
+
+              span {
+                font-size: 12rem;
+                font-weight: 500rem;
+                line-height: 14rem;
+                color: #fff;
+              }
+
+            }
+
+            h3 {
+              font-size: 18rem;
+              font-weight: 700;
+              line-height: 21rem;
+              color: #162C5B;
+              margin-top: 21rem;
+              width: 150rem;
+              display: block;
+            }
+
+
+
+            img {
+              width: 14rem;
+              height: 14rem;
+              object-fit: cover;
+            }
+          }
+        }
+
+        p {
+          font-size: 14rem;
+          font-weight: 500;
+          line-height: 16rem;
+          color: #576788;
+          margin-top: 16rem;
+        }
+      }
+
+    }
+
+    /* Hide scrollbar for Webkit browsers */
+    .company-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .company-scroll-container:active {
+      cursor: grabbing;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .company-scroll-container {
+        flex-direction: column;
+        overflow-x: hidden;
+        white-space: normal;
+        cursor: default;
+        padding: 0 16rem;
+        width: 100%;
+        background: #fff;
+        row-gap: 8rem;
+        margin: 0;
+        height: auto;
+        padding-bottom: 28rem;
+
+        >div {
+          color: white;
+          margin-right: 0;
+          padding: 8rem 8rem 16rem 8rem;
+          border-radius: 8rem;
+          background: #fff;
+          width: 100%;
+          min-width: auto;
+          height: auto;
+
+          h3 {
+            font-size: 14rem;
+            font-weight: 700;
+            line-height: 16rem;
+            color: #162C5B;
+            display: block;
+            margin-top: 12rem;
+            padding-left: 4rem;
+          }
+
+          .company-img-container {
+            height: 148rem;
+
+            .pc-show-img {
+              display: none;
+            }
+
+            .mobile-show-img {
+              display: block;
+              width: 100%;
+              height: 148rem;
+              object-fit: cover;
+              border-radius: 8rem;
+              position: absolute;
+              z-index: 0;
+            }
+
+            .item-left {
+              z-index: 1;
+
+              >div {
+                background: #162C5B;
+                display: inline-flex;
+                align-items: center;
+                column-gap: 4rem;
+                height: 32rem;
+                border-radius: 40rem;
+                justify-content: center;
+                padding: 0 10rem 0 9rem;
+                position: absolute;
+                bottom: 12rem;
+                left: 12rem;
+
+                span {
+                  font-size: 12rem;
+                  font-weight: 500rem;
+                  line-height: 14rem;
+                  color: #fff;
+                }
+
+              }
+
+              h3 {
+                display: none;
+              }
+
+
+
+              img {
+                width: 14rem;
+                height: 14rem;
+                object-fit: cover;
+              }
+            }
+          }
+
+          p {
+            font-size: 14rem;
+            font-weight: 500;
+            line-height: 16rem;
+            color: #576788;
+            margin-top: 8rem;
+            padding-left: 4rem;
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="company-scroll-container" id="company-scrollContainer">
+    <div>
+      <div class="company-img-container">
+        <div class="item-left">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_23.png"><span>Anhui</span>
+          </div>
+          <h3>Headquarter</h3>
+        </div>
+        <img class="pc-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_07.webp">
+        <img class="mobile-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_prototyping_05.webp">
+      </div>
+      <h3>Headquarter</h3>
+      <p>D1 Building, Gongtou Liheng Industrial Plaza, Fanhua Avenue, Feixi County, Hefei City, Anhui Province, China
+      </p>
+    </div>
+    <div>
+      <div class="company-img-container">
+        <div class="item-left">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_23.png"><span>Shenzhen</span>
+          </div>
+          <h3>E-Commerce Marketing Research Center</h3>
+        </div>
+        <img class="pc-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_04.webp">
+        <img class="mobile-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_prototyping_01.webp">
+      </div>
+      <h3>E-Commerce Marketing Research Center</h3>
+      <p>Sanding E-Commerce Building, Bantian Street, Longgang District, Shenzhen, Guangdong, China
+      </p>
+    </div>
+    <div>
+      <div class="company-img-container">
+        <div class="item-left">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_23.png"><span>Hangzhou</span>
+          </div>
+          <h3>Product R&D Center</h3>
+        </div>
+        <img class="pc-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_05.webp">
+        <img class="mobile-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_prototyping_02.webp">
+      </div>
+      <h3>Product R&D Center</h3>
+      <p>A210, Zone A, Dongxi Derbiyi Park, Dongning Road, Shangcheng District, Hangzhou, Zhejiang, China
+      </p>
+    </div>
+    <div>
+      <div class="company-img-container">
+        <div class="item-left">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_23.png"><span>Beijing</span>
+          </div>
+          <h3>Hardware and Software Technology and Testing Center</h3>
+        </div>
+        <img class="pc-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_25.webp">
+        <img class="mobile-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_prototyping_03.webp">
+      </div>
+      <h3>Hardware and Software Technology and Testing Center</h3>
+      <p>No. 536 Huaisha Road, Bohai Town, Huairou District, Beijing, China
+      </p>
+    </div>
+    <div>
+      <div class="company-img-container">
+        <div class="item-left">
+          <div>
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_23.png"><span>Hongkong</span>
+          </div>
+          <h3>Hong Kong Office</h3>
+        </div>
+        <img class="pc-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_24.webp">
+        <img class="mobile-show-img" src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_prototyping_04.webp">
+      </div>
+      <h3>Hong Kong Office</h3>
+      <p>RM 21 UNIT A 11/F TIN WUI IND BLDG NO 3 HING WONG ST TUEN, MUN, NT, HK
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const companyScrollContainer = document.getElementById('company-scrollContainer');
+    let companyIsDown = false;
+    let companyStartX;
+    let companyScrollLeft;
+    companyScrollContainer.addEventListener('mousedown', (e) => {
+      companyIsDown = true;
+      companyScrollContainer.classList.add('company-active');
+      companyStartX = e.pageX - companyScrollContainer.offsetLeft;
+      companyScrollLeft = companyScrollContainer.scrollLeft;
+    });
+
+    companyScrollContainer.addEventListener('mouseleave', () => {
+      companyIsDown = false;
+      companyScrollContainer.classList.remove('company-active');
+    });
+
+    companyScrollContainer.addEventListener('mouseup', () => {
+      companyIsDown = false;
+      companyScrollContainer.classList.remove('company-active');
+    });
+
+    companyScrollContainer.addEventListener('mousemove', (e) => {
+      if (!companyIsDown) return;
+      e.preventDefault();
+      const x = e.pageX - companyScrollContainer.offsetLeft;
+      const walk = (x - companyStartX) * 2; // Adjust scroll speed by changing the multiplier (2)
+      companyScrollContainer.scrollLeft = companyScrollLeft - walk;
+    });
+  </script>
+
+</body>

@@ -1,0 +1,155 @@
+<head>
+  <style>
+    .eos-slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: "Helvetica", sans-serif;
+      padding: 65rem 100rem;
+      background: #F9F9F9;
+      display: flex;
+      gap: 68rem;
+
+      >div:nth-child(1) {
+
+        h3 {
+          font-family: "Fjalla One", sans-serif;
+          font-size: 48rem;
+          font-weight: 400;
+          color: #162c5b;
+          line-height: 56rem;
+        }
+
+        h4 {
+          font-family: "Fjalla One", sans-serif;
+          font-size: 48rem;
+          font-weight: 400;
+          color: #ED5E0E;
+          line-height: 56rem;
+          margin-top: 16rem;
+        }
+
+        p {
+          font-size: 20rem;
+          font-weight: 400;
+          color: #576788;
+          line-height: 28rem;
+          margin: 28rem 0 48rem 0;
+        }
+
+        button {
+          width: 184rem;
+          height: 48rem;
+          background: #fff;
+          border-radius: 48rem;
+          font-size: 14rem;
+          font-weight: 400;
+          color: #666666;
+          line-height: 16rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #d4d4d4;
+        }
+
+        button:hover {
+          background: #1F1F1F;
+          color: #fff;
+          border: 1px solid transparent;
+        }
+
+      }
+
+      >div:nth-child(2) {
+        display: flex;
+        padding-right: 100rem;
+
+        >img {
+          width: 476rem;
+          background-color: #eff0f2;
+        }
+
+        >div {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_20.webp');
+          background-repeat: no-repeat;
+          background-size: 808rem auto;
+          background-position: right;
+          width: 808rem;
+          padding: 20rem 20rem 18rem 18rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: background-image 1s ease;
+          height: 420rem;
+          position: relative;
+
+          h4 {
+            font-size: 16rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 19rem;
+          }
+
+          p {
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 12rem;
+          }
+
+          .day-night {
+            position: absolute;
+            width: calc(100% + 120rem);
+            left: -60rem;
+            display: flex;
+            top: 50%;
+            transform: translateY(-50%);
+            justify-content: space-between;
+
+            img {
+              width: 44rem;
+              height: 44rem;
+              text-align: left;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="eos-slider-container">
+    <div>
+      <h3>Explore Our Solutions</h3>
+      <h4>Ready to see the night in a new light?</h4>
+      <p>Discover how our night vision technology can transform your business and find the solution that best fits your
+        needs.</p>
+      <a href="#drone2-form"><button>Development services</button></a>
+    </div>
+    <div>
+      <div id="eosBackgroundContainer">
+        <div class="day-night">
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_47.png" id="eosDayBtn" class="eos-active"
+            onclick="showDay()"></img>
+          <img src="https://www.eipeks.com/wp-content/uploads/2024/10/nvts_48.png" id="eosNightBtn"
+            onclick="showNight()"></img>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showDay() {
+      document.getElementById('eosBackgroundContainer').style.backgroundImage = "url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_20.webp')";
+    }
+
+    function showNight() {
+      document.getElementById('eosBackgroundContainer').style.backgroundImage = "url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_43.webp')";
+    }
+
+  </script>
+
+</body>

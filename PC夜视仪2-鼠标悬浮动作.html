@@ -1,0 +1,385 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .ptlnvd-slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 24rem;
+
+      >div:nth-child(1) {
+        display: flex;
+        gap: 24rem;
+
+        .item {
+          height: 516rem;
+          background: #f4f6f8;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+
+          h3 {
+            font-size: 24rem;
+            color: #162C5B;
+            font-weight: 400;
+            line-height: 28rem;
+          }
+
+          p {
+            font-size: 14rem;
+            line-height: 23rem;
+            color: #7C8FB3;
+          }
+
+          .dnvd-development-btn {
+            width: 172rem;
+            height: 44rem;
+            background: rgba(14, 106, 237, 0.05);
+            border-radius: 40rem;
+            border: none;
+            color: #576788;
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+          }
+
+          .dnvd-development-direct {
+            background: #FFFFFF;
+            color: #ED5E0E;
+            width: 172rem;
+            height: 44rem;
+            border-radius: 40rem;
+            border: none;
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+            margin-top: 16rem;
+          }
+        }
+
+        >div:nth-child(1) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_57.webp');
+          background-repeat: no-repeat;
+          background-size: 606rem auto;
+          background-position: right bottom;
+          width: 100%;
+          padding: 88rem 0 0 64rem;
+
+          p {
+            width: 418rem;
+            margin: 16rem 0 48rem;
+          }
+        }
+
+        >div:nth-child(1):hover {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_75.webp');
+          background-size: cover;
+          background-position: center;
+
+          .dnvd-development-btn {
+            background: #FFFFFF;
+            color: #0E6AED;
+          }
+
+          .dnvd-development-direct {
+            background: #FF823A;
+            color: #fff;
+          }
+
+          h3,
+          p {
+            color: #fff;
+          }
+        }
+
+        >div:nth-child(2),
+        >div:nth-child(3) {
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: bottom;
+          width: 477rem;
+          min-width: 477rem;
+          position: relative;
+          overflow: hidden;
+          padding: 47rem 48rem;
+
+          .ptlnvd-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16rem;
+          }
+
+          .ptlnvd-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.38);
+            /* 悬浮时的背景色 */
+            display: flex;
+            flex-direction: column;
+            transition: bottom 0.5s ease-in-out;
+            gap: 16rem;
+            justify-content: center;
+            align-items: center;
+
+            .dnvd-development-btn {
+              background: #FFFFFF;
+              color: #0E6AED;
+              cursor: pointer;
+            }
+
+            .dnvd-development-direct {
+              background: #FF823A;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+
+        >div:nth-child(2):hover,
+        >div:nth-child(3):hover {
+          .ptlnvd-overlay {
+            bottom: 0;
+          }
+        }
+
+        >div:nth-child(2) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_58.webp');
+        }
+
+        >div:nth-child(3) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_59.webp');
+        }
+      }
+
+      >div:nth-child(2) {
+        display: flex;
+        gap: 24rem;
+
+        .item {
+          height: 516rem;
+          background: #f4f6f8;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+
+          h3 {
+            font-size: 24rem;
+            color: #162C5B;
+            font-weight: 400;
+            line-height: 28rem;
+          }
+
+          p {
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 23rem;
+            color: #7C8FB3;
+          }
+
+          .dnvd-development-btn {
+            width: 172rem;
+            height: 44rem;
+            background: rgba(14, 106, 237, 0.05);
+            border-radius: 40rem;
+            border: none;
+            color: #576788;
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+          }
+
+          .dnvd-development-direct {
+            background: #FFFFFF;
+            color: #ED5E0E;
+            width: 172rem;
+            height: 44rem;
+            border-radius: 40rem;
+            border: none;
+            font-size: 14rem;
+            font-weight: 400;
+            line-height: 16rem;
+            margin-top: 16rem;
+          }
+        }
+
+        >div:nth-child(3) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_61.webp');
+          background-repeat: no-repeat;
+          background-size: 606rem auto;
+          background-position: right bottom;
+          width: 100%;
+          padding: 108rem 0 0 64rem;
+
+          p {
+            width: 418rem;
+            margin: 16rem 0 48rem;
+          }
+        }
+
+        >div:nth-child(3):hover {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_76.webp');
+          background-size: cover;
+          background-position: center;
+
+          .dnvd-development-btn {
+            background: #FFFFFF;
+            color: #0E6AED;
+          }
+
+          .dnvd-development-direct {
+            background: #FF823A;
+            color: #fff;
+          }
+
+          h3,
+          p {
+            color: #fff;
+          }
+        }
+
+        >div:nth-child(1),
+        >div:nth-child(2) {
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: bottom;
+          width: 477rem;
+          min-width: 477rem;
+          position: relative;
+          overflow: hidden;
+          padding: 47rem 48rem;
+
+          .ptlnvd-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16rem;
+          }
+
+          .ptlnvd-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.38);
+            /* 悬浮时的背景色 */
+            display: flex;
+            flex-direction: column;
+            transition: bottom 0.5s ease-in-out;
+            gap: 16rem;
+            justify-content: center;
+            align-items: center;
+
+            .dnvd-development-btn {
+              background: #FFFFFF;
+              color: #0E6AED;
+              cursor: pointer;
+            }
+
+            .dnvd-development-direct {
+              background: #FF823A;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+
+        >div:nth-child(1):hover,
+        >div:nth-child(2):hover {
+          .ptlnvd-overlay {
+            bottom: 0;
+          }
+        }
+
+        >div:nth-child(1) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_60.webp');
+        }
+
+        >div:nth-child(2) {
+          background-image: url('https://www.eipeks.com/wp-content/uploads/2024/10/nvts_62.webp');
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ptlnvd-slider-container">
+    <div>
+      <div class="item">
+        <h3>Thermal Imaging Tactical Vision</h3>
+        <p>ErlangSight is a multifunctional monocular thermal imager for head-mounted or handheld use, offering
+          high-resolution thermal image options (640x480 or 384x288), excellent thermal sensitivity (NETD<40mk @f1.0),
+            adaptive wide dynamic image processing, and PIP (Picture-in-Picture) functionality, perfect for real-time
+            observation and monitoring in various environments. </p>
+            <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+            <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+      </div>
+      <div class="item">
+        <div class="ptlnvd-text">
+          <h3>Infrared Thermal Imaging Module (With Shutter)</h3>
+          <p>The SmartCor-S640 offers high sensitivity, continuous digital zoom, and WDR image processing, delivering
+            high-quality thermal image videos. Using shutter imaging technology, it ensures excellent real-time video
+            performance. Suitable for UAVs, handheld thermal imagers, thermal night vision systems, driving vision
+            enhancement, and security monitoring applications.</p>
+        </div>
+        <div class="ptlnvd-overlay">
+          <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+          <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ptlnvd-text">
+          <h3>Infrared Thermal Imaging Module (Shutterless)</h3>
+          <p>The SmartCor series features advanced WDR wide dynamic image processing and multiple scene modes, meeting
+            different application needs with leading shutterless technology, ensuring uninterrupted real-time infrared
+            images. Ideal for UAVs, handheld thermal devices, and surveillance systems.</p>
+        </div>
+        <div class="ptlnvd-overlay">
+          <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+          <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="item">
+        <div class="ptlnvd-text">
+          <h3>Vehicle-Mounted Thermal Imager</h3>
+          <p>The DriCam series is designed to enhance driver vision in total darkness, fog, rain, snow, and headlight
+            glare conditions. It provides real-time clear thermal images, with optional 640x480 and 384x288 resolutions,
+            IP67 sealing, and analog video output, compatible with vehicle displays.</p>
+        </div>
+        <div class="ptlnvd-overlay">
+          <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+          <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ptlnvd-text">
+          <h3>Expansion Board</h3>
+          <p>The IPC expansion board is designed to integrate directly into the thermal IP network, providing IP network
+            services, ONVIF communication, analog, and H.264 video output, widely used in thermal security monitoring
+            systems and UAVs.</p>
+        </div>
+        <div class="ptlnvd-overlay">
+          <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+          <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Thermal Imaging Network Camera</h3>
+        <p>The Reach-3 boasts powerful monitoring and surveillance capabilities, equipped with an uncooled thermal
+          imager and a visible light HD camera, providing stable, clear thermal imaging even in extreme weather and dark
+          environments, suitable for LAN installation or analog security camera video networks.</p>
+        <a href="#drone2-form"><button class="dnvd-development-btn">Development services</button></a>
+        <a href="#drone2-form"><button class="dnvd-development-direct">Direct purchase</button></a>
+      </div>
+    </div>
+  </div>
+
+</body>

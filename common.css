@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+* {
+  box-sizing: border-box;
+}
+/* 去除p标签默认上下边距 */
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* 基础 font-size */
+html {
+  font-size: 16px; /* 你可以根据需要调整这个值 */
+}
+
+/* 针对2560px及以上屏幕调整 font-size */
+@media (min-width: 2500px) {
+  html {
+    font-size: 1.33px; /* 2560px 及以上的屏幕上，增加字体大小 */
+  }
+}
+
+/* 针对1920px及以上屏幕调整 font-size */
+@media (min-width: 1920px) and (max-width: 2499px) {
+  html {
+    font-size: 1px; /* 1920px 至 2559px 的屏幕上，保持 1px */
+  }
+}
+/* 针对中等屏幕调整 font-size */
+@media (max-width: 1919px) and (min-width: 1024px) {
+  html {
+    font-size: 0.8333px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+}
+
+/* 针对小屏幕调整 font-size */
+@media (max-width: 1023px) and (min-width: 768px) {
+  html {
+    font-size: 0.75px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+}
+
+/* 针对小屏幕调整 font-size */
+@media (max-width: 767px) {
+  html {
+    font-size: 1px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+}

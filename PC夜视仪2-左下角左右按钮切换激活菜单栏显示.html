@@ -1,0 +1,280 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .blog-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      cursor: grab;
+      user-select: none;
+      background-color: #FAFAFA;
+      scrollbar-width: none;
+      /* For Firefox */
+      -ms-overflow-style: none;
+      /* For Internet Explorer and Edge */
+      font-family: "Helvetica", sans-serif;
+      column-gap: 36rem;
+      margin-left: calc((100vw - 1400rem)/2);
+
+      img {
+        user-drag: none;
+        /* 禁止用户拖动图片 */
+        -webkit-user-drag: none;
+        /* 禁止在Webkit浏览器中拖动图片 */
+        pointer-events: none;
+        /* 禁止图片响应鼠标事件 */
+      }
+
+      >div:hover {
+        background: #fff;
+        box-shadow: 0 8rem 24rem 0 rgba(14, 106, 237, 0.04);
+      }
+
+      >div {
+        border-radius: 8rem;
+        width: 412rem;
+        color: white;
+        margin-right: 36rem;
+
+        .blog-img-container {
+          height: 288rem;
+          width: 412rem;
+          position: relative;
+
+          img {
+            width: 412rem;
+            height: 288rem;
+            object-fit: cover;
+          }
+
+          div {
+            display: block;
+            position: absolute;
+            bottom: 18rem;
+            left: 18rem;
+            background: rgba(255, 255, 255, 0.30);
+            border-radius: 36px;
+            backdrop-filter: blur(4rem);
+            z-index: 1;
+            padding: 8rem 15rem;
+
+            span {
+              font-size: 12rem;
+              font-weight: 500;
+              line-height: 14rem;
+              color: #FFFFFF;
+            }
+          }
+        }
+
+        .blog-text-container {
+          padding: 20rem 12rem 0 20rem;
+          position: relative;
+          height: 236rem;
+
+          h3 {
+            font-size: 20rem;
+            font-weight: 500;
+            line-height: 23rem;
+            color: #162C5B;
+          }
+
+          p {
+            font-size: 14rem;
+            font-weight: 500;
+            line-height: 16rem;
+            color: #576788;
+            margin-top: 12rem;
+          }
+
+          button {
+            position: absolute;
+            bottom: 29rem;
+            width: 96rem;
+            height: 32rem;
+            font-size: 12rem;
+            border: 0.5px solid #0E6AED;
+            border-radius: 4rem;
+            background: transparent;
+            color: #0E6AED;
+            padding: 0;
+            font-weight: 500;
+          }
+
+          button:hover {
+            background: #162C5B;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+          }
+        }
+      }
+
+    }
+
+    /* Hide scrollbar for Webkit browsers */
+    .blog-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .blog-scroll-container:active {
+      cursor: grabbing;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .blog-scroll-container {
+        flex-direction: column;
+        overflow-x: hidden;
+        white-space: normal;
+        cursor: default;
+        padding: 0 16rem;
+        width: 100%;
+        background: #fff;
+        row-gap: 12rem;
+        margin: 0;
+
+        >div {
+          width: 100%;
+          box-shadow: 0 8rem 24rem 0 rgba(14, 106, 237, 0.04);
+
+          .blog-img-container {
+            height: 164rem;
+            width: 100%;
+
+            img {
+              width: 100%;
+              height: 164rem;
+              border-radius: 8rem;
+            }
+
+            div {
+              bottom: 12rem;
+              left: 12rem;
+              backdrop-filter: blur(8rem);
+              padding: 5rem 14rem;
+
+              span {
+                font-size: 11rem;
+                line-height: 13rem;
+              }
+            }
+          }
+
+          .blog-text-container {
+            padding: 12rem 12rem 0 12rem;
+            height: 168rem;
+
+            h3 {
+              font-size: 14rem;
+              font-weight: 700;
+              line-height: 16rem;
+            }
+
+            p {
+              font-size: 13rem;
+              line-height: 15rem;
+              margin-top: 8rem;
+            }
+
+            button {
+              bottom: 15rem;
+              height: 28rem;
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="blog-scroll-container" id="blog-scrollContainer">
+    <div>
+      <div class="blog-img-container">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/new_product_design_34.webp">
+        <div> <span>July 20, 2024</span></div>
+      </div>
+      <div class="blog-text-container">
+        <h3>Exploring the Art and Science of Industrial Design Consultants</h3>
+        <p>Introduction Imagine the variety of products we use daily—from smartphones to cars to kitchen gadgets. How do
+          these products evolve</p>
+        <a href="https://www.eipeks.com/blog/exploring-the-art-and-science-of-industrial-design-consultants/"><button>Read
+            More</button></a>
+      </div>
+    </div>
+    <div>
+      <div class="blog-img-container">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/new_product_design_32.webp">
+        <div> <span>July 12, 2024</span></div>
+      </div>
+      <div class="blog-text-container">
+        <h3>From Idea to Product: A Comprehensive Guide to Getting Your Idea Manufactured</h3>
+        <p>Introduction Do you have a brilliant idea but don’t know how to turn it into reality? Getting your idea
+          manufactured</p>
+        <a
+          href="https://www.eipeks.com/blog/from-idea-to-product-a-comprehensive-guide-to-getting-your-idea-manufactured/"><button>Read
+            More</button></a>
+      </div>
+    </div>
+    <div>
+      <div class="blog-img-container">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/new_product_design_33.webp">
+        <div> <span>July 6, 2024</span></div>
+      </div>
+      <div class="blog-text-container">
+        <h3>How to Choose the Right Software Product Development Company</h3>
+        <p>When searching for a software product development company, we face numerous options. Finding the right
+          partner that meets your business</p>
+        <a href="https://www.eipeks.com/blog/how-to-choose-the-right-software-product-development-company/"><button>Read
+            More</button></a>
+      </div>
+    </div>
+    <div>
+      <div class="blog-img-container">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/new_product_design_31-1.webp">
+        <div> <span>July 1, 2024</span></div>
+      </div>
+      <div class="blog-text-container">
+        <h3>Product Development Software: The Best Choice to Drive Innovation</h3>
+        <p>How to quickly and efficiently develop innovative products that help companies generate revenue in the short
+          term is a question</p>
+        <a href="https://www.eipeks.com/blog/product-development-software-the-best-choice-to-drive-innovation/"><button>Read
+            More</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scrollContainer = document.getElementById('blog-scrollContainer');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    scrollContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      scrollContainer.classList.add('blog-active');
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollContainer.classList.remove('blog-active');
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollContainer.classList.remove('blog-active');
+    });
+
+    scrollContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust scroll speed by changing the multiplier (2)
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>

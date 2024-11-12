@@ -1,0 +1,517 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="PC+Mobile-FPGA-服务tab切换和滚动轮播切换.css">
+  <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+  <div class="fpga-service-container">
+    <!-- Tabs Section -->
+    <div class="tabs">
+      <div class="tab active" data-tab="0">FPGA Hardware Design</div>
+      <div class="tab" data-tab="1">Customized FPGA Logic Software Development</div>
+      <div class="tab" data-tab="2">Customized Digital/Analog Circuit Development</div>
+      <div class="tab" data-tab="3">High-Speed Digital Processing Services</div>
+    </div>
+    <!-- Content Slider -->
+    <div class="content-main-slider">
+      <div class="content-slider">
+        <div class="slides" id="slides-0">
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_16.png" alt="">
+                  <h3>Integrating Synthesizable IP Cores</h3>
+                </div>
+                <p>We integrate synthesizable IP cores into your design to ensure flexibility and full functionality.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_14.png" alt="">
+                  <h3>RTL Design Modeling (Verilog, VHDL)</h3>
+                </div>
+                <p>We use Verilog and VHDL for detailed Register Transfer Level (RTL) modeling to ensure accuracy and
+                  efficiency.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_17.png" alt="">
+                  <h3>Technical Feasibility Analysis</h3>
+                </div>
+                <p>We conduct thorough technical feasibility analyses to assess the technical and commercial potential
+                  of your project, providing data for future design.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_18.png" alt="">
+                  <h3>Microarchitecture Planning</h3>
+                </div>
+                <p>We plan the microarchitecture based on your needs, including functional module design and interface
+                  configuration to optimize performance and resource management.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_19.png" alt="">
+                  <h3>Design Synthesis and Optimization</h3>
+                </div>
+                <p>We perform design synthesis and optimization to improve resource utilization and performance to meet
+                  specific application needs.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_15.png" alt="">
+                  <h3>High-Speed Timing Optimization</h3>
+                </div>
+                <p>We address timing issues of high-speed signals to ensure stability and signal integrity under
+                  high-frequency operation, thereby optimizing timing performance.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_37.png" alt="">
+                  <h3>All-Tech Platform FPGA IP Development</h3>
+                </div>
+                <p>We offer IP development services for various FPGA platforms, including customized function modules
+                  and interface design.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_41.png" alt="">
+                  <h3>Cutting-Edge Technology Concept Testing</h3>
+                </div>
+                <p>We test new technologies to check their feasibility and support the exploration of innovative
+                  applications.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_53.png" alt="">
+                  <h3>FPGA Prototype for ASIC Design Verification</h3>
+                </div>
+                <p>We develop FPGA prototypes for ASIC design verification. We support functional testing and
+                  performance evaluation to ensure the accuracy of ASIC design.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_55.png" alt="">
+                  <h3>FPGA Debugging and Co-Verification</h3>
+                </div>
+                <p>We offer debugging and co-verification services to ensure the functional correctness and system
+                  compatibility of the design during integration.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_56.png" alt="">
+                  <h3>Post-Synthesis Functional Simulation</h3>
+                </div>
+                <p>We perform functional simulation testing after synthesis to verify that the design meets the expected
+                  requirements.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_57.png" alt="">
+                  <h3>System-Level Verification</h3>
+                </div>
+                <p>We conduct system-level verification, including comprehensive functional testing, performance
+                  evaluation, and stability checks, to ensure the overall reliability of the system.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slides" id="slides-1" style="display: none;">
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_58.png" alt="">
+                  <h3>Customized Logic Function Module</h3>
+                </div>
+                <p>We develop logic modules with specific functions, including arithmetic operation units, data
+                  processing units, and control logic, etc., and highly customize them according to customer needs.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_59.png" alt="">
+                  <h3>Communication Protocol Implementation</h3>
+                </div>
+                <p>We design and implement FPGA logic for various communication protocols like SPI, I2C, UART, Ethernet,
+                  etc., to support data transmission and interface communication.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_60.png" alt="">
+                  <h3>Signal Processing Algorithm</h3>
+                </div>
+                <p>We implement advanced signal processing algorithms, including filter, Fourier transform, and DSP
+                  algorithm, to enhance signal analysis and processing capabilities.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_61.png" alt="">
+                  <h3>Image Processing Algorithm</h3>
+                </div>
+                <p>We develop image processing function modules, such as image filtering, edge detection, image
+                  enhancement, etc., for real-time image processing and analysis.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_62.png" alt="">
+                  <h3>Data Encryption and Security</h3>
+                </div>
+                <p>We develop function modules for data encryption and security, including encryption algorithm, hash
+                  function, authentication mechanism, etc., to ensure data safety.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_63.png" alt="">
+                  <h3>Interface Driver</h3>
+                </div>
+                <p>We design and implement drivers for various external interfaces such as storage interface, display
+                  interface, sensor interface, etc., to enable device interactions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_33.png" alt="">
+                  <h3>High-Performance Computing Module</h3>
+                </div>
+                <p>We develop high-performance computing modules like matrix operation, parallel processing units meet
+                  the needs of compute-intensive applications.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_40.png" alt="">
+                  <h3>Real-Time Control System</h3>
+                </div>
+                <p>We implement logic for real-time control systems, such as PID controller, state machine, timing
+                  control, etc., for industrial control and automation applications.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_42.png" alt="">
+                  <h3>Data Acquisition and Processing</h3>
+                </div>
+                <p>We design data acquisition and processing systems, including sampling, buffering, data conversion,
+                  etc., for real-time data monitoring and processing.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_54.png" alt="">
+                  <h3>FPGA Embedded System</h3>
+                </div>
+                <p>We develop system solutions embedded in FPGA, such as embedded processors, hardware accelerators,
+                  etc., to provide specific functions and performance requirements.
+                </p>
+              </div>
+              <div class="card" style="border: none;">
+
+              </div>
+              <div class="card" style="border: none;">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slides" id="slides-2" style="display: none;">
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_34.png" alt="">
+                  <h3>Digital Circuit Design</h3>
+                </div>
+                <ul>
+                  <li>Logic Gate Circuit Design: We design basic logic gates like AND, OR, and NOT gates.</li>
+                  <li>Counter and Register: We develop various counters (e.g., synchronous counter, asynchronous
+                    counter) and registers (e.g., shift register, latch).</li>
+                  <li>State Machine Design: We create finite state machines (FSMs) for the implementation of control
+                    logic.</li>
+                  <li>Digital Signal Processing (DSP): We design digital filters and transformation algorithms for
+                    signal processing.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_39.png" alt="">
+                  <h3>Analog Circuit Design</h3>
+                </div>
+                <ul>
+                  <li>Amplifier Design: We design different types of amplifiers, such as operational amplifier,
+                    differential amplifier, and power amplifier, etc.</li>
+                  <li>Filter Design: We develop analog filters, including low-pass, high-pass, band-pass, and band-stop
+                    filters.</li>
+                  <li>Voltage Reference and Power Management: We design stable voltage reference sources and efficient
+                    power management circuits.</li>
+                  <li>Signal Conditioning: We implement signal conditioning circuits, including signal amplification,
+                    filtering, conversion, etc., to meet the requirements of subsequent processing.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_35.png" alt="">
+                  <h3>Circuit Optimization and Adjustment</h3>
+                </div>
+                <ul>
+                  <li>Power Consumption Optimization: We analyze and optimize circuit power consumption to improve
+                    energy efficiency.</li>
+                  <li>Noise Suppression: We perform noise suppression and signal integrity analysis to reduce
+                    interference.</li>
+                  <li>Thermal Management: We design thermal management solutions to ensure that the temperature of the
+                    circuit is stable during operation.</li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_36.png" alt="">
+                  <h3>Prototyping and Testing</h3>
+                </div>
+                <ul>
+                  <li>Hardware Prototyping: We develop circuit prototypes based on the design and conduct actual testing
+                    and verification.</li>
+                  <li>Circuit Testing and Verification: We conduct comprehensive circuit testing, including functional
+                    testing, performance evaluation, and troubleshooting.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_38.png" alt="">
+                  <h3>Customized Circuit Solution</h3>
+                </div>
+                <ul>
+                  <li>Application-Specific Circuit Design: We develop application-specific circuit solution based on
+                    customer needs, such as automotive electronics, medical device, and communication system.</li>
+                  <li>System-Level Integration: We integrate customized circuits into the overall system to ensure
+                    compatibility and performance.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slides" id="slides-3" style="display: none;">
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_43.png" alt="">
+                  <h3>High-Speed Data Path Design</h3>
+                </div>
+                <p>High-Speed Serial and Parallel Data Paths: We design data paths that support high-speed data
+                  transmission, such as PCIe, USB 3.x, LVDS, etc., to optimize the data flow path to increase bandwidth
+                  and transmission rate.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_45.png" alt="">
+                  <h3>High-Bandwidth Data Flow Control</h3>
+                </div>
+                <p>Flow Control and Buffer Management: We implement efficient data flow control and buffering mechanisms
+                  to optimize data transmission and processing in the system.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_47.png" alt="">
+                  <h3>Signal Integrity Optimization</h3>
+                </div>
+                <p>High-Speed Signal Integrity: We analyze and optimize the integrity of high-speed signals to reduce
+                  noise, crosstalk, and signal distortion, ensuring the accuracy and stability of data transmission.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_44.png" alt="">
+                  <h3>High-Frequency Timing Management</h3>
+                </div>
+                <p>Clock and Timing Optimization: We optimize clock distribution and timing management to ensure timing
+                  accuracy and clock synchronization in the system, especially under high-frequency operations.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_46.png" alt="">
+                  <h3>High-Performance Data Processing Algorithm</h3>
+                </div>
+                <p>Parallel Processing and Acceleration: We develop parallel data processing algorithms and hardware
+                  acceleration solutions to enhance data processing speed and efficiency.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_48.png" alt="">
+                  <h3>High-Frequency Signal Conditioning</h3>
+                </div>
+                <p>Signal Amplification and Filtering: We design high-frequency signal conditioning circuits, such as
+                  amplifiers and filters, to ensure signal quality and processing capabilities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_49.png" alt="">
+                  <h3>Real-Time Data Processing System</h3>
+                </div>
+                <p>Real-Time Processing Design: We create efficient real-time data processing systems to meet the
+                  instant processing requirements of high-speed data streams.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_51.png" alt="">
+                  <h3>Hardware Acceleration Design</h3>
+                </div>
+                <p>Customized Accelerator: We develop customized hardware accelerators for high-speed data processing in
+                  specific applications, such as image processing and machine learning acceleration.
+                </p>
+              </div>
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_52.png" alt="">
+                  <h3>System Integration and Verification</h3>
+                </div>
+                <p>Integration Testing: We integrate high-speed digital processing modules into the overall system and
+                  perform system-level testing to ensure performance and compatibility.
+                </p>
+              </div>
+            </div>
+            <div class="lines">
+              <div class="card">
+                <div>
+                  <img src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_50.png" alt="">
+                  <h3>Power Consumption and Thermal Management</h3>
+                </div>
+                <ul>
+                  <li>Power Consumption Optimization: We design power consumption optimization solutions to reduce the
+                    impact of high-speed processing on system energy efficiency.</li>
+                  <li>Thermal Management Design: We implement thermal management strategies to ensure stable operation
+                    under high load.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Indicator Dots -->
+        <div class="indicators">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+        </div>
+      </div>
+      <!-- Slider Controls -->
+      <div class="slider-controls">
+        <img id="prev-btn" src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_21.png" alt="">
+        <img id="next-btn" src="https://www.eipeks.com/wp-content/uploads/2024/09/fpga_20.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab');
+    const slidesContainers = document.querySelectorAll('.slides');
+    let currentTab = 0;
+    let currentSlideIndex = 0;
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        // Change active tab
+        document.querySelector('.tab.active').classList.remove('active');
+        tab.classList.add('active');
+
+        // Change content
+        slidesContainers.forEach(container => container.style.display = 'none');
+        document.querySelector(`#slides-${index}`).style.display = 'flex';
+
+        currentTab = index;
+        currentSlideIndex = 0;
+        updateSlidePosition();
+        updateIndicators();
+      });
+    });
+
+    // Slide functionality
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicators = document.querySelectorAll('.dot');
+
+    prevBtn.addEventListener('click', () => {
+      currentSlideIndex = Math.max(0, currentSlideIndex - 1);
+      updateSlidePosition();
+      updateIndicators();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const slides = document.querySelector(`#slides-${currentTab}`).children;
+      currentSlideIndex = Math.min(slides.length - 1, currentSlideIndex + 1);
+      updateSlidePosition();
+      updateIndicators();
+    });
+
+    function updateSlidePosition() {
+      const slides = document.querySelector(`#slides-${currentTab}`);
+      const slideWidth = slides.children[0].offsetWidth;
+      slides.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+
+      prevBtn.disabled = currentSlideIndex === 0;
+      nextBtn.disabled = currentSlideIndex === slides.children.length - 1;
+    }
+
+    function updateIndicators() {
+      indicators.forEach((dot, index) => {
+        if (index === currentSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+  </script>
+
+</body>

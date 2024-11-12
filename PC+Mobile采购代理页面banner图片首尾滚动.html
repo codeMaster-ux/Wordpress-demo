@@ -1,0 +1,121 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .agent_banner_right_container {
+      display: flex;
+      height: calc(100vh);
+      gap: 16rem;
+      overflow: hidden;
+      width: auto;
+
+      .agent_banner_container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .agent_banner_scroll_wrapper {
+          display: flex;
+          flex-direction: column;
+          animation: scroll-up 200s linear infinite;
+          gap: 16rem;
+        }
+
+        .agent_banner_scroll_wrapper.agent_left {
+          width: 572rem;
+
+          img {
+            width: 100%;
+            border-radius: 8rem;
+            height: 328rem;
+            object-fit: cover;
+          }
+        }
+
+        .agent_banner_scroll_wrapper.agent_right {
+          animation: scroll-down 200s linear infinite;
+          width: 480rem;
+
+          img {
+            width: 100%;
+            height: 328rem;
+            object-fit: cover;
+            border-radius: 8rem 0 0 8rem;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .agent_banner_right_container {
+        height: 440rem;
+        gap: 6rem;
+        overflow: hidden;
+        width: auto;
+        padding: 0 6rem;
+
+        .agent_banner_container {
+          .agent_banner_scroll_wrapper {
+            gap: 6rem;
+          }
+
+          .agent_banner_scroll_wrapper {
+            width: 100% !important;
+
+            img {
+              height: 102rem !important;
+            }
+          }
+
+        }
+      }
+    }
+
+    @keyframes scroll-up {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    @keyframes scroll-down {
+      0% {
+        transform: translateY(-50%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="agent_banner_right_container">
+    <div class="agent_banner_container">
+      <div class="agent_banner_scroll_wrapper agent_left">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_26.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_27.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_28.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_29.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_30.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_31.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_32.webp">
+      </div>
+    </div>
+    <div class="agent_banner_container">
+      <div class="agent_banner_scroll_wrapper agent_right">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_33.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_34.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_35.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_36.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_37.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_38.webp">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/prototyping_image_39.webp">
+      </div>
+    </div>
+  </div>
+</body>

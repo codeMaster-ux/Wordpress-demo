@@ -1,0 +1,41 @@
+<head>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .sasp-list-group {
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+      padding-left: 16rem;
+
+      li {
+        font-size: 15rem;
+        font-weight: 500;
+        color: #576788;
+        line-height: 24rem;
+      }
+    }
+
+    /* 针对小屏幕调整 font-size */
+    @media (max-width: 767px) {
+      .sasp-list-group {
+        gap: 4rem !important;
+        padding-left: 0 !important;
+        margin-left: 30rem;
+
+        li {
+          font-size: 13rem !important;
+          line-height: 15rem !important;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="sasp-list-group">
+    <li>Select suitable suppliers or manufacturers based on customer needs and standards.</li>
+    <li>Negotiate with suppliers to reach agreement on price and sourcing conditions.</li>
+    <li>Confirm sourcing order details and sign contract.</li>
+  </ul>
+</body>

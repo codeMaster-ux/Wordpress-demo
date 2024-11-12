@@ -1,0 +1,200 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .core-t-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: "Helvetica", sans-serif;
+
+      .core-t-sliders {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        touch-action: pan-y;
+
+        img {
+          width: 100%;
+          display: block;
+          height: 385rem;
+          object-fit: cover;
+          border-radius: 8rem;
+        }
+
+        .core-t-slide {
+          min-width: 100%;
+          box-sizing: border-box;
+
+          >div {
+            h3 {
+              font-size: 14rem;
+              font-weight: 700;
+              color: #171a1b;
+              line-height: 16rem;
+              margin: 12rem 0 6rem 0;
+            }
+
+            p {
+              font-size: 12rem;
+              font-weight: 500;
+              color: #646464;
+              line-height: 14rem;
+            }
+          }
+        }
+      }
+
+
+      .core-t-indicators {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 367rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+
+        span {
+          height: 6rem;
+          width: 6rem;
+          background: rgba(255, 255, 255, 0.40);
+          border-radius: 50%;
+          display: inline-block;
+          margin: 0 2px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        span.core-t-active {
+          background: #ffffff;
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="core-t-slider">
+    <div class="core-t-sliders">
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_30.webp">
+        <div>
+          <h3>Flight Control System</h3>
+          <p>Our self-developed flight control system serves as the "brain" of the drone, responsible for real-time
+            attitude adjustments and precise course control. Through multi-sensor fusion technology, our flight control
+            system ensures stable flight in various environments, laying the foundation for executing complex missions.
+          </p>
+        </div>
+      </div>
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_29.webp">
+        <div>
+          <h3>Navigation and Positioning Technology</h3>
+          <p>Accurate navigation and positioning are the core guarantee of autonomous drone flight. We integrate
+            GPS/GLONASS satellite positioning systems, Inertial Measurement Units (IMU), and visual positioning
+            technologies to achieve high-precision location tracking and path planning.
+          </p>
+        </div>
+      </div>
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_26.webp">
+        <div>
+          <h3>Wireless Communication and Data Link</h3>
+          <p>Efficient and stable wireless communication is key to maintaining real-time connectivity between the drone
+            and the ground station. We use advanced RF technology and 5G communication modules to ensure stable data
+            transmission over long distances or in complex environments, ensuring instant interaction of flight data,
+            images, and control commands.
+          </p>
+        </div>
+      </div>
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_28.webp">
+        <div>
+          <h3>Sensor Integration and Data Processing</h3>
+          <p>To enable environmental perception and autonomous decision-making, we integrate various sensors, such as
+            LIDAR, multispectral cameras, and ultrasonic sensors. These sensors can collect environmental data in
+            real-time and process it through advanced algorithms, helping drones achieve intelligent operation in
+            complex environments.
+          </p>
+        </div>
+      </div>
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_25.webp">
+        <div>
+          <h3>Automatic Obstacle Avoidance and Autonomous Flight</h3>
+          <p>Autonomous flight and intelligent obstacle avoidance are core capabilities for drones executing complex
+            tasks. By integrating vision recognition, LIDAR, and AI technologies, our drones can perform real-time
+            obstacle avoidance, autonomous navigation, and dynamic path planning, enhancing mission efficiency while
+            ensuring safety.
+          </p>
+        </div>
+      </div>
+      <div class="core-t-slide">
+        <img src="https://www.eipeks.com/wp-content/uploads/2024/08/mobile_drone_27.webp">
+        <div>
+          <h3>Safety and Redundancy Design</h3>
+          <p>To ensure drone flight safety, we incorporate multiple redundancy mechanisms in our designs, including dual
+            flight controllers and backup battery systems. In the event of a failure, the drone can quickly switch to
+            backup systems, ensuring uninterrupted missions and safer flights.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="core-t-indicators">
+      <span class="core-t-indicator" onclick="coreCurrentSlide(0)"></span>
+      <span class="core-t-indicator" onclick="coreCurrentSlide(1)"></span>
+      <span class="core-t-indicator" onclick="coreCurrentSlide(2)"></span>
+      <span class="core-t-indicator" onclick="coreCurrentSlide(3)"></span>
+      <span class="core-t-indicator" onclick="coreCurrentSlide(4)"></span>
+      <span class="core-t-indicator" onclick="coreCurrentSlide(5)"></span>
+    </div>
+  </div>
+
+  <script>
+    let coreTCurrentIndex = 0;
+    const coreTSlides = document.querySelector('.core-t-sliders');
+    let coreTStartX = 0;
+    let coreTIsDragging = false;
+
+    function coresShowSlide(index) {
+      const coresTotalSlides = document.querySelectorAll('.core-t-slide').length;
+      coreTCurrentIndex = (index + coresTotalSlides) % coresTotalSlides;
+      coreTSlides.style.transform = `translateX(-${coreTCurrentIndex * 100}%)`;
+      document.querySelectorAll('.core-t-indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('core-t-active', i === coreTCurrentIndex);
+      });
+    }
+
+    function coreCurrentSlide(index) {
+      coresShowSlide(index);
+    }
+
+    coreTSlides.addEventListener('touchstart', (e) => {
+      coreTStartX = e.touches[0].clientX;
+      coreTIsDragging = true;
+    });
+
+    coreTSlides.addEventListener('touchmove', (e) => {
+      if (coreTIsDragging) {
+        const currentX = e.touches[0].clientX;
+        const diff = coreTStartX - currentX;
+        if (diff > 50) {
+          coresShowSlide(coreTCurrentIndex + 1);
+          coreTIsDragging = false;
+        } else if (diff < -50) {
+          coresShowSlide(coreTCurrentIndex - 1);
+          coreTIsDragging = false;
+        }
+      }
+    });
+
+    coreTSlides.addEventListener('touchend', () => {
+      coreTIsDragging = false;
+    });
+
+    coresShowSlide(coreTCurrentIndex); // Initialize first slide
+  </script>
+</body>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .fitness_carousel {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      margin: auto;
+      font-family: "Outfit", sans-serif;
+
+      .fitness_carousel_inner {
+        display: flex;
+        transition: transform 0.5s ease;
+
+        .fitness_carousel_item {
+          min-width: 100%;
+          height: 100%;
+          font-size: 12rem;
+          display: flex;
+          flex-wrap: wrap;
+
+          .fintness_line {
+            width: 56rem;
+            height: 6rem;
+            background: #ff6600;
+          }
+
+          h3 {
+            font-size: 48rem;
+            font-weight: 600;
+            text-align: LEFT;
+            color: #111111;
+            line-height: 56rem;
+            color: #111;
+            margin-bottom: 32rem;
+          }
+
+
+          >:nth-child(1) {
+            height: 184rem;
+            width: 100%;
+            padding: 40rem 0 0 40rem;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 42rem;
+            align-items: center;
+            grid-column-gap: 12rem;
+            background: #FAFAFA;
+
+            >div {
+              padding: 0 20rem;
+            }
+
+            h4 {
+              font-size: 18rem;
+              font-weight: 500;
+              color: #111111;
+              line-height: 21rem;
+              margin-bottom: 10rem;
+            }
+
+            p {
+              font-size: 14rem;
+              font-weight: 300;
+              text-align: LEFT;
+              color: #333333;
+              line-height: 16rem;
+            }
+          }
+
+          >:nth-child(2) {
+            height: 510rem;
+            width: 50%;
+            padding: 48rem 0 0 48rem;
+          }
+
+          >:nth-child(3) {
+            height: 510rem;
+            width: 50%;
+            padding: 48rem 0 0 48rem;
+
+          }
+
+          >:nth-child(4) {
+            height: 646rem;
+            width: 505rem;
+            padding: 182rem 0 0 110rem;
+
+            h3 {
+              color: #fff;
+            }
+
+          }
+
+          >:nth-child(5) {
+            height: 646rem;
+            flex: 1;
+            padding: 182rem 0 0 110rem;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            >div {
+              display: none;
+
+            }
+          }
+
+          >div {
+            background-size: cover !important;
+          }
+        }
+
+        .fitness_carousel_item_01 {
+          >:nth-child(2) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_exhalation_trainer.webp) no-repeat center;
+          }
+
+          >:nth-child(3) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_junp_rope.webp) no-repeat center;
+
+            h3 {
+              width: 466rem;
+            }
+          }
+
+          >:nth-child(4) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_treadmill.webp) no-repeat center;
+          }
+
+          >:nth-child(5) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_treadmill_02.webp) no-repeat center;
+          }
+        }
+
+        .fitness_carousel_item_02 {
+          >:nth-child(2) {
+            padding: 353rem 0 0 260rem;
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_two_01.webp) no-repeat center;
+          }
+
+          >:nth-child(3) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_two_02.webp) no-repeat center;
+            padding: 40rem 0 0 52rem;
+          }
+
+          >:nth-child(4) {
+            padding: 180rem 0 0 133rem;
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_two_03.webp) no-repeat center;
+          }
+
+          >:nth-child(5) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_two_04.webp) no-repeat center;
+
+          }
+        }
+
+        .fitness_carousel_item_03 {
+          >:nth-child(2) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_three_01.webp) no-repeat center;
+            padding: 60rem 0 0 48rem;
+          }
+
+          >:nth-child(3) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_three_02.webp) no-repeat center;
+            padding: 44rem 0 0 52rem;
+
+          }
+
+          >:nth-child(4) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_three_03.webp) no-repeat center;
+            padding: 166rem 0 0 89rem;
+          }
+
+          >:nth-child(5) {
+            background: url(https://www.eipeks.com/wp-content/uploads/2024/07/fitness_carousel_group_three_04.webp) no-repeat center;
+
+          }
+        }
+
+      }
+
+      .fitness_carousel_button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        cursor: pointer;
+        width: 120rem;
+        height: 120rem;
+      }
+
+      .fitness_carousel_button.fitness_carousel_left {
+        left: 72rem;
+      }
+
+      .fitness_carousel_button.fitness_carousel_right {
+        right: 72rem;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .fitness_carousel {
+        padding-top: 55rem;
+
+        .fitness_carousel_inner {
+
+          .fitness_carousel_item {
+            min-width: 100%;
+            font-size: 12rem;
+            display: flex;
+            flex-wrap: wrap;
+
+            .fintness_line {
+              width: 20rem;
+              height: 3rem;
+              background: #ff6600;
+            }
+
+            h3 {
+              font-size: 16rem;
+              line-height: 19rem;
+              margin-bottom: 12rem;
+            }
+
+            >:nth-child(1) {
+              height: auto !important;
+              padding: 16rem 20rem 0 20rem;
+              flex-direction: column;
+              grid-row-gap: 12rem;
+              order: 1;
+
+              >div {
+                padding: 0;
+              }
+
+              h4 {
+                font-size: 14rem;
+                color: #333;
+                line-height: 16rem;
+                margin-bottom: 5rem;
+              }
+
+              p {
+                font-size: 12rem;
+                line-height: 14rem;
+              }
+            }
+
+            >:nth-child(2) {
+              padding: 20rem 0 0 20rem;
+            }
+
+            >:nth-child(3) {
+              padding: 20rem 0 0 20rem;
+            }
+
+            >:nth-child(4) {
+              display: none;
+
+              h3 {
+                color: #fff;
+              }
+            }
+
+            >:nth-child(5) {
+              padding: auto;
+              flex: 1;
+              padding: 20rem 20rem 0 0 !important;
+            }
+
+            >div {
+              height: 172rem !important;
+              width: 100% !important;
+
+              >div {
+                display: block !important;
+              }
+            }
+          }
+
+          .fitness_carousel_item_01 {
+            >:nth-child(5) {
+              h3 {
+                color: #fff;
+              }
+            }
+          }
+
+          .fitness_carousel_item_02 {
+            >:nth-child(2) {
+              background: url(https://www.eipeks.com/wp-content/uploads/2024/07/mobile_fitness_carousel_group_two_01.webp) no-repeat center;
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+              padding: 37rem 37rem 0 0;
+
+              h3 {
+                width: 77rem;
+              }
+            }
+
+          }
+
+          .fitness_carousel_item_03 {
+            >:nth-child(5) {
+              padding: 29rem 0 0 76rem !important;
+              align-items: flex-start;
+            }
+          }
+        }
+
+        .fitness_carousel_button {
+          top: 0;
+          transform: translate(-50%);
+          width: 28rem;
+          height: 28rem;
+        }
+
+
+        .fitness_carousel_button.fitness_carousel_left {
+          right: 36rem !important;
+          left: auto;
+        }
+
+        .fitness_carousel_button.fitness_carousel_right {
+          right: 0;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fitness_carousel">
+    <div class="fitness_carousel_inner">
+      <div class="fitness_carousel_item fitness_carousel_item_01">
+        <div class="fitness_text_area_inner">
+          <div>
+            <h4>Advanced Technological Integration</h4>
+            <p>Our cardio equipment integrates cutting-edge technology, such as heart rate monitoring, smart device
+              connectivity, and real-time data feedback. These technologies enable users to accurately track their
+              workout status, enhancing training effectiveness.</p>
+          </div>
+          <div>
+            <h4>Ergonomic Design</h4>
+            <p>Each piece of our cardio equipment is meticulously designed to ensure users maintain optimal posture and
+              comfort during workouts. Whether it's a treadmill, an elliptical trainer, or a jump rope, users can enjoy
+              a smooth and natural exercise experience.</p>
+          </div>
+          <div>
+            <h4>Durability and Low Maintenance</h4>
+            <p>Our cardio exercise equipment utilizes high-quality materials and exquisite craftsmanship, delivering
+              outstanding performance and exceptional durability with minimal maintenance required. Users can
+              confidently use our equipment for years, enjoying continuous fitness enjoyment.</p>
+          </div>
+          <div>
+            <h4>Diverse Training Modes</h4>
+            <p>Our equipment offers a variety of training modes and difficulty levels to meet the needs of different
+              users. From beginners to seasoned fitness enthusiasts, everyone can find a suitable training plan to help
+              them achieve their fitness goals.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Smart Breathing<br /> Trainer</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <h3>Smart Jump <br />Rope</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <h3>Smart<br />Treadmill</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <div>
+            <h3>Smart<br />Treadmill</h3>
+            <div class="fintness_line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fitness_carousel_item fitness_carousel_item_02">
+        <div class="fitness_text_area_inner">
+          <div>
+            <h4>Sturdy Structural Design</h4>
+            <p>Our strength training equipment features high-strength steel and stable frame structures, ensuring
+              absolute safety and stability during use. Whether it's free weights or fixed machinery, users can
+              confidently engage in high-intensity workouts.</p>
+          </div>
+          <div>
+            <h4>Versatility and Adjustability</h4>
+            <p>Each piece of strength training equipment is designed with versatility and adjustability to cater to
+              various training needs and user body types. With simple adjustments, users can target different muscle
+              groups for a well-rounded full-body development.</p>
+          </div>
+          <div>
+            <h4>Professional-Grade Experience</h4>
+            <p>Our strength training equipment is widely used in professional gyms and sports teams, boasting
+              professional-level quality and performance. Even home users can enjoy a training experience akin to that
+              of a professional gym.</p>
+          </div>
+          <div>
+            <h4>Detailed User Guide</h4>
+            <p>Each piece of strength training equipment comes with a detailed user guide and video tutorials to assist
+              users in proper equipment usage, prevent workout injuries, and enhance training effectiveness.</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h3>Hand Gripper</h3>
+            <div class="fintness_line"></div>
+          </div>
+        </div>
+        <div>
+          <h3>AB Wheel <br />Roller</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <h3>Dumbbell</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <div>
+            <h3>Dumbbell</h3>
+            <div class="fintness_line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fitness_carousel_item fitness_carousel_item_03">
+        <div class="fitness_text_area_inner">
+          <div>
+            <h4>Comprehensive Training Coverage</h4>
+            <p>Our functional fitness equipment is specifically designed for full-body training, effectively enhancing
+              users' strength, flexibility, coordination, and endurance. Whether it's bench press resistance band, pull
+              up resistance band, or pedal resistance band, they offer comprehensive body workouts.</p>
+          </div>
+          <div>
+            <h4>Modular Design</h4>
+            <p>Functional fitness equipment features a modular design, allowing for free combination and assembly based
+              on users' training needs and space constraints. This flexibility enables our equipment to be efficiently
+              used in various environments, from gyms to home workout spaces, and even outdoor training areas.</p>
+          </div>
+          <div>
+            <h4>Adaptability to Different Training Levels</h4>
+            <p>OOur functional fitness equipment caters to users of all training levels, from beginners to professional
+              athletes, providing suitable training intensities and methods for each. The variety of training options
+              offered by the equipment helps users progressively improve their athletic abilities.</p>
+          </div>
+          <div>
+            <h4>High-Quality Materials and Eco-Friendly Design</h4>
+            <p>Utilizing eco-friendly materials and high-quality manufacturing processes, our functional fitness
+              equipment excels in performance while remaining environmentally friendly. Users can contribute to
+              environmental conservation while enjoying effective workouts.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Bench Press <br />Resistance Band</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <h3>Pull Up Resistance <br />Band</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <h3>Pedal Resistance <br />Band</h3>
+          <div class="fintness_line"></div>
+        </div>
+        <div>
+          <div>
+            <h3>Pedal Resistance <br />Band</h3>
+            <div class="fintness_line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="fitness_carousel_button fitness_carousel_left"
+      src="https://www.eipeks.com/wp-content/uploads/2024/07/fitness_left_icon.webp" alt="fitness_left_icon">
+    <img class="fitness_carousel_button fitness_carousel_right"
+      src="https://www.eipeks.com/wp-content/uploads/2024/07/fitness_right_icon.webp" alt="fitness_right_icon">
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      var fintnessCarouselCurrentIndex = 0;
+      var fintnessCarouselTotalItems = $('.fitness_carousel_item').length;
+      var fintnessCarouselAutoScrollInterval;
+
+      function fintnessCarouselUpdateCarousel() {
+        var transformValue = 'translateX(-' + (fintnessCarouselCurrentIndex * 100) + '%)';
+        $('.fitness_carousel_inner').css('transform', transformValue);
+      }
+
+      function fintnessCarouselStartAutoScroll() {
+        fintnessCarouselAutoScrollInterval = setInterval(function () {
+          fintnessCarouselCurrentIndex = (fintnessCarouselCurrentIndex + 1) % fintnessCarouselTotalItems;
+          fintnessCarouselUpdateCarousel();
+        }, 5000);
+      }
+
+      function fintnessCarouselStopAutoScroll() {
+        clearInterval(fintnessCarouselAutoScrollInterval);
+      }
+
+      $('.fitness_carousel_right').click(function () {
+        fintnessCarouselStopAutoScroll();
+        fintnessCarouselCurrentIndex = (fintnessCarouselCurrentIndex + 1) % fintnessCarouselTotalItems;
+        fintnessCarouselUpdateCarousel();
+        fintnessCarouselStartAutoScroll();
+      });
+
+      $('.fitness_carousel_left').click(function () {
+        fintnessCarouselStopAutoScroll();
+        fintnessCarouselCurrentIndex = (fintnessCarouselCurrentIndex - 1 + fintnessCarouselTotalItems) % fintnessCarouselTotalItems;
+        fintnessCarouselUpdateCarousel();
+        fintnessCarouselStartAutoScroll();
+      });
+
+      // Start auto-scroll when the document is ready
+      fintnessCarouselStartAutoScroll();
+    });
+
+  </script>
+</body>
+
+</html>

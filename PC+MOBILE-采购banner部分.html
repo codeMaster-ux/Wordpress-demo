@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    @media (min-width: 769px) {
+
+      @keyframes agentBannerDownBounces {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+
+        40% {
+          transform: translateY(-10rem);
+        }
+
+        60% {
+          transform: translateY(-5rem);
+        }
+      }
+
+      .agent_section {
+        height: calc(100vh - 70px);
+        overflow: hidden;
+        font-family: "Outfit", sans-serif;
+        position: relative;
+
+        .text-section {
+          display: flex;
+          justify-content: flex-end;
+          background: white;
+          z-index: 2;
+          padding: 0 0 37rem 100rem;
+          z-index: 20;
+          flex-direction: column;
+          position: absolute;
+          top: 0%;
+          bottom: 0%;
+          left: 0%;
+          overflow: hidden;
+          will-change: width, height;
+          width: 47.1065%;
+
+          h1 {
+            font-size: 60rem;
+            font-weight: 500;
+            line-height: 70rem;
+            width: 632rem;
+          }
+
+          p {
+            font-size: 20rem;
+            line-height: 23rem;
+            width: 632rem;
+            margin: 28rem 0 48rem 0;
+          }
+
+          button {
+            width: 200rem;
+            height: 56rem;
+            background: #ff6600;
+            border-radius: 56rem;
+            border: none;
+            color: #fff;
+            font-size: 20rem;
+            line-height: 23rem;
+          }
+
+          .scroll-down {
+            grid-column-gap: 8rem;
+            display: flex;
+            font-size: 18rem;
+            color: #556173;
+            margin-top: 60rem;
+            text-decoration: none;
+
+            img {
+              width: 24rem;
+              animation: agentBannerDownBounces 1.5s infinite;
+            }
+
+
+          }
+
+        }
+
+        .heroheader_transformed-section {
+          z-index: 10;
+          perspective: 1600rem;
+          background-color: rgba(0, 0, 0, 0);
+          position: relative;
+          overflow: hidden;
+
+          .heroheader_transformed-wrapper {
+            z-index: 1;
+            background-color: white;
+            transform-origin: 50% 0;
+            transform-style: preserve-3d;
+            align-items: flex-start;
+            margin-top: auto;
+            padding-bottom: 6rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            display: flex;
+            position: relative;
+            transform: translate(40%)scale(.8)rotateX(15deg)rotateY(-9deg)rotateZ(32deg);
+            will-change: transform;
+            transform: translate3d(37.6852%, 0rem, 0rem) scale3d(0.811574, 0.811574, 1) rotateX(14.1319deg) rotateY(-8.47917deg) rotateZ(30.1482deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+
+            .heroheader_grid {
+              z-index: 9999;
+              grid-column-gap: 40rem;
+              grid-row-gap: 40rem;
+              background-color: white;
+              grid-template-rows: auto;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              grid-auto-columns: 1fr;
+              justify-content: space-between;
+              align-items: flex-start;
+              width: 100%;
+              min-height: 100vh;
+              padding-bottom: 0;
+              transition: all .7s;
+              display: grid;
+
+              .heroheader_grid-col-01 {
+                z-index: 2;
+                grid-column-gap: 40rem;
+                grid-row-gap: 40rem;
+                flex-direction: column;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                grid-auto-columns: 1fr;
+                justify-content: flex-start;
+                display: grid;
+                will-change: transform;
+                transform: translate3d(0rem, 10vh, 0rem) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d
+              }
+
+              .heroheader_grid-col-02 {
+                will-change: transform;
+                transform: translate3d(0rem, -10vh, 0rem) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;
+              }
+
+              .heroheader_grid-col-03 {
+                will-change: transform;
+                transform: translate3d(0rem, 10vh, 0rem) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;
+              }
+
+              .heroheader_grid-col-04 {
+                will-change: transform;
+                transform: translate3d(0rem, -10vh, 0rem) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                transform-style: preserve-3d;
+              }
+
+              .heroheader_grid-col-02,
+              .heroheader_grid-col-03,
+              .heroheader_grid-col-04 {
+                z-index: 2;
+                grid-column-gap: 40rem;
+                grid-row-gap: 40rem;
+                flex-direction: column;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+                grid-auto-columns: 1fr;
+                justify-content: flex-start;
+                display: grid;
+              }
+
+              img {
+                box-shadow: 0 5rem 10rem rgba(71, 84, 103, .5) !important;
+                vertical-align: middle;
+                max-width: 100%;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .agent_section {
+        width: 100%;
+        color: #333;
+        font-family: "Outfit", sans-serif;
+
+        .text-section {
+          width: 100%;
+          padding: 16rem 20rem 23rem 20rem;
+
+          h1 {
+            font-size: 28rem;
+            line-height: 33rem;
+            color: #111;
+          }
+
+          p {
+            font-size: 15rem;
+            line-height: 18rem;
+            margin: 8rem 0 20rem 0;
+          }
+
+          button {
+            height: 44rem;
+            background: #ff6600;
+            border-radius: 56rem;
+            border: none;
+            color: #fff;
+            width: 100%;
+            font-size: 14rem;
+            line-height: 16rem;
+          }
+
+          .scroll-down {
+            display: none;
+          }
+
+        }
+
+        .heroheader_transformed-section {
+          width: 100%;
+
+          .heroheader_transformed-wrapper {
+            width: 100%;
+
+            .heroheader_grid {
+              width: 100%;
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+
+              >div {
+                grid-column-gap: 4rem;
+                display: grid;
+                width: 100%;
+              }
+
+              img {
+                box-shadow: 0 5rem 10rem rgba(71, 84, 103, .5) !important;
+                max-width: 100%;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="agent_section">
+    <div class="text-section">
+      <h1>Having trouble finding the product you want in China? </h1>
+      <p>EIPEKS uses our professional product sourcing agent services to help you source and import any product.</p>
+      <a href="https://www.eipeks.com/contact-us/"><button>Talk to an expert</button></a>
+      <a href="#agent_section_start" class="scroll-down">
+        <img
+          src="https://assets-global.website-files.com/632fa11904792046fcb6d8d3/6437d4cb55dcf6222e5cceee_arrow-down.webp"
+          loading="lazy">
+        <div class="text-size-medium text-weight-semibold">Scroll down</div>
+      </a>
+    </div>
+    <div class="heroheader_transformed-section">
+      <div class="heroheader_transformed-wrapper">
+        <div class="heroheader_grid">
+          <div class="heroheader_grid-col-01">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_01.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_02.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_03.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_04.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_05.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_06.webp">
+          </div>
+          <div class="heroheader_grid-col-02">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_07.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_08.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_09.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_010.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_011.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_02.webp">
+          </div>
+          <div class="heroheader_grid-col-03">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_013.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_014.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_015.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_016.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_017.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_018.webp">
+          </div>
+          <div class="heroheader_grid-col-04">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_019.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_020.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_021.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_022.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_023.webp">
+            <img src="https://www.eipeks.com/wp-content/uploads/2024/07/sourcing_landing_image_024.webp">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
+</html>

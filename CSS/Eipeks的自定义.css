@@ -1,0 +1,789 @@
+@media (min-width: 768px) {
+  .btn-after-cl {
+    .elementor-button {
+      position: relative;
+      overflow: hidden;
+      span {
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .elementor-button::after {
+      content: "";
+      position: absolute !important;
+      left: 0;
+      bottom: -100%;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      transition: bottom 0.3s ease;
+    }
+
+    .elementor-button:hover:after {
+      bottom: 0;
+    }
+  }
+  .overhand-btn-FF7920 {
+    .elementor-button::after {
+      background-color: #ff7113;
+    }
+  }
+  .overhand-btn-333 {
+    .elementor-button::after {
+      background-color: #2b2d2e;
+    }
+  }
+}
+
+.drone-contact-form {
+  form {
+    opacity: 1 !important;
+  }
+  .elementor-button {
+    width: 320rem;
+    margin-top: 8rem;
+  }
+  label {
+    padding-left: 4rem;
+  }
+  #form-field-field_c5f23c1 {
+    background-color: #fff;
+    border-radius: 8rem;
+  }
+  .elementor-size-md,
+  #form-field-field_c5f23c1 {
+    min-height: 48rem !important;
+    padding-left: 16rem !important;
+  }
+  textarea {
+    padding: 12rem !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #a0a7b4 !important;
+  }
+  .elementor-form-fields-wrapper {
+    > div:nth-child(1) {
+      padding-right: 2rem !important;
+    }
+    > div:nth-child(2) {
+      padding-left: 2rem !important;
+    }
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #171a1b !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .drone-contact-form {
+    input {
+      height: 36rem;
+    }
+
+    .elementor-field-group {
+      margin-bottom: 12rem !important;
+      label {
+        padding-bottom: 5rem !important;
+      }
+    }
+    .elementor-button {
+      width: 100%;
+      margin-top: 4rem;
+      border-radius: 8rem !important;
+    }
+    #form-field-field_c5f23c1 {
+      border-radius: 6rem;
+    }
+    .elementor-size-md,
+    #form-field-field_c5f23c1 {
+      min-height: 36rem !important;
+      padding-left: 12rem !important;
+    }
+    textarea {
+      padding: 8rem 12rem 8rem 12rem !important;
+    }
+    .elementor-form-fields-wrapper {
+      > div:nth-child(1),
+      > div:nth-child(6) {
+        padding-right: 3.5rem !important;
+      }
+      > div:nth-child(2),
+      > div:nth-child(7) {
+        padding-left: 3.5rem !important;
+      }
+    }
+  }
+}
+
+.fpga-form-cl {
+  input[type="file"] {
+    outline: none !important;
+    font-size: 14rem !important;
+    font-weight: 300 !important;
+    color: #7c8fb3 !important;
+    line-height: 16rem !important;
+  }
+
+  input[type="file"] {
+    position: relative !important;
+  }
+  #form-field-field_2f84571 {
+    width: 100% !important;
+    border-radius: 16rem !important;
+    height: 120rem !important;
+    cursor: pointer !important;
+    background-color: #f8faff !important;
+    border: 1px dashed #0e6aed;
+    margin-right: 12rem !important;
+    position: relative;
+  }
+  input[type="file"]::file-selector-button {
+    width: 46.7% !important;
+    margin-top: 66rem;
+    color: transparent !important;
+    background-color: #f8faff !important;
+    border: none;
+  }
+
+  input[type="file"]::after {
+    position: absolute !important;
+    pointer-events: none !important;
+    left: 50% !important;
+    height: 17rem !important;
+    width: 16rem !important;
+    object-fit: cover;
+    content: "" !important;
+    top: 32rem !important;
+    background-image: url("https://www.eipeks.com/wp-content/uploads/2024/09/fpga_95.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover; /* 图片会自动调整到适合的大小 */
+    background-position: center; /* 将图片置于中央 */
+  }
+}
+@media (max-width: 768px) {
+  .elementor-element-0ae933c {
+    box-shadow: none !important;
+    .fpga-form-cl {
+      .elementor-field-group {
+        margin-bottom: 12rem !important;
+        > label {
+          font-size: 12rem !important;
+          font-weight: 300;
+          line-height: 14rem !important;
+          padding-bottom: 5rem !important;
+        }
+      }
+      .elementor-button {
+        width: 100%;
+        height: 40rem;
+        padding: 0 !important;
+        span {
+          font-size: 14rem;
+          font-weight: 300;
+          line-height: 40rem;
+        }
+      }
+      input[type="file"] {
+        font-size: 12rem !important;
+        font-weight: 500 !important;
+        line-height: 16rem !important;
+      }
+
+      #form-field-field_2f84571 {
+        width: 100% !important;
+        height: 44rem !important;
+        background: #ffffff !important;
+        border-radius: 4rem !important;
+        box-shadow: 0px 4rem 16rem 0px rgba(0, 42, 102, 0.06);
+        margin-right: 0 !important;
+        border: none;
+        margin-bottom: 34rem !important;
+      }
+      input[type="file"]::file-selector-button {
+        height: 44rem !important;
+        cursor: pointer !important;
+        width: 139rem !important;
+        margin-top: 0 !important;
+        color: transparent !important;
+        background: none !important;
+      }
+
+      input[type="file"]::after {
+        left: 112rem !important;
+        height: 16rem !important;
+        width: 15rem !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.drone-contact-form,
+.drone-popup-contact-form {
+  input[type="file"] {
+    outline: none !important;
+    font-size: 16rem !important;
+    font-weight: 400 !important;
+    color: #ff7920 !important;
+    line-height: 19rem !important;
+    position: relative !important;
+  }
+
+  input[type="file"]::file-selector-button {
+    width: 20rem !important;
+    color: transparent !important;
+    height: 48rem !important;
+    cursor: pointer !important;
+    background-color: white !important;
+    border: none !important;
+    margin-right: 4rem !important;
+  }
+
+  input[type="file"]::after {
+    position: absolute !important;
+    pointer-events: none !important;
+    left: 16rem !important;
+    height: 20rem !important;
+    width: 20rem !important;
+    content: "" !important;
+    top: 50% !important;
+    transform: translate(0, -50%);
+    background-image: url("https://www.eipeks.com/wp-content/uploads/2024/09/mobile_drone_43.png") !important;
+    background-size: cover;
+  }
+}
+
+.drone-popup-contact-form {
+  input[type="file"]::file-selector-button {
+    height: 42rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .drone-contact-form,
+  .drone-popup-contact-form {
+    input[type="file"] {
+      font-size: 14rem !important;
+      font-weight: 500 !important;
+      line-height: 16rem !important;
+    }
+
+    input[type="file"]::file-selector-button {
+      width: 14rem !important;
+      height: 36rem !important;
+    }
+
+    input[type="file"]::after {
+      left: 11rem !important;
+      height: 14rem !important;
+      width: 14rem !important;
+    }
+  }
+}
+
+.new_agent_form_cl {
+  input[type="file"] {
+    outline: none !important;
+    font-size: 14rem !important;
+    font-weight: 400 !important;
+    color: #7c8fb3 !important;
+    line-height: 16rem !important;
+  }
+
+  input[type="file"] {
+    position: relative !important;
+  }
+
+  input[type="file"]::file-selector-button {
+    width: 52rem !important;
+    color: transparent !important;
+    border-radius: 10rem !important;
+    height: 44rem !important;
+    cursor: pointer !important;
+    background-color: white !important;
+    border: 1px dashed rgba(87, 103, 136, 0.5);
+    margin-right: 12rem !important;
+  }
+
+  input[type="file"]::after {
+    position: absolute !important;
+    pointer-events: none !important;
+    left: 16rem !important;
+    height: 20rem !important;
+    width: 20rem !important;
+    content: "" !important;
+    top: 12rem !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E") !important;
+  }
+}
+
+.new_product_desgin_brand:hover {
+  img {
+    opacity: 1 !important;
+  }
+}
+.new_product_desgin_brand img {
+  opacity: 0 !important;
+}
+strong {
+  font-weight: 400;
+}
+/* 毛玻璃效果*/
+.bg_blur_cl {
+  backdrop-filter: blur(8rem);
+}
+
+/* 去除elementor表单校验icon */
+.elementor-message-danger:before {
+  content: "" !important;
+}
+.elementor-widget-image a {
+  display: flex !important;
+}
+.elementor-widget-image {
+  display: inline-flex;
+}
+.elementor-widget-container {
+  display: inherit;
+}
+
+/* 基础 font-size */
+html {
+  font-size: 1px; /* 你可以根据需要调整这个值 */
+}
+body {
+  line-height: 0;
+}
+/* 去除p标签默认上下边距 */
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+/* 去除按钮的默认内边距 */
+button {
+  padding: 0;
+}
+/* 针对2560px及以上屏幕调整 font-size */
+@media (min-width: 2500px) {
+  html {
+    font-size: 1.33px; /* 2560px 及以上的屏幕上，增加字体大小 */
+  }
+}
+
+/* 针对1920px及以上屏幕调整 font-size */
+@media (min-width: 1920px) and (max-width: 2499px) {
+  html {
+    font-size: 1px; /* 1920px 至 2559px 的屏幕上，保持 1px */
+  }
+}
+/* 针对中等屏幕调整 font-size */
+@media (max-width: 1919px) and (min-width: 1024px) {
+  html {
+    font-size: 0.8333px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+}
+
+/* 针对小屏幕调整 font-size */
+@media (max-width: 1023px) and (min-width: 768px) {
+  html {
+    font-size: 0.75px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+}
+
+/* 针对小屏幕调整 font-size */
+@media (max-width: 767px) {
+  html {
+    font-size: 1px; /* 适当调整这个值，根据需求缩小字体大小 */
+  }
+  .full_width_button {
+    .elementor-button {
+      width: 100%;
+    }
+  }
+}
+
+/* 设置博客首页排版宽度完全撑开 */
+.generate-columns.grid-50 {
+  width: auto;
+}
+
+/* 设置pc导航栏联系我们按钮样式*/
+#menu-item-17784:last-child a {
+  line-height: 40px;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 18px;
+}
+/* pc端样式专用 */
+@media screen and (min-width: 768px) {
+  /* pc设置右下置顶按钮样式不被whtasapp按钮遮盖 */
+  .generate-back-to-top {
+    bottom: 100px;
+    right: 38px;
+  }
+}
+/* 手机端样式专用 */
+@media screen and (max-width: 768px) {
+  /* 手机端设置右下置顶按钮样式不被whtasapp按钮遮盖 */
+  .generate-back-to-top {
+    bottom: 90px;
+    right: 23px;
+  }
+  /* 菜单 */
+  .menu {
+    border-top: 3.5px solid #ff6600;
+  }
+  .site-header {
+    .header-image {
+      padding-left: 10px;
+    }
+  }
+  .inside-header {
+    padding: 0;
+  }
+  .menu-item-17784:last-child a {
+    line-height: 50px !important;
+    border-radius: 0 !important;
+    text-align: center;
+  }
+  .menu-toggle {
+    padding-right: 20px !important;
+  }
+}
+#mobile-header {
+  .menu-bar-item a {
+    line-height: 58.5px;
+  }
+  .menu-toggle {
+    line-height: 58.5px;
+  }
+  #menu-main-1 {
+    border-top: 3.5px solid #ff6600;
+    margin: 0 26px;
+  }
+  .menu-bar-items a {
+    font-size: 16px;
+  }
+}
+.menu-bar-items a {
+  font-size: 20px;
+}
+.navigation-branding img {
+  height: 58.1px !important;
+}
+/*  导航栏自定义样式 */
+.sub-menu a {
+  border-radius: 20px;
+  margin: 4px 10px;
+}
+.sub-menu {
+  padding: 10px 0px !important;
+}
+/*  */
+/** Start Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+.envato-block__preview {
+  overflow: visible;
+}
+
+/* Envato Kit 141 Custom Styles - Applied to the element under Advanced */
+
+.elementor-headline-animation-type-drop-in .elementor-headline-dynamic-wrapper {
+  text-align: center;
+}
+
+.envato-kit-141-newsletter-inline .elementor-field-textual.elementor-size-md {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.envato-kit-141-bottom-8
+  .elementor-price-list
+  .elementor-price-list-item
+  .elementor-price-list-header {
+  margin-bottom: 0.5rem;
+}
+
+.envato-kit-141.elementor-widget-testimonial-carousel.elementor-pagination-type-bullets
+  .swiper-container {
+  padding-bottom: 52px;
+}
+
+.envato-kit-141-display-inline {
+  display: inline-block;
+}
+
+.envato-kit-141 .elementor-slick-slider ul.slick-dots {
+  bottom: -40px;
+}
+
+/** End Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+/** Start Template Kit CSS: Internet Company (css/customizer.css) **/
+
+/* Envato Custom css - applied to the advanced tab of the element it affects */
+.envato-kit-200-progress .elementor-progress-wrapper,
+.envato-kit-200-progress .elementor-progress-bar {
+  border-radius: 30px;
+}
+
+/** End Template Kit CSS: Internet Company (css/customizer.css) **/
+
+/** Start Block Kit CSS: 141-3-1d55f1e76be9fb1a8d9de88accbe962f **/
+
+.envato-kit-138-bracket .elementor-widget-container > *:before {
+  content: "[";
+  color: #ffab00;
+  display: inline-block;
+  margin-right: 4px;
+  line-height: 1em;
+  position: relative;
+  top: -1px;
+}
+
+.envato-kit-138-bracket .elementor-widget-container > *:after {
+  content: "]";
+  color: #ffab00;
+  display: inline-block;
+  margin-left: 4px;
+  line-height: 1em;
+  position: relative;
+  top: -1px;
+}
+
+/** End Block Kit CSS: 141-3-1d55f1e76be9fb1a8d9de88accbe962f **/
+
+/** Start Block Kit CSS: 143-3-7969bb877702491bc5ca272e536ada9d **/
+
+.envato-block__preview {
+  overflow: visible;
+}
+/* Material Button Click Effect */
+.envato-kit-140-material-hit .menu-item a,
+.envato-kit-140-material-button .elementor-button {
+  background-position: center;
+  transition: background 0.8s;
+}
+.envato-kit-140-material-hit .menu-item a:hover,
+.envato-kit-140-material-button .elementor-button:hover {
+  background: radial-gradient(circle, transparent 1%, #fff 1%) center/15000%;
+}
+.envato-kit-140-material-hit .menu-item a:active,
+.envato-kit-140-material-button .elementor-button:active {
+  background-color: #fff;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Field Shadow */
+.envato-kit-140-big-shadow-form .elementor-field-textual {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* FAQ */
+.envato-kit-140-faq .elementor-accordion .elementor-accordion-item {
+  border-width: 0 0 1px !important;
+}
+
+/* Scrollable Columns */
+.envato-kit-140-scrollable {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+/* ImageBox: No Space */
+.envato-kit-140-imagebox-nospace:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.envato-kit-140-imagebox-nospace figure {
+  line-height: 0;
+}
+
+.envato-kit-140-slide .elementor-slide-content {
+  background: #fff;
+  margin-left: -60px;
+  padding: 1em;
+}
+.envato-kit-140-carousel .slick-active:not(.slick-current) img {
+  padding: 20px !important;
+  transition: all 0.9s;
+}
+
+/** End Block Kit CSS: 143-3-7969bb877702491bc5ca272e536ada9d **/
+
+/** Start Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+
+.envato-block__preview {
+  overflow: visible !important;
+}
+
+/** End Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+
+/** Start Block Kit CSS: 71-3-d415519effd9e11f35d2438c58ea7ebf **/
+
+.envato-block__preview {
+  overflow: visible;
+}
+
+/** End Block Kit CSS: 71-3-d415519effd9e11f35d2438c58ea7ebf **/
+
+/** Start Block Kit CSS: 69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9 **/
+
+.envato-kit-66-menu .e--pointer-framed .elementor-item:before {
+  border-radius: 1px;
+}
+
+.envato-kit-66-subscription-form .elementor-form-fields-wrapper {
+  position: relative;
+}
+
+.envato-kit-66-subscription-form
+  .elementor-form-fields-wrapper
+  .elementor-field-type-submit {
+  position: static;
+}
+
+.envato-kit-66-subscription-form
+  .elementor-form-fields-wrapper
+  .elementor-field-type-submit
+  button {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -webmit-transform: translate(0, -50%);
+}
+
+.envato-kit-66-testi-slider .elementor-testimonial__footer {
+  margin-top: -60px !important;
+  z-index: 99;
+  position: relative;
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff !important;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  left: -25px !important;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-prev:before {
+  display: block;
+  margin-top: 0px;
+  margin-left: 0px;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff !important;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  right: -25px !important;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.32);
+}
+
+.envato-kit-66-featured-slider .elementor-slides .slick-next:before {
+  display: block;
+  margin-top: -5px;
+  margin-right: -5px;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.envato-kit-66-orangetext {
+  color: #f4511e;
+}
+
+.envato-kit-66-countdown .elementor-countdown-label {
+  display: inline-block !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 9px 20px;
+}
+
+/** End Block Kit CSS: 69-3-4f8cfb8a1a68ec007f2be7a02bdeadd9 **/
+
+/** Start Block Kit CSS: 72-3-34d2cc762876498c8f6be5405a48e6e2 **/
+
+.envato-block__preview {
+  overflow: visible;
+}
+
+/*Kit 69 Custom Styling for buttons */
+.envato-kit-69-slide-btn .elementor-button,
+.envato-kit-69-cta-btn .elementor-button,
+.envato-kit-69-flip-btn .elementor-button {
+  border-left: 0px !important;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+  padding: 15px 0 0 !important;
+}
+.envato-kit-69-slide-btn .elementor-slide-button:hover,
+.envato-kit-69-cta-btn .elementor-button:hover,
+.envato-kit-69-flip-btn .elementor-button:hover {
+  margin-bottom: 20px;
+}
+.envato-kit-69-menu .elementor-nav-menu--main a:hover {
+  margin-top: -7px;
+  padding-top: 4px;
+  border-bottom: 1px solid #fff;
+}
+/* Fix menu dropdown width */
+.envato-kit-69-menu .elementor-nav-menu--dropdown {
+  width: 100% !important;
+}
+
+/** End Block Kit CSS: 72-3-34d2cc762876498c8f6be5405a48e6e2 **/
+
+/** Start Block Kit CSS: 135-3-c665d4805631b9a8bf464e65129b2f58 **/
+
+.envato-block__preview {
+  overflow: visible;
+}
+
+/** End Block Kit CSS: 135-3-c665d4805631b9a8bf464e65129b2f58 **/
+
+/** Start Block Kit CSS: 105-3-0fb64e69c49a8e10692d28840c54ef95 **/
+
+.envato-kit-102-phone-overlay {
+  position: absolute !important;
+  display: block !important;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  z-index: 1;
+}
+
+/** End Block Kit CSS: 105-3-0fb64e69c49a8e10692d28840c54ef95 **/

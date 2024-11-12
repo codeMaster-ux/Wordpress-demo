@@ -1,0 +1,135 @@
+<head>
+  <!-- <link rel="stylesheet" href="common.css"> -->
+  <style>
+    .hardware-video-container {
+      display: flex;
+      overflow: hidden;
+      width: 1400rem;
+      height: 458rem;
+      position: relative;
+      border-radius: 16rem;
+      margin: 0 auto;
+      font-family: "Helvetica", sans-serif;
+      display: flex;
+      gap: 8rem;
+
+      .hardware-video-item {
+        flex: 0 0 180rem;
+        position: relative;
+        transition: flex 0.3s ease, height 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 2rem 28rem 16rem;
+
+        h3 {
+          font-size: 20rem;
+          line-height: 23rem;
+          color: #fff;
+        }
+
+        p {
+          display: none;
+        }
+      }
+
+      >div:nth-child(2) {
+        padding: 0 0 50rem 0;
+        align-items: center;
+      }
+
+      .hardware-video-item.hardware-active {
+        flex: 1;
+        z-index: 1;
+        justify-content: flex-start;
+        padding: 48rem 59rem 0 36rem;
+
+        h3 {
+          font-size: 32rem;
+          line-height: 38rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 16rem;
+          font-weight: 500;
+          line-height: 24rem;
+          color: #fff;
+          margin-top: 16rem;
+          display: block;
+        }
+
+      }
+
+      >div:nth-child(2).hardware-active {
+        align-items: normal;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="hardware-video-container">
+    <div style="background: url('https://www.eipeks.com/wp-content/uploads/2024/08/pcb_15.webp') no-repeat center/cover"
+      class="hardware-video-item hardware-active" onclick="hardwareToggleVideo(this)">
+      <h3>Preliminary Assessment</h3>
+      <p>To better understand your project vision and needs, we will communicate with you in depth. After signing a
+        non-disclosure agreement, our team will assess your project, gather your requirements, analyze market
+        competitors, and develop a preliminary strategy.</p>
+    </div>
+    <div class="hardware-video-item"
+      style="background: url('https://www.eipeks.com/wp-content/uploads/2024/10/pcb_34.webp') no-repeat center/cover"
+      onclick="hardwareToggleVideo(this)">
+      <h3>Project Plan</h3>
+      <p>Once project requirements are confirmed, we'll work with you to create detailed technical specifications,
+        budget, and schedule. Our project team will conduct a comprehensive project assessment, refine resource
+        allocation, and ensure the smooth progress of the project.</p>
+    </div>
+    <div style="background: url('https://www.eipeks.com/wp-content/uploads/2024/10/pcb_31.webp') no-repeat center/cover"
+      class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <h3>Development Phase</h3>
+      <p>During the R&D phase, we will carry out component selection, schematic design, PCB layout design, and prototype
+        production. At the same time, our technical team will carry out firmware development, 3D modeling, and
+        simulation testing. We will also maintain regular communication with you to report on the project progress and
+        adapt to any new requirements or goal adjustments.</p>
+    </div>
+    <div style="background: url('https://www.eipeks.com/wp-content/uploads/2024/10/pcb_32.webp') no-repeat center/cover"
+      class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <h3>Testing and Compliance</h3>
+      <p>We will conduct rigorous testing to ensure that the product is error-free and meets industry standards. All
+        tests will be conducted under real operating conditions, including those required for product certification. If
+        problems are found, we will make the necessary modifications to resolve them and ensure product compliance.</p>
+    </div>
+    <div style="background: url('https://www.eipeks.com/wp-content/uploads/2024/10/pcb_33.webp') no-repeat center/cover"
+      class="hardware-video-item" onclick="hardwareToggleVideo(this)">
+      <h3>Manufacturing Support</h3>
+      <p>As your project moves to large-scale production, we'll provide full production documentation and technical
+        support, including a detailed Bill of Materials (BOM). If needed, we can help you choose a suitable manufacturer
+        and ensure a smooth production process.</p>
+    </div>
+  </div>
+
+  <script>
+    function hardwareToggleVideo(element) {
+      const hardwareActiveItem = document.querySelector('.hardware-video-item.hardware-active');
+      if (hardwareActiveItem !== element) {
+        hardwareActiveItem.classList.remove('hardware-active');
+        element.classList.add('hardware-active');
+      }
+    }
+
+    function hardwarePlayVideo(button) {
+      const hardwareVideo = button.previousElementSibling;
+      if (hardwareVideo.paused) {
+        hardwareVideo.play();
+        button.style.display = 'none';
+      } else {
+        hardwareVideo.pause();
+        button.style.display = 'flex';
+      }
+    }
+  </script>
+</body>
