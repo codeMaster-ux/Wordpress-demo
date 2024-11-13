@@ -7,7 +7,6 @@
  * @package GeneratePress
  */
 
-
 // 创建PCB询盘表的菜单
 function add_pcb_form_menu() {
     add_menu_page(
@@ -48,20 +47,12 @@ function display_pcb_form_data() {
   
     echo '<h1>PCB表单提交数据</h1>';
     echo '<table>';
-    echo '<tr><th>序号</th><th>创建时间</th><th>基础数据</th><th>PCB名称</th><th>面板数量</th><th>交货期限</th><th>勾选数据</th><th>调度单位</th><th>面板参数</th><th>个人信息</th>';
+    echo '<tr><th>序号</th><th>创建时间</th><th>PCB名称</th><th>面板数量</th><th>交货期限</th><th>勾选数据</th><th>调度单位</th><th>面板参数</th><th>个人信息</th>';
     $index = 1; // 初始化序号
     foreach ($results as $row) {
         echo '<tr>';
         echo '<td>' . esc_html($index++) . '</td>'; // 显示序号并递增
         echo '<td>' . esc_html($row->created_at) . '</td>';
-        // 基础数据
-        echo '<td>';
-        echo '国际武器贸易条例: ' . esc_html($row->ITAR) . '<br>';
-        echo '首产品: ' . esc_html($row->first_article) . '<br>';
-        echo '测试板: ' . esc_html($row->test_coupons) . '<br>';
-        echo '</td>';
-        echo '<td>' . esc_html($row->dispatch_unit) . '</td>'; //调度单位
-        echo '</td>';
         echo '<td>' . esc_html($row->pcb_name) . '</td>'; //PCB名称
         echo '<td>' . esc_html($row->quantity) . '</td>'; //面板数量
         echo '<td>' . esc_html($row->delivery_term) . '</td>'; //交货期限
@@ -108,6 +99,7 @@ function display_pcb_form_data() {
         echo '应用领域: ' . esc_html($row->application) . '<br>';
         echo '留言: ' . esc_html($row->message) . '<br>';
         echo '</td>';
+        echo '<td><a href="#" class="pcb-delete-record" data-id="' . esc_attr($row->id) . '">删除</a></td>';
         echo '</tr>';
     }
     echo '</table>';
@@ -303,7 +295,7 @@ function display_custom_form_data() {
           }
         </style>';
 
-  echo '<h1>分部署表单提交数据</h1>';
+  echo '<h1>分布式表单提交数据</h1>';
   echo '<table>';
   echo '<tr><th>序号</th><th>创建时间</th><th>基本信息</th><th>行业信息</th><th>公司信息</th><th>产品信息</th><th>项目阶段</th><th>具体任务</th><th>接受发展</th><th>具体材料</th><th>开发周期</th><th>市场调查</th><th>订购量</th></tr>';
   $index = 1; // 初始化序号
@@ -366,6 +358,40 @@ function display_custom_form_data() {
   echo '</table>';
 }
 
+// 删除PCB表单数据
+function handle_delete_pcb_form_data() {
+    // 验证用户是否有权限删除数据
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error('无权限删除记录');
+    }
+
+    // 检查是否接收到有效的 POST 请求
+    if (isset($_POST['record_id'])) {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'pcb_form_data';
+
+        // 获取传递的记录 ID
+        $record_id = intval($_POST['record_id']);
+
+        // 从数据库中删除记录
+        $deleted = $wpdb->delete($table_name, ['id' => $record_id]);
+
+        // 检查删除是否成功
+        if ($deleted) {
+            wp_send_json_success('记录已成功删除');
+        } else {
+             // 获取数据库错误信息
+             $error_message = $wpdb->last_error ? $wpdb->last_error : '未知错误';
+             wp_send_json_error('删除记录时出错2: ' . $error_message);
+        }
+    } else {
+        wp_send_json_error('无效的请求');
+    }
+}
+
+// 注册AJAX处理函数
+add_action('wp_ajax_delete_pcb_form_data', 'handle_delete_pcb_form_data');
+
 // 删除分布式数据
 function handle_delete_custom_form_data() {
     // 验证用户是否有权限删除数据
@@ -388,7 +414,7 @@ function handle_delete_custom_form_data() {
         if ($deleted) {
             wp_send_json_success('记录已成功删除');
         } else {
-            wp_send_json_error('删除记录时出错');
+            wp_send_json_error('删除记录时出错1');
         }
     } else {
         wp_send_json_error('无效的请求');
