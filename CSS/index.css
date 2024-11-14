@@ -1,3 +1,25 @@
-.game_app_cl_text {
-  margin-left: calc((100vw - 1200rem) / 2);
+.drone-contact-form {
+  input:focus,
+  textarea:focus {
+    outline: #ff7920 !important;
+  }
+  .elementor-message {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .drone-contact-form {
+    .elementor-message {
+      font-size: 13rem;
+      font-weight: 500rem;
+      margin-top: 10rem;
+    }
+    /* .e-form__buttons{
+      margin-bottom: 0;
+    } */
+    .elementor-button {
+      margin: 0;
+    }
+  }
 }
