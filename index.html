@@ -1051,14 +1051,14 @@
             <el-form-item label="PCB Name / Part Nr." prop="pcb_name">
               <el-input placeholder="Please enter" v-model="form.pcb_name"></el-input>
             </el-form-item>
-            <el-form-item class="m_hidden" :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`"
-              prop="quantity">
+            <el-form-item v-if="!isMobile" class="m_hidden"
+              :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`" prop="quantity">
               <el-input autocomplete="off" v-model.number="form.quantity" placeholder="Please enter"></el-input>
             </el-form-item>
           </div>
           <div class="lines_one">
-            <el-form-item class="m_visible" :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`"
-              prop="quantity" :rules="[
+            <el-form-item v-if="isMobile" class="m_visible"
+              :label="`${form.dispatch_unit === 'Panel' ? 'Panel' : 'PCB'} Quantity`" prop="quantity" :rules="[
             { required: true, message: 'This field is required.', trigger: 'change' },
           ]">
               <el-input v-model="form.quantity"></el-input>
@@ -1429,6 +1429,7 @@
       el: '#app',  // Vue 作用的 HTML 元素
       data() {
         var checkQuantity = (rule, value, callback) => {
+          console.log(value);
           if (!value) {
             return callback(new Error('This field is required.'));
           }
@@ -1497,6 +1498,7 @@
         this.initIntlTelInput();
       },
       created() {
+
         // 从 sessionStorage 中获取数据
         const formData = JSON.parse(sessionStorage.getItem('pcbFormData') || '{}');
         let file = null
@@ -1557,10 +1559,13 @@
         // 下一步
         nextPage() {
           this.$refs.pcbForm.validate((valid) => {
+            console.log(valid)
             if (valid) {
-              this.$refs.pcbInfoForm.resetFields()
-              this.scrollToTop()
               this.activeIndex = 1
+              this.scrollToTop()
+              this.$nextTick(() => {
+                this.$refs.pcbInfoForm.resetFields()
+              })
             } else {
               window.scrollTo({
                 top: 0,
