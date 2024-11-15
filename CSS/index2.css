@@ -1,0 +1,126 @@
+.popup-drone-submit-btn {
+  form {
+    opacity: 1 !important;
+  }
+
+  input {
+    height: 44rem;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: #171a1b !important;
+  }
+  .elementor-button {
+    position: relative;
+    overflow: hidden;
+    span {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .elementor-button::after {
+    content: "";
+    position: absolute !important;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #2b2d2e;
+    z-index: 0;
+    transition: bottom 0.3s ease;
+  }
+
+  .elementor-button:hover:after {
+    bottom: 0;
+  }
+}
+
+.drone-popup-contact-form {
+  .elementor-button {
+    width: 320rem;
+    margin-top: 8rem;
+  }
+
+  .elementor-message-danger {
+    display: block;
+    text-align: center;
+    margin: 14rem 0 -7rem 0;
+  }
+  label {
+    padding-left: 4rem;
+  }
+  #form-field-dronePopupField7 {
+    background-color: #fff;
+    border-radius: 8rem;
+    border: 1px solid #e2e7f0;
+  }
+  .elementor-size-md,
+  #form-field-dronePopupField7 {
+    min-height: 44rem !important;
+    padding-left: 12rem !important;
+  }
+  textarea {
+    padding: 12rem !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #a0a7b4 !important;
+  }
+  .elementor-form-fields-wrapper {
+    > div:nth-child(1) {
+      padding-right: 2rem !important;
+    }
+    > div:nth-child(2) {
+      padding-left: 2rem !important;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .drone-popup-contact-form {
+    .elementor-message-danger {
+      font-size: 13rem;
+      font-weight: 500rem;
+    }
+    input {
+      height: 36rem;
+    }
+    .elementor-field-group {
+      padding: 0 !important;
+      margin-bottom: 12rem !important;
+      label {
+        padding-bottom: 5rem !important;
+      }
+    }
+
+    .elementor-field-type-submit {
+      margin-bottom: 0 !important;
+    }
+    .elementor-button {
+      width: 100%;
+      margin-top: 4rem;
+      border-radius: 8rem !important;
+    }
+    #form-field-dronePopupField7 {
+      border-radius: 6rem;
+    }
+    .elementor-size-md,
+    #form-field-dronePopupField7 {
+      min-height: 36rem !important;
+      padding-left: 12rem !important;
+    }
+    textarea {
+      padding: 8rem 12rem 8rem 12rem !important;
+    }
+    .elementor-form-fields-wrapper {
+      margin: 0 !important;
+      > div:nth-child(1),
+      > div:nth-child(6) {
+        padding-right: 3.5rem !important;
+      }
+      > div:nth-child(2),
+      > div:nth-child(7) {
+        padding-left: 3.5rem !important;
+      }
+    }
+  }
+}

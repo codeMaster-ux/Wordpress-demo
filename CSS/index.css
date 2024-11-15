@@ -3,23 +3,21 @@
   textarea:focus {
     outline: #ff7920 !important;
   }
-  .elementor-message {
+  .elementor-form-fields-wrapper {
+    margin-bottom: 0 !important;
+  }
+  .elementor-message-danger {
     display: block;
     text-align: center;
+    margin: 0;
+    color: #fff;
   }
 }
 @media (max-width: 767px) {
   .drone-contact-form {
-    .elementor-message {
+    .elementor-message-danger {
       font-size: 13rem;
       font-weight: 500rem;
-      margin-top: 10rem;
-    }
-    /* .e-form__buttons{
-      margin-bottom: 0;
-    } */
-    .elementor-button {
-      margin: 0;
     }
   }
 }
